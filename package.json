@@ -1,0 +1,23 @@
+{
+  "name": "test-proxy-server",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "prestart": "npm install && bower install",
+    "start": "node app",
+    "dev": "nodemon app"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.17.1",
+    "express": "^4.15.1",
+    "express-http-proxy": "^0.11.0",
+    "request": "^2.80.0",
+    "socket.io": "^1.7.3"
+  },
+  "devDependencies": {
+    "nodemon": "^1.11.0"
+  }
+}
