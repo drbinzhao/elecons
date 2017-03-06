@@ -1,11 +1,19 @@
 //CLIENT
 // connect to a server socket // --> it will send the read 'connection' to the localhost:3000
-var socket = io.connect();
+var socket = io.connect('http://localhost:3000');
 
-$(function(){
-    // var $messageForm = $('#messageForm')
-    // var $message = $('#message')
-    var $chat = $('#chat')
+socket.on('connect', function(){
+      console.log('User is connected!');
+      socket
+    });
+
+var $chat = $('#chat')
+
+//Listen to event 'new data available'
+socket.on('new read', function(data){
+  $chat.append(`<div class="well">${data.reading}</div>`)
+  console.log(data.reading)
+})
 
     // $messageForm.submit(function(e){
     //   e.preventDefault()
@@ -13,9 +21,4 @@ $(function(){
     //   $message.val('')
     // })
 
-   //Listen to event 'new data available'
-    socket.on('new read', function(data){
-      $chat.append(`<div class="well"> ${data.reading} </div>`)
-      console.log(data)
-    })
-  })
+

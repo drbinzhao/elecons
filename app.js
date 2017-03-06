@@ -18,6 +18,61 @@ app.get('/', function(req,res) {
 })
 
 
+
+  setInterval( () => {
+    request(url,  (error, response, body) => {
+      console.log(typeof body) 
+      let bodyParsed = body.replace(/\n/g,'')
+      let current = bodyParsed.substring(bodyParsed.indexOf(':')+1);
+      let accumulated = bodyParsed.substring(0,bodyParsed.indexOf(':'))
+      dataReads.push({
+          date : Date.now(), 
+          current : current,
+          accumulated: accumulated
+        })
+      console.log(dataReads)
+    })
+  }, 5000)
+  //setTimeout(() => clearInterval(myInterval), 240000)
+
+
+
+
+// //it listens a  message 'connection' and  will do the function
+// io.on('connection', function(socket){
+//   connections.push(socket);
+//   console.log(`Connected: ${connections.length} sockets connected`)
+  
+//   // Emit - send data available
+//   socket.emit('new read', function (data) {
+//     getData(data)
+//     console.log(data)
+//   })
+
+//   //console.log(getData())
+//     function getData() { 
+//       const myInterval = setInterval ( () => {
+//         request(url,  (error, response, body) => {
+//           console.log(body) } , 3000 )
+//       setTimeout(() => clearInterval(myInterval), 240000)
+//       //return (body)
+//       })
+//     } 
+//   //io.sockets.emit('new read', {reading:body})
+// })
+
+server.listen( PORT, () => console.log(`Listening on ${PORT}...`) )
+
+// function getData() {
+//   const myInterval = setInterval( () => {
+//   request(url,  (error, response, body) => console.log(body) )
+//   }, 30000)
+//   setTimeout(() => clearInterval(myInterval), 240000)
+// }
+
+// getData()
+
+
 // const myInterval = setInterval( () => {
 //   request(url,  (error, response, body) => console.log(body) )
 // }, 30000)
@@ -26,33 +81,3 @@ app.get('/', function(req,res) {
 
 // console.log("running interval requests....")
 
-
-server.listen( PORT, () => console.log(`Listening on ${PORT}...`) )
-
-
-//it listens a  message 'connection' and  will do the function
-io.on('connection', function(socket){
-  connections.push(socket);
-  console.log(`Connected: ${connections.length} sockets connected`)
-  
-  // Emit - send data available
-  socket.emit('new read', request(url,  (error, response, body) => {
-    console.log(body)
-    io.sockets.emit('new read', {reading:body})
-  }))
-
-  //Disconnect
-  socket.on('disconnect', function(data) {
-    connections.splice(connections.indexOf(socket),1)
-    console.log('Disconnected: %s sockets disconnected', connections.length)
-  })
-
-})
-
-// function getData() {
-//       const myInterval = setInterval( () => {
-//       request(url,  (error, response, body) => console.log(body) )
-//       }, 30000)
-//       setTimeout(() => clearInterval(myInterval), 240000)
-//       })
-//     }
