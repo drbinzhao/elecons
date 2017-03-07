@@ -6,9 +6,10 @@ angular.module('EleconsApp')
     vm.readings = []
 
     socket.on('new read', function(data) {
-      vm.readings.push(data)
+      // vm.readings.push(data)
+      vm.reading = data.current
       //console.log('Hello World!')
-      console.log(vm.readings)
+      console.log(vm.reading)
 
     })
   })

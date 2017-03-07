@@ -39,7 +39,7 @@ io.on('connection', function(socket){
       // //array pushing
       // dataReads.push(readObject)
       // console.log(dataReads)
-    console.log(newRead)
+      console.log(newRead)
 
     socket.emit('new read', newRead)
     })
