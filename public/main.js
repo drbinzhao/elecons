@@ -11,7 +11,11 @@ var $chat = $('#chat')
 
 //Listen to event 'new data available'
 socket.on('new read', function(data){
-  $chat.append(`<div class="well">${data.reading}</div>`)
+  $chat.append(`<div class="well">
+            <p>Last read: ${data.reading.date}</p>
+            <p>Current consumption: ${data.reading.current}</p>
+            <p>Accumulated consumption: ${data.reading.accumulated}</p>
+            </div>`)
   console.log(data.reading)
 })
 
