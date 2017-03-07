@@ -13,18 +13,24 @@
     }
   </style>
 </head>
-<body>
+<body ng-controller="getConsumptionController as vm">
   <div class="contianer">
     <div class="row">
       <div class="col-md-4">
         <div class="well">
           <h3>Available data</h3>
           <p>{{2+3}}</p>
+          <p>{{vm.readings}}</p>
+
         </div>
       </div>
       <div class="col-md-8">
-        <div class="chat" ng-controller="getConsumptionController">
-          
+        <div >
+          <ul>
+            <li ng-repeat= "reading in vm.readings">
+                <p>{{reading.current}}</p>
+            </li>
+          </ul>
         </div>
       </div>
     </div>
@@ -40,7 +46,7 @@
 <!-- script src="/jquery/dist/jquery.min.js"></script>
 <script src="./bower_components/bootstrap/dist/js/bootstrap.min.js"></script> -->
 
-<script src="/main.js"></script>
+<!-- <script src="/main.js"></script> -->
 <script src="/app.module.js"></script>
 <script src="/app.controller.js"></script>
 </body>

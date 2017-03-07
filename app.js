@@ -31,7 +31,7 @@ io.on('connection', function(socket){
       let current = bodyParsed.substring(bodyParsed.indexOf(':')+1);
       let accumulated = bodyParsed.substring(0,bodyParsed.indexOf(':'))
 
-      let readObject = {
+      let newRead = {
           date : moment(Date.now()).format('DD/MM/YYYY hh:mm:ss'), 
           current : +current,
           accumulated: +accumulated
@@ -39,9 +39,9 @@ io.on('connection', function(socket){
       // //array pushing
       // dataReads.push(readObject)
       // console.log(dataReads)
-    console.log(readObject)
+    console.log(newRead)
 
-    socket.emit('new read', {reading: readObject})
+    socket.emit('new read', newRead)
     })
   }, 5000)
   setTimeout(() => clearInterval(myInterval), 240000)
