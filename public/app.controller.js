@@ -1,15 +1,16 @@
 angular.module('EleconsApp')
    
-  .controller('getConsumptionController', function ($scope, $rootScope) {
+  .controller('getConsumptionController', ['socketio', function (socketio) {
     var vm = this;
     var socket = io.connect('http://localhost:3000')
     vm.readings = []
 
-    socket.on('new read', function(data) {
-      // vm.readings.push(data)
-      vm.reading = data.current
-      //console.log('Hello World!')
-      console.log(vm.reading)
+    socketio.on('new read', function(data) {
+      vm.readings.push(data)
+      vm.current = data.current
+      vm.date = data.date
+      vm.accumulated = data.accumulated
+      console.log(vm.readings)
 
     })
-  })
+  }])

@@ -19,16 +19,17 @@
       <div class="col-md-4">
         <div class="well">
           <h3>Available data</h3>
-          <p>{{2+3}}</p>
-          <p>{{vm.reading}}</p>
-
+          <p>Last read at {{vm.date}}  Current:{{vm.current}}W . Accumulated:{{vm.accumulated}} W</p>
         </div>
       </div>
       <div class="col-md-8">
-        <div >
+        <div>
+          
           <ul>
-            <li>
-                <p>{{vm.reading}}</p>
+            <li class="well" ng-repeat="reading in vm.readings">
+                <p>Datetime: {{reading.date}}</p>
+                <p>Current Consumption: {{reading.current}} W</p>
+                <p>Accumulated Consumption: {{reading.accumulated}} Wh</p>
             </li>
           </ul>
         </div>
@@ -48,6 +49,7 @@
 
 <!-- <script src="/main.js"></script> -->
 <script src="/app.module.js"></script>
+<script src="/app.factory.js"></script>
 <script src="/app.controller.js"></script>
 </body>
 </html>
