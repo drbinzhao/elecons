@@ -18,66 +18,39 @@ app.get('/', function(req,res) {
 })
 
 
-
-  setInterval( () => {
+//it listens a  message 'connection' and  will do the function
+io.on('connection', function(socket){
+  connections.push(socket);
+  console.log(`Connected: ${connections.length} sockets connected`)
+  
+  // Emit - send data available
+    const myInterval = setInterval( () => {
     request(url,  (error, response, body) => {
-      console.log(typeof body) 
+
       let bodyParsed = body.replace(/\n/g,'')
       let current = bodyParsed.substring(bodyParsed.indexOf(':')+1);
       let accumulated = bodyParsed.substring(0,bodyParsed.indexOf(':'))
-      dataReads.push({
+
+      let readObject = {
           date : Date.now(), 
           current : current,
           accumulated: accumulated
-        })
+        }
+      //array pushing
+      dataReads.push(readObject)
       console.log(dataReads)
     })
-  }, 5000)
-  //setTimeout(() => clearInterval(myInterval), 240000)
+  }, 30000)
+  //console.log(dataReads)
+  setTimeout(() => clearInterval(myInterval), 240000)
 
+  //socket.emit('new read', {reading: dataReads.current})
+  //console.log(myInterval)
+  //io.sockets.emit('new read', {reading:body})
+})
 
-
-
-// //it listens a  message 'connection' and  will do the function
-// io.on('connection', function(socket){
-//   connections.push(socket);
-//   console.log(`Connected: ${connections.length} sockets connected`)
-  
-//   // Emit - send data available
-//   socket.emit('new read', function (data) {
+// function (data) {
 //     getData(data)
-//     console.log(data)
+//     console.log(dataReads)
 //   })
-
-//   //console.log(getData())
-//     function getData() { 
-//       const myInterval = setInterval ( () => {
-//         request(url,  (error, response, body) => {
-//           console.log(body) } , 3000 )
-//       setTimeout(() => clearInterval(myInterval), 240000)
-//       //return (body)
-//       })
-//     } 
-//   //io.sockets.emit('new read', {reading:body})
-// })
-
 server.listen( PORT, () => console.log(`Listening on ${PORT}...`) )
-
-// function getData() {
-//   const myInterval = setInterval( () => {
-//   request(url,  (error, response, body) => console.log(body) )
-//   }, 30000)
-//   setTimeout(() => clearInterval(myInterval), 240000)
-// }
-
-// getData()
-
-
-// const myInterval = setInterval( () => {
-//   request(url,  (error, response, body) => console.log(body) )
-// }, 30000)
-
-// setTimeout(() => clearInterval(myInterval), 240000)
-
-// console.log("running interval requests....")
-
