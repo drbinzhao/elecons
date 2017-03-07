@@ -43,7 +43,7 @@ io.on('connection', function(socket){
 
     socket.emit('new read', {reading: readObject})
     })
-  }, 2000)
+  }, 5000)
   setTimeout(() => clearInterval(myInterval), 240000)
 })
 
