@@ -10,7 +10,7 @@ angular.module('EleconsApp')
       vm.current = data.current
       vm.date = data.date
       vm.accumulated = data.accumulated
-      console.log(vm.readings)
+      //console.log(vm.readings)
 
     })
   }])

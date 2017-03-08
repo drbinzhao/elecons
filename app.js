@@ -40,7 +40,7 @@ io.on('connection', function(socket){
           current : +current,
           accumulated: +accumulated
         }
-      console.log(newRead)
+      //console.log(newRead)
 
     io.sockets.emit('new read', newRead)
     })

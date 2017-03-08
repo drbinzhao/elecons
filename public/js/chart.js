@@ -1,5 +1,6 @@
 /* Graph */
 let myData = [ 'data1'/*, 12, 34, 45 */];
+//let myAvg = ['avg']
 let myAxis = ['x'/*,'2013/01/01', '2013/01/02', '2013/01/03'*/]
 const chart = c3.generate({
   bindto: '#chart',
