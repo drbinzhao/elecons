@@ -13,6 +13,7 @@ app.use(express.static('public'))
 
 //var dataReads = []
 var connections = []
+let uniqueInterval
 
 // app.get('/', function(req,res) {
 //   res.sendFile(__dirname + '/index.html')
@@ -23,9 +24,10 @@ io.on('connection', function(socket){
   connections.push(socket);
   console.log(`Connected: ${connections.length} sockets connected`)
   
+  if (uniqueInterval) clearInterval(uniqueInterval)
   // Emit - send data available
   //const myInterval =  
-  setInterval( () => {
+  uniqueInterval = setInterval( () => {
     request(url,  (error, response, body) => {
 
       let bodyParsed = body.replace(/\n/g,'')
@@ -47,6 +49,7 @@ io.on('connection', function(socket){
 
   //Disconnect
     socket.on('disconnect', function(data) {
+      clearInterval(uniqueInterval)
       connections.splice(connections.indexOf(socket),1)
       console.log('Disconnected: %s sockets disconnected', connections.length)
     })
