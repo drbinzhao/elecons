@@ -2,7 +2,7 @@ angular.module('EleconsApp')
    
   .controller('getConsumptionController', ['socketio', function (socketio) {
     var vm = this;
-    var socket = io.connect('http://localhost:3000')
+    //var socket = io.connect()
     vm.readings = []
 
     socketio.on('new read', function(data) {
