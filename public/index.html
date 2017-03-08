@@ -7,30 +7,24 @@
   <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
   <script src="bower_components/angular/angular.min.js"></script>
   <script src="/socket.io/socket.io.js"></script>
+  <!-- Load c3.css -->
+  <link rel="stylesheet" href="bower_components/c3/c3.css" type="text/css">
   <link rel="stylesheet" href="/css/styles.css">
 
 </head>
-<body ng-controller="getConsumptionController as vm">
+<body >
   <div class="contianer">
     <div class="row">
-      <div class="col-md-4">
+      <div class="col-md-3" ng-controller="getConsumptionController as vm">
         <div class="well">
           <h3>Available data</h3>
           <p>Last read at {{vm.date}}  Current:{{vm.current}}W . Accumulated:{{vm.accumulated}} W</p>
         </div>
       </div>
-      <div class="col-md-8">
-        <div>
-          
-          <ul>
-            <li class="well" ng-repeat="reading in vm.readings">
-                <p>Datetime: {{reading.date}}</p>
-                <p>Current Consumption: {{reading.current}} W</p>
-                <p>Accumulated Consumption: {{reading.accumulated}} Wh</p>
-            </li>
-          </ul>
-        </div>
+      <div class="col-md-7">
+        <div id ="chart"></div>
       </div>
+      <ul id="list"></ul>
     </div>
   </div>
   
@@ -40,13 +34,13 @@
 <script src="bower_components/jquery/dist/jquery.min.js"></script>
 <!-- Latest compiled and minified JS -->
 <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+<!-- Load d3.js and c3.js -->
+<script src="bower_components/d3/d3.min.js"></script>
+<script src="bower_components/c3/c3.min.js"></script>
 
-<!-- script src="/jquery/dist/jquery.min.js"></script>
-<script src="./bower_components/bootstrap/dist/js/bootstrap.min.js"></script> -->
-
-<!-- <script src="/main.js"></script> -->
-<script src="/app.module.js"></script>
-<script src="/app.factory.js"></script>
-<script src="/app.controller.js"></script>
+<script src="/js/app.module.js"></script>
+<script src="/js/app.factory.js"></script>
+<script src="/js/app.controller.js"></script>
+<script src="/js/chart.js"></script>
 </body>
 </html>
