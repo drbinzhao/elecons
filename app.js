@@ -21,7 +21,7 @@ let uniqueInterval
 
 //it listens a  message 'connection' and  will do the function
 io.on('connection', function(socket){
-  //connections.push(socket);
+  connections.push(socket);
   console.log(`Connected: ${connections.length} sockets connected`)
   
   if (uniqueInterval) clearInterval(uniqueInterval)
@@ -50,8 +50,8 @@ io.on('connection', function(socket){
   //Disconnect
     socket.on('disconnect', function(data) {
       clearInterval(uniqueInterval)
-      //connections.splice(connections.indexOf(socket),1)
-      console.log('Disconnected: %s sockets disconnected', connections.length)
+      connections.splice(connections.indexOf(socket),1)
+      console.log('Disconnected: %s sockets connected', connections.length )
     })
   })
 
