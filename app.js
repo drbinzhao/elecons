@@ -1,6 +1,7 @@
 const express = require('express')
 const request = require('request');
 const moment = require('moment')
+const path = require('path')
 const app = express()
 
 const server = require('http').createServer(app);
@@ -9,7 +10,7 @@ const io = require('socket.io')(server);
 const PORT = process.env.PORT || 3000
 const url = 'http://fran.noip.me:8888/consumo?id=0001'
 
-app.use(express.static('public'))
+app.use(express.static( path.join(__dirname,'public') ))
 
 //var dataReads = []
 var connections = []
