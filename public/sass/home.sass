@@ -3,21 +3,35 @@ $color_nav_footer: #F2CF61
 
 body 
   font-family: 'Lato', sans-serif;
-  background-image: url("../img/background-img.jpg")
-  height: 90%
 
 .logo
   height: 40px
-  margin-top: -10px
+  margin-top: -7px
+
+#nav-style
+  height: 60px
+
+.background-img
+  background-image: url("../img/background-img.jpg")
+  height: 100%
+
+.background-filter
+  background: rgba(0, 0, 0, 0.6)
+  height: 100%
 
 .colored-icons 
   li, a, span
     color:#F2CF61
     font-size: 18px
 
+.fa.fa-bolt, .fa.fa-bar-chart, .fa.fa-money
+  color: #4AB8A1
+
 .main-left
   padding-left: 10px
+  margin-bottom: 70px
   h1 
+    font-size: 40px
     color: #4AB8A1
     line-height: 55px
     font-weight: bold
@@ -37,21 +51,30 @@ body
       color: white
 
 .main-rigth
-  padding-top: 80px
-  h1
-    color: green
-
+  padding-top: 40px
+  margin-bottom: 20px
+  h2
+    font-size: 35px
+    font-weight: bold
+    color: #4AB8A1
+    padding-bottom: 20px
+  h3
+    font-size: 25px
+    font-weight: bold
+    color: #F2CF61
+    padding-bottom: 30px
 
 .footer
   display: flex
   flex-direction: row
   flex-wrap: nowrap
-  position: absolute
+  position: relative
   bottom: 0
   width: 100%
-  height: 50px
+  height: 60px
   background: #222222
   color: #F2CF61
   div p
-    font-size: 14px
-    padding-top: 10px
+    font-size: 18px
+    //font-weight: bold
+    padding-top: 20px

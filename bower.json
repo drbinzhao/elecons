@@ -18,6 +18,7 @@
   "dependencies": {
     "bootstrap": "^3.3.7",
     "angular": "^1.6.2",
-    "c3": "^0.4.11"
+    "c3": "^0.4.11",
+    "font-awesome": "^4.7.0"
   }
 }
