@@ -1,0 +1,48 @@
+/* line 1, C:/Users/Josep/Documents/Skylabcoders/projects-bootcamp/elecons/public/sass/dashboard.sass */
+body {
+  font-family: 'Lato', sans-serif;
+}
+
+/* line 4, C:/Users/Josep/Documents/Skylabcoders/projects-bootcamp/elecons/public/sass/dashboard.sass */
+.logo {
+  height: 40px;
+  margin-top: -7px;
+}
+
+/* line 8, C:/Users/Josep/Documents/Skylabcoders/projects-bootcamp/elecons/public/sass/dashboard.sass */
+#nav-style {
+  height: 60px;
+}
+
+/* line 12, C:/Users/Josep/Documents/Skylabcoders/projects-bootcamp/elecons/public/sass/dashboard.sass */
+.colored-icons a {
+  color: #F2CF61;
+  font-size: 18px;
+  vertical-align: center;
+}
+
+/* line 17, C:/Users/Josep/Documents/Skylabcoders/projects-bootcamp/elecons/public/sass/dashboard.sass */
+div {
+  border: 1px solid red;
+}
+
+/* line 21, C:/Users/Josep/Documents/Skylabcoders/projects-bootcamp/elecons/public/sass/dashboard.sass */
+.footer {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  position: relative;
+  bottom: 0;
+  width: 100%;
+  height: 60px;
+  background: #222222;
+  color: #F2CF61;
+}
+
+/* line 31, C:/Users/Josep/Documents/Skylabcoders/projects-bootcamp/elecons/public/sass/dashboard.sass */
+.footer div p {
+  font-size: 18px;
+  padding-top: 20px;
+}
+
+/*# sourceMappingURL=../css/dashboard.map */

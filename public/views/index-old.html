@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="EleconsApp">
+<head>
+  <meta charset="UTF-8">
+  <title>Elecons</title>
+  <!-- Latest compiled and minified CSS -->
+  <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
+  <script src="bower_components/angular/angular.min.js"></script>
+  <script src="/socket.io/socket.io.js"></script>
+  <!-- Load c3.css -->
+  <link rel="stylesheet" href="bower_components/c3/c3.css" type="text/css">
+  <link rel="stylesheet" href="/css/styles.css">
+
+</head>
+<body>
+
+
+
+  <div class="contianer">
+    <div class="row">
+      <div class="container">
+        <div class="col-sm-4" ng-controller="getConsumptionController as vm">
+          <div class="well">
+            <h3>Available data</h3>
+            <p>Last read at {{vm.date}}  Current:{{vm.current}}W . Accumulated:{{vm.accumulated}} W</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-8">
+        <div id ="chart"></div>
+      </div>
+    </div>
+    <ul id="list"></ul>
+  </div>
+
+  <!-- Loading the jquery library -->
+  <script src="bower_components/jquery/dist/jquery.min.js"></script>
+  <!-- Latest compiled and minified JS -->
+  <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+  <!-- Load d3.js and c3.js -->
+  <script src="bower_components/d3/d3.min.js"></script>
+  <script src="bower_components/c3/c3.min.js"></script>
+
+  <script src="/js/app.module.js"></script>
+  <script src="/js/app.factory.js"></script>
+  <script src="/js/app.controller.js"></script>
+  <script src="/js/chart.js"></script>
+</body>
+</html>

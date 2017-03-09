@@ -25,11 +25,11 @@ const chart = c3.generate({
 var socket = io.connect()
   socket.on('new read', function(data) {
     //the list
-    const oList = document.getElementById('list')
-    const html = oList.innerHTML
+    //const oList = document.getElementById('list')
+    //const html = oList.innerHTML
     const value = data.current
     const date = Date.now()
-    oList.innerHTML = html + `<li>${value}</li>`
+    //oList.innerHTML = html + `<li>${value}</li>`
     myData.push( +value )
     myAxis.push( date )
     console.log(myData)

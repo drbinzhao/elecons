@@ -4,16 +4,17 @@
   <meta charset="UTF-8">
   <title>Elecons</title>
   <!-- Latest compiled and minified CSS -->
-  <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
-  <script src="bower_components/angular/angular.min.js"></script>
+  <link rel="stylesheet" href="../bower_components/bootstrap/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="../bower_components/font-awesome/css/font-awesome.min.css">
+  <script src="../bower_components/angular/angular.min.js"></script>
   <script src="/socket.io/socket.io.js"></script>
+  <link href="https://fonts.googleapis.com/css?family=Lato:300" rel="stylesheet">
   <!-- Load c3.css -->
-  <link rel="stylesheet" href="bower_components/c3/c3.css" type="text/css">
-  <link rel="stylesheet" href="/css/styles.css">
+  <link rel="stylesheet" href="../bower_components/c3/c3.css" type="text/css">
+  <link rel="stylesheet" href="../css/dashboard.css">
 
 </head>
 <body>
-
 <div class="background-img">
   <div class="background-filter">
   <header>
@@ -31,12 +32,10 @@
 
   <main class ="container">
     <div class="row">
-      <div class="col-sm-4" ng-controller="getConsumptionController as vm">
+      <div class="col-sm-4">
         <h1>Josep Otal</h1>
         <div class="col-xs-6">
         Last read kWh
-        <p>Last read at {{vm.date}}  Current:{{vm.current}}W </p>
-        <p>Accumulated:{{vm.accumulated}} W</p>
         </div>
         <div class="col-xs-6">
         % change previous read
@@ -86,27 +85,40 @@
             <button type="button" class="btn btn-default">Monthly</button>
           </div>
         </div>
-        <section id="chart">
+        <div id="chart">
           Graph
-        </section>
+        </div>
+        <ul id="list"></ul>
       </div>
     </div> 
   </main>
+
+
+  <footer class="footer">
+    <div class="container">
+      <div class="row">
+        <p>Elecons Inc. 2017</p>
+      </div>
+    </div>
+
+  </footer>
   </div>
-  </div>
-</body>
+</div>
+
+
+
 
   <!-- Loading the jquery library -->
-  <script src="bower_components/jquery/dist/jquery.min.js"></script>
+  <script src="../bower_components/jquery/dist/jquery.min.js"></script>
   <!-- Latest compiled and minified JS -->
-  <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+  <script src="../bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
   <!-- Load d3.js and c3.js -->
-  <script src="bower_components/d3/d3.min.js"></script>
-  <script src="bower_components/c3/c3.min.js"></script>
+  <script src="../bower_components/d3/d3.min.js"></script>
+  <script src="../bower_components/c3/c3.min.js"></script>
 
-  <script src="/js/app.module.js"></script>
-  <script src="/js/app.factory.js"></script>
-  <script src="/js/app.controller.js"></script>
-  <script src="/js/chart.js"></script>
+  <script src="../js/app.module.js"></script>
+  <script src="../js/app.factory.js"></script>
+  <script src="../js/app.controller.js"></script>
+  <script src="../js/chart.js"></script>
 </body>
 </html>
