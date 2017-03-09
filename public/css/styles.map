@@ -1,0 +1,12 @@
+{
+	"version": 3,
+	"file": "../sass/styles.css",
+	"sources": [
+		"../sass/styles.sass"
+	],
+	"sourcesContent": [
+		"$background_main: #FbFbFb;\nhtml, body {\n  height: 100%;\n  font-family: 'Roboto', sans-serif; }\n\n\n"
+	],
+	"mappings": ";AACA,AAAA,IAAI,EAAE,AAAA,IAAI,CAAC;EACT,MAAM,EAAE,IAAK;EACb,WAAW,EAAE,oBAAqB;CAAG",
+	"names": []
+}

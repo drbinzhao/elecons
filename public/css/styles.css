@@ -1,4 +1,7 @@
-body {
-  margin-top:30px;
-  color: green;
+/* line 2, C:/Users/Josep/Documents/Skylabcoders/projects-bootcamp/elecons/public/sass/styles.sass */
+html, body {
+  height: 100%;
+  font-family: 'Roboto', sans-serif;
 }
+
+/*# sourceMappingURL=../css/styles.map */
