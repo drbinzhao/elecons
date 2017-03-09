@@ -48,7 +48,6 @@ body {
   font-size: 40px;
   color: #4AB8A1;
   line-height: 55px;
-  font-weight: bold;
   padding-top: 50px;
   padding-bottom: 20px;
 }
@@ -78,28 +77,37 @@ body {
 }
 
 /* line 53, C:/Users/Josep/Documents/Skylabcoders/projects-bootcamp/elecons/public/sass/home.sass */
-.main-rigth {
+.main-right {
   padding-top: 40px;
   margin-bottom: 20px;
+  display: flex;
+  flex-direction: column;
 }
 
-/* line 56, C:/Users/Josep/Documents/Skylabcoders/projects-bootcamp/elecons/public/sass/home.sass */
-.main-rigth h2 {
+/* line 58, C:/Users/Josep/Documents/Skylabcoders/projects-bootcamp/elecons/public/sass/home.sass */
+.main-right h2 {
   font-size: 35px;
-  font-weight: bold;
   color: #4AB8A1;
-  padding-bottom: 20px;
-}
-
-/* line 61, C:/Users/Josep/Documents/Skylabcoders/projects-bootcamp/elecons/public/sass/home.sass */
-.main-rigth h3 {
-  font-size: 25px;
-  font-weight: bold;
-  color: #F2CF61;
   padding-bottom: 30px;
 }
 
-/* line 67, C:/Users/Josep/Documents/Skylabcoders/projects-bootcamp/elecons/public/sass/home.sass */
+/* line 63, C:/Users/Josep/Documents/Skylabcoders/projects-bootcamp/elecons/public/sass/home.sass */
+.main-right .features-list {
+  padding-bottom: 30px;
+  justify-content: center;
+}
+
+/* line 66, C:/Users/Josep/Documents/Skylabcoders/projects-bootcamp/elecons/public/sass/home.sass */
+.main-right .features-list h3 {
+  font-size: 25px;
+  color: #F2CF61;
+  padding-left: 20px;
+  margin-top: 0px;
+  margin-bottom: 0px;
+  vertical-align: center;
+}
+
+/* line 77, C:/Users/Josep/Documents/Skylabcoders/projects-bootcamp/elecons/public/sass/home.sass */
 .footer {
   display: flex;
   flex-direction: row;
@@ -112,10 +120,17 @@ body {
   color: #F2CF61;
 }
 
-/* line 77, C:/Users/Josep/Documents/Skylabcoders/projects-bootcamp/elecons/public/sass/home.sass */
+/* line 87, C:/Users/Josep/Documents/Skylabcoders/projects-bootcamp/elecons/public/sass/home.sass */
 .footer div p {
   font-size: 18px;
   padding-top: 20px;
+}
+
+@media all and (max-width: 350px) {
+  /* line 96, C:/Users/Josep/Documents/Skylabcoders/projects-bootcamp/elecons/public/sass/home.sass */
+  .main-right .features-list {
+    display: inline-block;
+  }
 }
 
 /*# sourceMappingURL=../css/home.map */
