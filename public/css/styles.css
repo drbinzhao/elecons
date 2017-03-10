@@ -9216,13 +9216,13 @@ body {
 /* line 1, C:/Users/Josep/Documents/Skylabcoders/projects-bootcamp/elecons/public/sass/_home.sass */
 .background-img {
   background-image: url("../img/background-img.jpg");
-  height: 100%;
+  width: 100%;
 }
 
 /* line 5, C:/Users/Josep/Documents/Skylabcoders/projects-bootcamp/elecons/public/sass/_home.sass */
 .background-filter {
   background: rgba(0, 0, 0, 0.6);
-  height: 100%;
+  width: 100%;
 }
 
 /* line 8, C:/Users/Josep/Documents/Skylabcoders/projects-bootcamp/elecons/public/sass/_home.sass */
