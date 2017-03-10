@@ -14,3 +14,7 @@ angular.module('EleconsApp')
 
     })
   }])
+
+  // .controller('homeController', function ($scope, $rootScope) {
+  //   $rootScope.section = 'home'
+  // })

@@ -10,6 +10,7 @@ const io = require('socket.io')(server);
 const PORT = process.env.PORT || 3000
 const url = 'http://fran.noip.me:8888/consumo?id=0001'
 
+//app.set('view engine', 'pug')
 app.use(express.static( path.join(__dirname,'public') ))
 
 //var dataReads = []

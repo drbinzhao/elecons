@@ -1,1 +1,1 @@
-angular.module('EleconsApp', [])
+angular.module('EleconsApp', ['ngRoute'])
