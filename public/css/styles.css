@@ -9307,17 +9307,22 @@ body {
   }
 }
 
-/* line 1, C:/Users/Josep/Documents/Skylabcoders/projects-bootcamp/elecons/public/sass/_dashboard.sass */
-h1 {
+/* line 2, C:/Users/Josep/Documents/Skylabcoders/projects-bootcamp/elecons/public/sass/_dashboard.sass */
+.dashboard h1 {
   color: #F2CF61;
 }
 
 /* line 4, C:/Users/Josep/Documents/Skylabcoders/projects-bootcamp/elecons/public/sass/_dashboard.sass */
+.dashboard h4 {
+  color: #4AB8A1;
+}
+
+/* line 7, C:/Users/Josep/Documents/Skylabcoders/projects-bootcamp/elecons/public/sass/_dashboard.sass */
 .time-buttons {
   padding-bottom: 30px;
 }
 
-/* line 7, C:/Users/Josep/Documents/Skylabcoders/projects-bootcamp/elecons/public/sass/_dashboard.sass */
+/* line 10, C:/Users/Josep/Documents/Skylabcoders/projects-bootcamp/elecons/public/sass/_dashboard.sass */
 .circle {
   border-radius: 50%;
   font-size: 20px;
@@ -9325,6 +9330,11 @@ h1 {
   text-align: center;
   background: Transparent;
   border: 2px solid #F2CF61;
+}
+
+/* line 22, C:/Users/Josep/Documents/Skylabcoders/projects-bootcamp/elecons/public/sass/_dashboard.sass */
+.circle h3, .circle h5 {
+  color: #4AB8A1;
 }
 
 /* line 1, C:/Users/Josep/Documents/Skylabcoders/projects-bootcamp/elecons/public/sass/_footer.sass */
