@@ -35,8 +35,9 @@
         <h1>Josep Otal</h1>
         <div class="col-xs-6">
         Last read kWh
-        <p>Last read at {{vm.date}}  Current:{{vm.current}}W </p>
-        <p>Accumulated:{{vm.accumulated}} W</p>
+        <h4>Last read at <button class="btn btn-success"> {{vm.date}}</button></h4>  
+        <h4>Current: <button class="btn btn-danger"> {{vm.current}}W </button></h4>
+        <!-- <p>Accumulated:{{vm.accumulated}} W</p> -->
         </div>
         <div class="col-xs-6">
         % change previous read
@@ -45,17 +46,33 @@
       </div>
       <div class="col-sm-8">
         <h1>Agregatted data</h1>
-        <div class="col-sm-3">
+        <div class="col-sm-3 ">
         Hour
+        <div class="circle">
+          <h3> 37 </h3>
+          <h5> kWh </h5>
         </div>
-        <div class="col-sm-3">
+        </div>
+        <div class="col-sm-3 ">
         Day
+        <div class="circle">
+          <h3> 37 </h3>
+          <h5> kWh </h5>
         </div>
-        <div class="col-sm-3">
+        </div>
+        <div class="col-sm-3 ">
         Month
+        <div class="circle">
+          <h3> 37 </h3>
+          <h5> kWh </h5>
         </div>
-        <div class="col-sm-3">
+        </div>
+        <div class="col-sm-3 ">
         Year
+        <div class="circle">
+          <h3> 37 </h3>
+          <h5> kWh </h5>
+        </div>
         </div>
     
       </div>
@@ -65,16 +82,26 @@
         <h1>Hourly Energy Prices</h1>
         <div class="col-xs-12">
         Cheapest hour
+        <div class="circle">
+          <h2> 10:00am</h2>
+          <h3> 0,08 </h3>
+          <h5> €/kWh </h5>
+        </div>
         </div>
         <div class="col-xs-12">
         Most expensive hour
+        <div class="circle">
+          <h2> 18:00pm</h2>  
+          <h3> 0,10 </h3>
+          <h5> €/kWh </h5>
+        </div>
         </div>
       </div>
       <div class="col-sm-8">
         <h1>Graphs</h1>
-        <div class="btn-group btn-group-justified" role="group" aria-label="...">
+        <div class="btn-group btn-group-justified time-buttons" role="group" aria-label="...">
           <div class="btn-group" role="group">
-            <button type="button" class="btn btn-default">Real-time</button>
+            <button type="button" class="btn btn-info">Real-time</button>
           </div>
           <div class="btn-group" role="group">
             <button type="button" class="btn btn-default">Hourly</button>
