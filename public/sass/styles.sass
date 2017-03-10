@@ -1,64 +1,8 @@
-div
-  border: 1px solid red
-
-$background_nav_footer: #FbFbFb
-$color_nav_footer: #F2CF61
-
-body 
+$icon-font-path: "/bower_components/bootstrap-sass/assets/fonts/bootstrap/";
+@import '../../public/bower_components/bootstrap-sass/assets/stylesheets/bootstrap';
+body
   font-family: 'Lato', sans-serif;
-
-.logo
-  height: 40px
-  margin-top: -7px
-
-#nav-style
-  height: 60px
-
-.background-img
-  background-image: url("../img/background-img.jpg")
-  height: 100%
-
-.background-filter
-  background: rgba(0, 0, 0, 0.8)
-  height: 100%
-
-h1
-  color: #F2CF61
-
-.colored-icons 
-  a
-    color:#F2CF61
-    font-size: 18px
-    vertical-align: center
-
-.time-buttons
-  padding-bottom: 30px  
-
-.circle
-  //width: 100%;
-  //height: 100%;
-  border-radius: 50%
-  font-size: 20px
-  color: #4AB8A1
-  //line-height: 50px;
-  text-align: center
-  background: Transparent
-  border: 2px solid #F2CF61
-  //border: 2px solid #4AB8A1
-  //border-radius: 25px
-  
-
-.footer
-  display: flex
-  flex-direction: row
-  flex-wrap: nowrap
-  position: relative
-  bottom: 0
-  width: 100%
-  height: 60px
-  background: #222222
-  color: #F2CF61
-  div p
-    font-size: 18px
-    //font-weight: bold
-    padding-top: 20px
+@import 'navbar.sass';
+@import 'home.sass';
+@import 'dashboard.sass';
+@import 'footer.sass';

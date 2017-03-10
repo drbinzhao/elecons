@@ -13,12 +13,35 @@
   <!-- Load c3.css -->
   <link rel="stylesheet" href="bower_components/c3/c3.css" type="text/css">
   <link rel="stylesheet" href="/css/styles.css">
-  <link rel="stylesheet" href="/css/dashboard.css">
-  <link rel="stylesheet" href="/css/home.css">
 
 </head>
 <body>
+<div class="background-img">
+  <div class="background-filter">
+  <header>
+    <nav class="navbar navbar-inverse" >
+      <div class="container" id="nav-style">
+        <div class="nav navbar-nav">
+          <a class="navbar-brand" href="#!/"><img class="logo" src="../img/logo-elecons.png" alt=""></a>
+        </div>
+        <ul class="nav navbar-nav navbar-right">
+          <li class="colored-icons"><a href="../register"><span class="glyphicon glyphicon-user"></span> <span>Sign Up </span></a></li>
+          <li class="colored-icons"><a href="../login"><span class="glyphicon glyphicon-log-in"></span> <span>Login</span> </a></li>
+        </ul>
+      </div>
+    </nav>
+  </header>
   <ng-view></ng-view>
+  <section id ="chart">
+    
+  </section>
+  <footer class="footer">
+    <div class="container">
+      <div class="row">
+        <p>Elecons Inc. 2017</p>
+      </div>
+    </div>
+  </footer>
 
   <!-- Loading the jquery library -->
   <script src="bower_components/jquery/dist/jquery.min.js"></script>

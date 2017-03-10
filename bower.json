@@ -20,6 +20,7 @@
     "angular": "^1.6.2",
     "c3": "^0.4.11",
     "font-awesome": "^4.7.0",
-    "angular-route": "^1.6.3"
+    "angular-route": "^1.6.3",
+    "bootstrap-sass": "^3.3.7"
   }
 }
