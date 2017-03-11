@@ -9207,26 +9207,27 @@ body {
   margin: 0 auto;
 }
 
-/* line 11, C:/Users/Josep/Documents/Skylabcoders/projects-bootcamp/elecons/public/sass/_navbar.sass */
+/* line 9, C:/Users/Josep/Documents/Skylabcoders/projects-bootcamp/elecons/public/sass/_navbar.sass */
+#nav-style div:last-child div {
+  padding-top: 13px;
+}
+
+/* line 13, C:/Users/Josep/Documents/Skylabcoders/projects-bootcamp/elecons/public/sass/_navbar.sass */
 .navbar-inverse .navbar-nav li a {
   padding-top: 17px;
 }
 
-/* line 14, C:/Users/Josep/Documents/Skylabcoders/projects-bootcamp/elecons/public/sass/_navbar.sass */
+/* line 15, C:/Users/Josep/Documents/Skylabcoders/projects-bootcamp/elecons/public/sass/_navbar.sass */
 .colored-icons {
   background-color: #222222;
-}
-
-/* line 16, C:/Users/Josep/Documents/Skylabcoders/projects-bootcamp/elecons/public/sass/_navbar.sass */
-.colored-icons a {
-  text-align: center;
+  padding-top: 10px;
 }
 
 /* line 18, C:/Users/Josep/Documents/Skylabcoders/projects-bootcamp/elecons/public/sass/_navbar.sass */
-.colored-icons li, .colored-icons a, .colored-icons span {
+.colored-icons a, .colored-icons span {
   color: #F2CF61;
-  font-size: 18px;
-  vertical-align: center;
+  font-size: 20px;
+  vertical-align: middle;
 }
 
 /* line 4, C:/Users/Josep/Documents/Skylabcoders/projects-bootcamp/elecons/public/sass/_home.sass */
