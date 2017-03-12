@@ -8,10 +8,16 @@ angular.module('EleconsApp')
       .when('/login', {
           templateUrl: '/views/login.html'
       })
+      .when('/register', {
+          templateUrl: '/views/register.html'
+      })
       .when('/dashboard', {
           templateUrl: '/views/dashboard.html',
           controller: 'getConsumptionController',
           controllerAs: 'vm'
+      })
+      .when('/user', {
+          templateUrl: '/views/user.html'
       })
       .otherwise('/home')
 })

@@ -17,20 +17,15 @@
 
 </head>
 <body>
-<div class="background-img">
-  <div class="background-filter">
-  
-  <ng-view></ng-view>
+  <div class="background-img">
+    <div class="background-filter">
 
-  <footer class="footer">
-    <div class="container">
-      <div class="row">
-        <p>Elecons Inc. 2017</p>
-      </div>
+      <ng-view></ng-view>
+      
+      <ng-include src="'/views/footer.html'"></ng-include>
+
     </div>
-  </footer>
-</div>
-</div>
+  </div>
   <!-- Loading the jquery library -->
   <script src="bower_components/jquery/dist/jquery.min.js"></script>
   <!-- Latest compiled and minified JS -->

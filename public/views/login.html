@@ -1,20 +1,37 @@
+<header>
+  <nav class="navbar navbar-inverse navbar-static-top">
+    <div class="container" id="nav-style">
+      <div class="col-xs-7 col-sm-10">
+        <a class="navbar-brand" href="#!/"><img class="logo" src="../img/logo-elecons.png" alt=""></a>
+      </div>
+      <div class="col-xs-5 col-sm-2">
+          <ul class="nav navbar-nav navbar-right">
+          <li><a class="colored-icons " href="../#!/login"><span class="glyphicon glyphicon-log-in"></span> <span> Login</span> </a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+</header>
+
 <div class="modal-dialog">
     <div class="modal-content">
         <div class="modal-header">
-          <h1 class="text-center">Welcome</h1>
+          <h1 class="text-center">Welcome to Elecons</h1>
         </div>
          <div class="modal-body">
              <div class="form-group">
-                 <input type="text" class="form-control input-lg" placeholder="Username"/>
+                <label for="username">Username</label>
+                <input type="text" class="form-control input-lg" id="username" name="username" placeholder="Username"/>
              </div>
 
              <div class="form-group">
-                 <input type="password" class="form-control input-lg" placeholder="Password"/>
+                 <label for="password">Password</label>
+                 <input type="password" class="form-control input-lg" id="password" name="password" placeholder="Password"/>
              </div>
 
              <div class="form-group">
-                  <a href="#!/dashboard"><input type="submit" class="btn btn-block btn-lg btn-primary" value="Login"/></a>
-                 <span class="pull-right"><a href="#">Register</a></span><span><a href="#">Forgot Password</a></span>
+                  <a href="#!/dashboard"><input type="submit" class="btn btn-block btn-lg" value="Login"/></a>
+                 <span class="pull-right"><a href="#!/register">Register</a></span><span><a href="#!/home">Forgot Password</a></span>
              </div>
          </div>
     </div>

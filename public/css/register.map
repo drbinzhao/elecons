@@ -1,0 +1,12 @@
+{
+	"version": 3,
+	"file": "../sass/register.css",
+	"sources": [
+		"../sass/register.sass"
+	],
+	"sourcesContent": [
+		".modal-dialog {\n  padding: 70px 0px; }\n"
+	],
+	"mappings": ";AAAA,AAAA,aAAa,CAAC;EACZ,OAAO,EAAE,QAAS;CAAG",
+	"names": []
+}
