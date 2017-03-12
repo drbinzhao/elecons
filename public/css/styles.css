@@ -9450,6 +9450,16 @@ body {
   }
 }
 
+/* line 61, C:/Users/Josep/Documents/Skylabcoders/projects-bootcamp/elecons/public/sass/_dashboard.sass */
+#chart-now rect {
+  fill: #222222;
+}
+
+/* line 68, C:/Users/Josep/Documents/Skylabcoders/projects-bootcamp/elecons/public/sass/_dashboard.sass */
+#chart-day rect {
+  width: 100%;
+}
+
 /* line 1, C:/Users/Josep/Documents/Skylabcoders/projects-bootcamp/elecons/public/sass/_footer.sass */
 .footer {
   display: flex;

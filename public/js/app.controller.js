@@ -15,43 +15,160 @@ angular.module('EleconsApp')
     })
   
 
-  
-    /* Graph */
-let myData = [ 'data1'/*, 12, 34, 45 */];
-//let myAvg = ['avg']
-let myAxis = ['x'/*,'2013/01/01', '2013/01/02', '2013/01/03'*/]
-const chart = c3.generate({
-  bindto: '#chart',
-  data: {
-    x: 'x',
-    columns: [
-      myAxis,
-      myData
-    ]
-  },
-  axis: {
-    x: {
-      type: 'timeseries',
-      tick: {
-        format: '%H:%M:%S'
-      }
-    }
-  }
-});
+/// CHART NOW-------------------------------------------------
+    $(document).ready(function () {
+        
+        Highcharts.setOptions({
+            global: {
+                useUTC: false
+            }
+        });
+        //Highcharts.setOptions(Highcharts.theme);
 
+        Highcharts.chart('chart-now', {
+            chart: {
+                type: 'spline',
+                animation: Highcharts.svg, // don't animate in old IE
+                marginRight: 10,
+                events: {
+                    load: function () {
+                        var series = this.series[0]
+                        var socket = io.connect()
+                        socket.on('new read', function(data) {
+                          console.log(data)
+                            var x = (new Date()).getTime(), // current time
+                                y = data.current;
+                            series.addPoint([x, y], true, true);
+                        });
+                    }
+                }
+            },
 
-var socket = io.connect()
-  socket.on('new read', function(data) {
-    //the list
-    //const oList = document.getElementById('list')
-    //const html = oList.innerHTML
-    const value = data.current
-    const date = Date.now()
-    //oList.innerHTML = html + `<li>${value}</li>`
-    myData.push( +value )
-    myAxis.push( date )
-    //console.log(myData)
-    //console.log(myAxis)
-    chart.load({ columns: [myAxis, myData] })
-  })
-}])
+            title: {
+                text: 'Live random data'
+            },
+            xAxis: {
+                type: 'datetime',
+                tickPixelInterval: 150
+            },
+            yAxis: {
+                title: {
+                    text: 'Value'
+                },
+                plotLines: [{
+                    value: 0,
+                    width: 1,
+                    color: '#808080'
+                }]
+            },
+            tooltip: {
+                formatter: function () {
+                    return '<b>' + this.series.name + '</b><br/>' +
+                        Highcharts.dateFormat('%Y-%m-%d %H:%M:%S', this.x) + '<br/>' +
+                        Highcharts.numberFormat(this.y, 2);
+                }
+            },
+            legend: {
+                enabled: false
+            },
+            exporting: {
+                enabled: false
+            },
+            series: [{
+                name: 'Random data',
+                data: (function () {
+                    // generate an array of random data, fixed
+                    var data = [],
+                        time = (new Date()).getTime(),
+                        i;
+
+                    for (i = -19; i <= 0; i += 1) {
+                        data.push({
+                            x: time + i * 1000,
+                            y: data.current
+                        });
+                    }
+                    return data;
+                }())
+            }]
+        });
+    })
+/// CHART NOW-------------------------------------------------
+    $(document).ready(function () {
+        
+        Highcharts.setOptions({
+            global: {
+                useUTC: false
+            }
+        });
+        //Highcharts.setOptions(Highcharts.theme);
+
+        Highcharts.chart('chart-day', {
+            chart: {
+                type: 'spline',
+                animation: Highcharts.svg, // don't animate in old IE
+                marginRight: 10,
+                events: {
+                    load: function () {
+                        var series = this.series[0]
+                        var socket = io.connect()
+                        socket.on('new read', function(data) {
+                          console.log(data)
+                            var x = (new Date()).getTime(), // current time
+                                y = data.current;
+                            series.addPoint([x, y], true, true);
+                        });
+                    }
+                }
+            },
+
+            title: {
+                text: 'Live random data'
+            },
+            xAxis: {
+                type: 'datetime',
+                tickPixelInterval: 150
+            },
+            yAxis: {
+                title: {
+                    text: 'Value'
+                },
+                plotLines: [{
+                    value: 0,
+                    width: 1,
+                    color: '#808080'
+                }]
+            },
+            tooltip: {
+                formatter: function () {
+                    return '<b>' + this.series.name + '</b><br/>' +
+                        Highcharts.dateFormat('%Y-%m-%d %H:%M:%S', this.x) + '<br/>' +
+                        Highcharts.numberFormat(this.y, 2);
+                }
+            },
+            legend: {
+                enabled: false
+            },
+            exporting: {
+                enabled: false
+            },
+            series: [{
+                name: 'Random data',
+                data: (function () {
+                    // generate an array of random data, fixed
+                    var data = [],
+                        time = (new Date()).getTime(),
+                        i;
+
+                    for (i = -19; i <= 0; i += 1) {
+                        data.push({
+                            x: time + i * 1000,
+                            y: data.current
+                        });
+                    }
+                    return data;
+                }())
+            }]
+        });
+    })
+}]);

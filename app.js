@@ -41,7 +41,7 @@ io.on('connection', function(socket){
           current : +current,
           accumulated: +accumulated
         }
-      //console.log(newRead)
+      console.log(newRead)
 
     io.sockets.emit('new read', newRead)
     })
@@ -55,7 +55,7 @@ io.on('connection', function(socket){
       connections.splice(connections.indexOf(socket),1)
       console.log('Disconnected: %s sockets connected', connections.length )
     })
-  })
+})
 
  
 
