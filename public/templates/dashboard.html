@@ -9,15 +9,15 @@
       <!-- Nav tabs -->
       <ul class="nav nav-tabs" role="tablist">
         <li role="presentation" ><a href="dashboard/#chart-now" aria-controls="chart-now" role="tab" data-toggle="tab">Now</a></li>
-        <li role="presentation"><a href="dashboard/#chart-day" aria-controls="chart-day" role="tab" data-toggle="tab">Day</a></li>
+        <!-- <li role="presentation"><a href="dashboard/#chart-day" aria-controls="chart-day" role="tab" data-toggle="tab">Day</a></li> -->
         <li role="presentation"><a href="dashboard/#chart-month" aria-controls="chart-month" role="tab" data-toggle="tab">Month</a></li>
         <li role="presentation"><a href="dashboard/#chart-year" aria-controls="chart-year" role="tab" data-toggle="tab">Year</a></li>
       </ul>
 
       <!-- Tab panes -->
-      <div class="tab-content">
-        <div role="tabpanel" class="tab-pane active" id="chart-now"></div>
-        <div role="tabpanel" class="tab-pane" id="chart-day"></div>
+      <div class="tab-content" ng-controller="ChartsController">
+        <div role="tabpanel" class="tab-pane active" id="chart-now" ></div>
+        <!-- <div role="tabpanel" class="tab-pane" id="chart-day"></div> -->
         <div role="tabpanel" class="tab-pane" id="chart-month"></div>
         <div role="tabpanel" class="tab-pane" id="chart-year"></div>
       </div>

@@ -31,7 +31,6 @@
             return $http(req)
               .then(function(response){
                 var pvpc = response.data.indicator.values
-                console.log(pvpc)
                 return pvpc
             })
           }
