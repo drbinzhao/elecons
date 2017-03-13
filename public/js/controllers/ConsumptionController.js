@@ -14,13 +14,7 @@
               vm.current = data.current
               vm.date = data.date
               vm.accumulated = data.accumulated
-              //console.log(vm.readings)
-
             })
-
-            //vm.aPricesValues = []
-            
-            //console.log($rootScope.aPricesValues)
-            
+        
     }]);
 })()

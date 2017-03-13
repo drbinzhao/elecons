@@ -5,9 +5,8 @@
       .module('EleconsApp')
       .factory('ChartsFactory', ChartsFactory)
 
-      function ChartsFactory ($rootScope) {
-        var vm = this
-        console.log($rootScope.aPricesValues)
+      function ChartsFactory ($rootScope, PricesFactory) {
+        //var vm = this
         var service = {
             getChartNow: getChartNow,
             getChartDay: getChartDay,
@@ -96,48 +95,55 @@
 
         function getChartDay () {
           
-          var abba =  $rootScope.aPricesValues;
-          console.log(abba)
-          var temperatureBcn = [4,5,6,7,8,9,10,11,12,13,14,15,16]
+          var pvpcPrices = []
+          PricesFactory.getPrices()
+           .then(function (response) {
+              var aPricesValues = response.map(function(obj){
+                  return obj.price
+              })
+              pvpcPrices = aPricesValues
+              
+              console.log(pvpcPrices)       
 
-        /// CHART DAY-------------------------------------------------
+          /// CHART DAY-------------------------------------------------
           Highcharts.chart('chart-month', {
             chart: {
                 zoomType: 'xy'
             },
             title: {
-                text: 'Average Monthly Temperature and Rainfall in Tokyo'
+                text: 'Hourly Electricity Consumption and Price'
             },
             subtitle: {
-                text: 'Source: WorldClimate.com'
+                text: ''
             },
             xAxis: [{
-                categories: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun',
-                    'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
+                categories: ['00:00', '01:00', '02:00', '03:00', '04:00', '05:00','06:00', 
+                  '07:00', '08:00', '09:00', '10:00', '11:00', '12:00', '13:00', '14:00','15:00', 
+                  '16:00', '17:00', '18:00', '19:00', '20:00', '21:00', '22:00', '23:00'],
                 crosshair: true
             }],
             yAxis: [{ // Primary yAxis
                 labels: {
-                    format: '{value}°C',
+                    format: '{value} €/kWh',
                     style: {
                         color: Highcharts.getOptions().colors[1]
                     }
                 },
                 title: {
-                    text: 'Temperature',
+                    text: 'Electricity Price',
                     style: {
                         color: Highcharts.getOptions().colors[1]
                     }
                 }
             }, { // Secondary yAxis
                 title: {
-                    text: 'Rainfall',
+                    text: 'Electricity Consumption',
                     style: {
                         color: Highcharts.getOptions().colors[0]
                     }
                 },
                 labels: {
-                    format: '{value} mm',
+                    format: '{value} kWh',
                     style: {
                         color: Highcharts.getOptions().colors[0]
                     }
@@ -150,29 +156,30 @@
             legend: {
                 layout: 'vertical',
                 align: 'left',
-                x: 120,
+                x: 60,
                 verticalAlign: 'top',
-                y: 100,
+                y: 50,
                 floating: true,
                 backgroundColor: (Highcharts.theme && Highcharts.theme.legendBackgroundColor) || '#FFFFFF'
             },
             series: [{
-                name: 'Rainfall',
-                type: 'column',
+                name: 'Electricity Consumption',
+                type: 'spline',
                 yAxis: 1,
                 data: [49.9, 71.5, 106.4, 129.2, 144.0, 176.0, 135.6, 148.5, 216.4, 194.1, 95.6, 54.4],
                 tooltip: {
-                    valueSuffix: ' mm'
+                    valueSuffix: ' kWh'
                 }
 
             }, {
-                name: 'Temperature',
+                name: 'Electricity Price',
                 type: 'spline',
-                data: temperatureBcn,
+                data: pvpcPrices,
                 tooltip: {
-                    valueSuffix: '°C'
+                    valueSuffix: '€/kWh'
                 }
             }]
+          });
           });
         };
 
@@ -190,8 +197,7 @@
                 },
                 xAxis: {
                     categories: [
-                        'Jan',
-                        'Feb',
+                        'Jan','Feb',
                         'Mar',
                         'Apr',
                         'May',
