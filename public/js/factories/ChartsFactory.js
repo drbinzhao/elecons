@@ -36,7 +36,6 @@
                           var series = this.series[0]
                           var socket = io.connect()
                           socket.on('new read', function(data) {
-                            console.log(data)
                               var x = (new Date()).getTime(), // current time
                                   y = data.current;
                               series.addPoint([x, y], true, true);

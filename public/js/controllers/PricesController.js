@@ -38,7 +38,7 @@ angular
               })
 
               $rootScope.aPricesValues =  aPricesValues[0]
-                console.log($rootScope.aPricesValues)
+                //console.log($rootScope.aPricesValues)
         })
     }
 
