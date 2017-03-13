@@ -3,21 +3,21 @@ angular.module('EleconsApp')
 .config(function($routeProvider){
   $routeProvider
       .when('/home', {
-          templateUrl: '/views/home.html'
+          templateUrl: '/templates/home.html'
       })
       .when('/login', {
-          templateUrl: '/views/login.html'
+          templateUrl: '/templates/login.html'
       })
       .when('/register', {
-          templateUrl: '/views/register.html'
+          templateUrl: '/templates/register.html'
       })
       .when('/dashboard', {
-          templateUrl: '/views/dashboard.html',
+          templateUrl: '/templates/dashboard.html',
           controller: 'getConsumptionController',
           controllerAs: 'vm'
       })
       .when('/user', {
-          templateUrl: '/views/user.html'
+          templateUrl: '/templates/user.html'
       })
       .otherwise('/home')
 })

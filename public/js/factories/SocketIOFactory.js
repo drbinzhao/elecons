@@ -1,4 +1,6 @@
-angular.module('EleconsApp')
+angular
+  
+  .module('EleconsApp')
   .factory('socketio', ['$rootScope', function ($rootScope) {
     
     var socket = io.connect()
