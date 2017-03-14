@@ -9240,7 +9240,12 @@ header nav .navbar.navbar-inverse.navbar-static-top {
   vertical-align: middle;
 }
 
-/* line 4, C:/Users/Josep/Documents/Skylabcoders/projects-bootcamp/elecons/public/sass/_home.sass */
+/* line 3, C:/Users/Josep/Documents/Skylabcoders/projects-bootcamp/elecons/public/sass/_home.sass */
+body {
+  background: #3E4852;
+}
+
+/* line 6, C:/Users/Josep/Documents/Skylabcoders/projects-bootcamp/elecons/public/sass/_home.sass */
 .background-filter {
   background: rgba(0, 0, 0, 0.6);
   background-size: cover;
@@ -9250,7 +9255,7 @@ header nav .navbar.navbar-inverse.navbar-static-top {
   padding-bottom: 60px;
 }
 
-/* line 12, C:/Users/Josep/Documents/Skylabcoders/projects-bootcamp/elecons/public/sass/_home.sass */
+/* line 14, C:/Users/Josep/Documents/Skylabcoders/projects-bootcamp/elecons/public/sass/_home.sass */
 .background-img {
   background-image: url("../img/background-img.jpg");
   background-size: cover;
@@ -9262,18 +9267,18 @@ header nav .navbar.navbar-inverse.navbar-static-top {
   z-index: 1;
 }
 
-/* line 22, C:/Users/Josep/Documents/Skylabcoders/projects-bootcamp/elecons/public/sass/_home.sass */
+/* line 24, C:/Users/Josep/Documents/Skylabcoders/projects-bootcamp/elecons/public/sass/_home.sass */
 .fa.fa-bolt, .fa.fa-bar-chart, .fa.fa-money {
   color: #4AB8A1;
 }
 
-/* line 25, C:/Users/Josep/Documents/Skylabcoders/projects-bootcamp/elecons/public/sass/_home.sass */
+/* line 27, C:/Users/Josep/Documents/Skylabcoders/projects-bootcamp/elecons/public/sass/_home.sass */
 .main-left {
   padding-left: 10px;
   margin-bottom: 70px;
 }
 
-/* line 28, C:/Users/Josep/Documents/Skylabcoders/projects-bootcamp/elecons/public/sass/_home.sass */
+/* line 30, C:/Users/Josep/Documents/Skylabcoders/projects-bootcamp/elecons/public/sass/_home.sass */
 .main-left h1 {
   font-size: 40px;
   color: #4AB8A1;
@@ -9282,12 +9287,12 @@ header nav .navbar.navbar-inverse.navbar-static-top {
   padding-bottom: 20px;
 }
 
-/* line 35, C:/Users/Josep/Documents/Skylabcoders/projects-bootcamp/elecons/public/sass/_home.sass */
+/* line 37, C:/Users/Josep/Documents/Skylabcoders/projects-bootcamp/elecons/public/sass/_home.sass */
 .main-left h1 span {
   color: #F2CF61;
 }
 
-/* line 37, C:/Users/Josep/Documents/Skylabcoders/projects-bootcamp/elecons/public/sass/_home.sass */
+/* line 39, C:/Users/Josep/Documents/Skylabcoders/projects-bootcamp/elecons/public/sass/_home.sass */
 .main-left button {
   border: 2px solid #4AB8A1;
   border-radius: 25px;
@@ -9295,19 +9300,19 @@ header nav .navbar.navbar-inverse.navbar-static-top {
   text-align: center;
 }
 
-/* line 42, C:/Users/Josep/Documents/Skylabcoders/projects-bootcamp/elecons/public/sass/_home.sass */
+/* line 44, C:/Users/Josep/Documents/Skylabcoders/projects-bootcamp/elecons/public/sass/_home.sass */
 .main-left button a {
   font-size: 20px;
   font-weight: bold;
   color: #F2CF61;
 }
 
-/* line 46, C:/Users/Josep/Documents/Skylabcoders/projects-bootcamp/elecons/public/sass/_home.sass */
+/* line 48, C:/Users/Josep/Documents/Skylabcoders/projects-bootcamp/elecons/public/sass/_home.sass */
 .main-left button a:hover {
   color: white;
 }
 
-/* line 49, C:/Users/Josep/Documents/Skylabcoders/projects-bootcamp/elecons/public/sass/_home.sass */
+/* line 51, C:/Users/Josep/Documents/Skylabcoders/projects-bootcamp/elecons/public/sass/_home.sass */
 .main-right {
   padding-top: 40px;
   margin-bottom: 20px;
@@ -9315,7 +9320,7 @@ header nav .navbar.navbar-inverse.navbar-static-top {
   flex-direction: column;
 }
 
-/* line 54, C:/Users/Josep/Documents/Skylabcoders/projects-bootcamp/elecons/public/sass/_home.sass */
+/* line 56, C:/Users/Josep/Documents/Skylabcoders/projects-bootcamp/elecons/public/sass/_home.sass */
 .main-right h2 {
   font-size: 35px;
   padding-top: 20px;
@@ -9323,13 +9328,13 @@ header nav .navbar.navbar-inverse.navbar-static-top {
   padding-bottom: 30px;
 }
 
-/* line 60, C:/Users/Josep/Documents/Skylabcoders/projects-bootcamp/elecons/public/sass/_home.sass */
+/* line 62, C:/Users/Josep/Documents/Skylabcoders/projects-bootcamp/elecons/public/sass/_home.sass */
 .main-right .features-list {
   padding-bottom: 30px;
   justify-content: center;
 }
 
-/* line 63, C:/Users/Josep/Documents/Skylabcoders/projects-bootcamp/elecons/public/sass/_home.sass */
+/* line 65, C:/Users/Josep/Documents/Skylabcoders/projects-bootcamp/elecons/public/sass/_home.sass */
 .main-right .features-list h3 {
   font-size: 25px;
   color: #F2CF61;
@@ -9340,29 +9345,29 @@ header nav .navbar.navbar-inverse.navbar-static-top {
 }
 
 @media all and (max-width: 450px) {
-  /* line 74, C:/Users/Josep/Documents/Skylabcoders/projects-bootcamp/elecons/public/sass/_home.sass */
+  /* line 76, C:/Users/Josep/Documents/Skylabcoders/projects-bootcamp/elecons/public/sass/_home.sass */
   .main-left {
     margin: 0px auto;
     text-align: center;
   }
-  /* line 77, C:/Users/Josep/Documents/Skylabcoders/projects-bootcamp/elecons/public/sass/_home.sass */
+  /* line 79, C:/Users/Josep/Documents/Skylabcoders/projects-bootcamp/elecons/public/sass/_home.sass */
   .main-left h1 {
     padding-top: 10px;
   }
-  /* line 79, C:/Users/Josep/Documents/Skylabcoders/projects-bootcamp/elecons/public/sass/_home.sass */
+  /* line 81, C:/Users/Josep/Documents/Skylabcoders/projects-bootcamp/elecons/public/sass/_home.sass */
   .main-right {
     padding-top: 5px;
     margin-bottom: 20px;
     display: flex;
     flex-direction: column;
   }
-  /* line 84, C:/Users/Josep/Documents/Skylabcoders/projects-bootcamp/elecons/public/sass/_home.sass */
+  /* line 86, C:/Users/Josep/Documents/Skylabcoders/projects-bootcamp/elecons/public/sass/_home.sass */
   .main-right h2 {
     font-size: 35px;
     padding-top: 10px;
     text-align: center;
   }
-  /* line 88, C:/Users/Josep/Documents/Skylabcoders/projects-bootcamp/elecons/public/sass/_home.sass */
+  /* line 90, C:/Users/Josep/Documents/Skylabcoders/projects-bootcamp/elecons/public/sass/_home.sass */
   .main-right .features-list {
     display: inline-block;
   }
@@ -9492,11 +9497,6 @@ h1, h3, label {
   color: #F2CF61;
 }
 
-/* line 1, C:/Users/Josep/Documents/Skylabcoders/projects-bootcamp/elecons/public/sass/_prices.sass */
-div {
-  border: 1px solid red;
-}
-
 /* line 4, C:/Users/Josep/Documents/Skylabcoders/projects-bootcamp/elecons/public/sass/_prices.sass */
 .prices {
   margin: 0px auto;
@@ -9504,50 +9504,84 @@ div {
 
 /* line 6, C:/Users/Josep/Documents/Skylabcoders/projects-bootcamp/elecons/public/sass/_prices.sass */
 .prices h2 {
-  padding-bottom: 20px;
+  padding-bottom: 26px;
+  color: #F2CF61;
 }
 
-/* line 8, C:/Users/Josep/Documents/Skylabcoders/projects-bootcamp/elecons/public/sass/_prices.sass */
+/* line 9, C:/Users/Josep/Documents/Skylabcoders/projects-bootcamp/elecons/public/sass/_prices.sass */
 .prices h4 {
   padding: 0px;
   text-align: center;
+  color: #4AB8A1;
 }
 
-/* line 15, C:/Users/Josep/Documents/Skylabcoders/projects-bootcamp/elecons/public/sass/_prices.sass */
-.prices-day-button button {
-  margin: 0 auto;
+/* line 13, C:/Users/Josep/Documents/Skylabcoders/projects-bootcamp/elecons/public/sass/_prices.sass */
+.prices p {
+  color: #4AB8A1;
+  text-align: center;
+}
+
+/* line 18, C:/Users/Josep/Documents/Skylabcoders/projects-bootcamp/elecons/public/sass/_prices.sass */
+#prices-day-button {
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+/* line 21, C:/Users/Josep/Documents/Skylabcoders/projects-bootcamp/elecons/public/sass/_prices.sass */
+#prices-day-button a {
   border: 1px solid #4AB8A1;
   border-radius: 25px;
   background-color: Transparent;
   text-align: center;
-  font-size: 20px;
+  font-size: 30px;
   color: #F2CF61;
 }
 
-/* line 24, C:/Users/Josep/Documents/Skylabcoders/projects-bootcamp/elecons/public/sass/_prices.sass */
-.prices-day-button button:hover {
+/* line 29, C:/Users/Josep/Documents/Skylabcoders/projects-bootcamp/elecons/public/sass/_prices.sass */
+#prices-day-button a:hover {
   color: #4AB8A1;
   background: #F2CF61;
 }
 
-/* line 29, C:/Users/Josep/Documents/Skylabcoders/projects-bootcamp/elecons/public/sass/_prices.sass */
+/* line 34, C:/Users/Josep/Documents/Skylabcoders/projects-bootcamp/elecons/public/sass/_prices.sass */
 .circle-data {
   font-size: 24px;
 }
 
-/* line 31, C:/Users/Josep/Documents/Skylabcoders/projects-bootcamp/elecons/public/sass/_prices.sass */
+/* line 36, C:/Users/Josep/Documents/Skylabcoders/projects-bootcamp/elecons/public/sass/_prices.sass */
 .circle-data-units, .circle-data-units-date {
   font-size: 20px;
 }
 
-/* line 34, C:/Users/Josep/Documents/Skylabcoders/projects-bootcamp/elecons/public/sass/_prices.sass */
+/* line 39, C:/Users/Josep/Documents/Skylabcoders/projects-bootcamp/elecons/public/sass/_prices.sass */
 .circle-prices, .circle-prices-units {
   font-size: 20px;
 }
 
-/* line 36, C:/Users/Josep/Documents/Skylabcoders/projects-bootcamp/elecons/public/sass/_prices.sass */
+/* line 41, C:/Users/Josep/Documents/Skylabcoders/projects-bootcamp/elecons/public/sass/_prices.sass */
 .circle-prices-date {
   font-size: 28px;
+}
+
+@media all and (max-width: 450px) {
+  /* line 46, C:/Users/Josep/Documents/Skylabcoders/projects-bootcamp/elecons/public/sass/_prices.sass */
+  .circle-min-price {
+    margin-bottom: 50px;
+  }
+  /* line 48, C:/Users/Josep/Documents/Skylabcoders/projects-bootcamp/elecons/public/sass/_prices.sass */
+  .circle-min-price svg {
+    height: 300px;
+    display: block;
+    margin: 0 auto;
+    position: relative;
+  }
+  /* line 54, C:/Users/Josep/Documents/Skylabcoders/projects-bootcamp/elecons/public/sass/_prices.sass */
+  .circle-max-price svg {
+    height: 300px;
+    display: block;
+    margin: 0 auto;
+    position: relative;
+  }
 }
 
 @media (max-width: 768px) {

@@ -1,27 +1,32 @@
-div 
-  border: 1px solid red
+// div 
+//   border: 1px solid red
 
 .prices
   margin: 0px auto
   h2
-    padding-bottom: 20px
+    padding-bottom: 26px
+    color: #F2CF61
   h4 
     padding: 0px
     text-align: center
+    color: #4AB8A1
+  p
+    color: #4AB8A1
+    text-align: center
 
-.circle-min-price
 
-.prices-day-button
-  button
-    margin: 0 auto
+#prices-day-button
+  margin-bottom: 30px
+  text-align: center
+  a
     border: 1px solid #4AB8A1
     border-radius: 25px
     background-color: Transparent
     text-align: center
-    font-size: 20px
+    font-size: 30px
     //font-weight: bold
     color: #F2CF61
-  button:hover
+  a:hover
     color: #4AB8A1
     background: #F2CF61
 
@@ -36,3 +41,18 @@ div
 .circle-prices-date
   font-size: 28px
 
+
+@media all and (max-width: 450px )
+  .circle-min-price
+    margin-bottom: 50px
+    svg
+      height: 300px
+      display: block;
+      margin: 0 auto;
+      position: relative;
+  .circle-max-price
+    svg
+      height: 300px
+      display: block
+      margin: 0 auto
+      position: relative;
