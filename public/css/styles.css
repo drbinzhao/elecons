@@ -9584,6 +9584,98 @@ h1, h3, label {
   }
 }
 
+/* line 4, C:/Users/Josep/Documents/Skylabcoders/projects-bootcamp/elecons/public/sass/_power.sass */
+.power {
+  margin: 0px auto;
+}
+
+/* line 6, C:/Users/Josep/Documents/Skylabcoders/projects-bootcamp/elecons/public/sass/_power.sass */
+.power h2 {
+  padding-bottom: 26px;
+  color: #F2CF61;
+}
+
+/* line 9, C:/Users/Josep/Documents/Skylabcoders/projects-bootcamp/elecons/public/sass/_power.sass */
+.power h4 {
+  padding: 0px;
+  text-align: center;
+  color: #4AB8A1;
+}
+
+/* line 13, C:/Users/Josep/Documents/Skylabcoders/projects-bootcamp/elecons/public/sass/_power.sass */
+.power p {
+  color: #4AB8A1;
+  text-align: center;
+}
+
+/* line 18, C:/Users/Josep/Documents/Skylabcoders/projects-bootcamp/elecons/public/sass/_power.sass */
+#power-day-button {
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+/* line 21, C:/Users/Josep/Documents/Skylabcoders/projects-bootcamp/elecons/public/sass/_power.sass */
+#power-day-button a {
+  border: 1px solid #4AB8A1;
+  border-radius: 25px;
+  background-color: Transparent;
+  text-align: center;
+  font-size: 30px;
+  color: #F2CF61;
+}
+
+/* line 29, C:/Users/Josep/Documents/Skylabcoders/projects-bootcamp/elecons/public/sass/_power.sass */
+#power-day-button a:hover {
+  color: #4AB8A1;
+  background: #F2CF61;
+}
+
+/* line 32, C:/Users/Josep/Documents/Skylabcoders/projects-bootcamp/elecons/public/sass/_power.sass */
+#power-day-button h3 {
+  margin-top: 0px;
+}
+
+/* line 35, C:/Users/Josep/Documents/Skylabcoders/projects-bootcamp/elecons/public/sass/_power.sass */
+.circle-power {
+  font-size: 24px;
+}
+
+/* line 37, C:/Users/Josep/Documents/Skylabcoders/projects-bootcamp/elecons/public/sass/_power.sass */
+.circle-power-units, .circle-power-units-date {
+  font-size: 14px;
+}
+
+/* line 40, C:/Users/Josep/Documents/Skylabcoders/projects-bootcamp/elecons/public/sass/_power.sass */
+.circle-power, .circle-power-units {
+  font-size: 14px;
+}
+
+/* line 42, C:/Users/Josep/Documents/Skylabcoders/projects-bootcamp/elecons/public/sass/_power.sass */
+.circle-power-date {
+  font-size: 24px;
+}
+
+@media all and (max-width: 450px) {
+  /* line 47, C:/Users/Josep/Documents/Skylabcoders/projects-bootcamp/elecons/public/sass/_power.sass */
+  .circle-max-power {
+    margin-bottom: 50px;
+  }
+  /* line 49, C:/Users/Josep/Documents/Skylabcoders/projects-bootcamp/elecons/public/sass/_power.sass */
+  .circle-max-power svg {
+    height: 300px;
+    display: block;
+    margin: 0 auto;
+    position: relative;
+  }
+  /* line 55, C:/Users/Josep/Documents/Skylabcoders/projects-bootcamp/elecons/public/sass/_power.sass */
+  .circle-contracted-power svg {
+    height: 300px;
+    display: block;
+    margin: 0 auto;
+    position: relative;
+  }
+}
+
 @media (max-width: 768px) {
   /* line 3, C:/Users/Josep/Documents/Skylabcoders/projects-bootcamp/elecons/public/sass/_navbar-fixed-side.sass */
   .navbar-fixed-side {

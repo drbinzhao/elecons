@@ -12,14 +12,20 @@ angular.module('EleconsApp')
           templateUrl: '/templates/register.html'
       })
       .when('/dashboard', {
-          templateUrl: '/templates/dashboard.html',
-          controller: 'getConsumptionController',
-          controllerAs: 'vm'
+          templateUrl: '/templates/dashboard.html'
+          // controller: 'getConsumptionController',
+          // controllerAs: 'vm'
       })
       .when('/charts', {
           templateUrl: '/templates/charts.html',
           controller: 'ChartsController',
           controllerAs: 'vm'
+      })
+      .when('/power', {
+          templateUrl: '/templates/power.html',
+          controller: 'getConsumptionController',
+          controllerAs: 'vm'
+
       })
       .when('/prices', {
           templateUrl: '/templates/prices.html',
