@@ -11,8 +11,8 @@ angular.module('EleconsApp')
       .when('/register', {
           templateUrl: '/templates/register.html'
       })
-      .when('/status', {
-          templateUrl: '/templates/status.html',
+      .when('/dashboard', {
+          templateUrl: '/templates/dashboard.html',
           controller: 'getConsumptionController',
           controllerAs: 'vm'
       })
