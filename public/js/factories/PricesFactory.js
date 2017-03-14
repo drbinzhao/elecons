@@ -32,15 +32,6 @@
               .then(getPvpc)
               .then(filterPvpc)
           }
-
-          // ///All array of prices
-          //     var aPricesValues = aPrices.map(function(obj){
-          //         return obj.price
-          //     })
-          //     console.log(aPricesValues)
-
-          //     $rootScope.aPricesValues =  aPricesValues[0]
-          //       console.log($rootScope.aPricesValues)
         }
 
 

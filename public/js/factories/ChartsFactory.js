@@ -9,13 +9,11 @@
         //var vm = this
         var service = {
             getChartNow: getChartNow,
-            getChartDay: getChartDay,
-            getChartMonth: getChartMonth
+            getChartHourly: getChartHourly,
+            getChartDaily: getChartDaily
         };
 
         return service;
-
-
 
 
         ///////mehthods from the factory
@@ -30,6 +28,11 @@
 
       // Create the chart
       Highcharts.stockChart('chart-now', {
+          plotOptions: {
+              series: {
+                  turboThreshold: 0
+              }
+          },
           chart: {
               events: {
                   load: function () {
@@ -87,14 +90,12 @@
               }())
           }]
       });
-
-
-                /// CHART NOW-------------------------------------------------
-                
+ 
                 
               }
+   /// CHART HOURLY-------------------------------------------------
 
-        function getChartDay () {
+        function getChartHourly () {
           
           var pvpcPrices = []
           PricesFactory.getPrices()
@@ -106,7 +107,6 @@
               
               console.log(pvpcPrices)       
 
-          /// CHART DAY-------------------------------------------------
           Highcharts.chart('chart-month', {
             chart: {
                 zoomType: 'xy'
@@ -184,7 +184,7 @@
           });
         };
 
-        function getChartMonth () {
+        function getChartDaily () {
           // CHART MONTH
             $.getJSON('https://www.highcharts.com/samples/data/jsonp.php?filename=aapl-v.json&callback=?', function (data) {
 

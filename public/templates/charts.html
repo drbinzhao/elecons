@@ -1,11 +1,7 @@
 <ng-include src="'/templates/navbar.html'"></ng-include>
 
-
-<main class ="container dashboard">
-  <div class="row">
-  <ng-include src="'/templates/includes/last-read-info.html'"></ng-include>    
-    
-    <div class="col-md-8">
+<div class="col-sm-9 col-lg-10 container">
+  <div class="col-xs-11 col-sm-offset-1">
       <!-- Nav tabs -->
       <ul class="nav nav-tabs" role="tablist">
         <li role="presentation" ><a href="dashboard/#chart-now" aria-controls="chart-now" role="tab" data-toggle="tab">Now</a></li>
@@ -21,11 +17,8 @@
         <div role="tabpanel" class="tab-pane" id="chart-month"></div>
         <div role="tabpanel" class="tab-pane" id="chart-year"></div>
       </div>
-    </div>
   </div>
-  <div class="row">
-    <ng-include src="'/templates/includes/prices.html'"></ng-include>
-    <ng-include src="'/templates/includes/consumption.html'"></ng-include>
-  </div> 
-</main>
+</div>
+
+
 

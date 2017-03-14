@@ -11,11 +11,25 @@ angular.module('EleconsApp')
       .when('/register', {
           templateUrl: '/templates/register.html'
       })
-      .when('/dashboard', {
-          templateUrl: '/templates/dashboard.html',
+      .when('/status', {
+          templateUrl: '/templates/status.html',
           controller: 'getConsumptionController',
           controllerAs: 'vm'
       })
+      .when('/charts', {
+          templateUrl: '/templates/charts.html',
+          controller: 'ChartsController',
+          controllerAs: 'vm'
+      })
+      .when('/prices', {
+          templateUrl: '/templates/prices.html',
+          controller: 'PricesController'
+      })
+      // .when('/dashboard', {
+      //     templateUrl: '/templates/dashboard.html',
+      //     controller: 'getConsumptionController',
+      //     controllerAs: 'vm'
+      // })
       .when('/user', {
           templateUrl: '/templates/user.html'
       })

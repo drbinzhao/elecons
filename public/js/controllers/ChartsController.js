@@ -10,8 +10,8 @@
             var vm = this;
 
             ChartsFactory.getChartNow()
-            ChartsFactory.getChartDay()
-            ChartsFactory.getChartMonth()
+            ChartsFactory.getChartHourly()
+            ChartsFactory.getChartDaily()
 
           }
 })()
