@@ -6,9 +6,9 @@
         .controller('NeighboursController', NeighboursController)
         //.controller('chartsController', ['socketio','$rootScope', function (socketio, $rootScope) {
         
-          function NeighboursController ($rootScope, DashboardFactory) {
+          function NeighboursController ($rootScope, NeighboursFactory) {
             var vm = this;
 
-            DashboardFactory.getNeighbours()
+            NeighboursFactory.getNeighbours()
           }
 })()

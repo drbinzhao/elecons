@@ -10,6 +10,5 @@
             var vm = this;
 
             DashboardFactory.getComparison()
-            DashboardFactory.getNeighbours()
           }
 })()
