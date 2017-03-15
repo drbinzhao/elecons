@@ -4,23 +4,19 @@
       <div id="power-day-button">
         <h2>Your Instantaneous Power</h2>
         <p>Your contracted power is an important part of your energy bill. Here you can see your maximum power achieved and compared it to the contracted power. If your maximum power is far from you contracted power, change it and save money </p>
+        <div class="row">
+          <div class="col-sm-5 col-sm-offset-1">
+            <h3>Current: <span>{{current}} W </span></h3>
+            <h3>Last read at: <span>{{date}} </span></h3>
+          </div>
           <div class="col-sm-4 col-sm-offset-1">
-            <h4>Current: </h4>
-            <h3>{{current}} W </h3>
-            <h4>Last read at: </h4>
-            <h3>{{date}}</h3>  
+            <h3>Average: <span>3300 W </span></h3>
+            <h3>Difference: <span>  350W | 0.25%</span></h3>
           </div>
-          <div class="col-sm-4 col-sm-offset-2">
-            <h4>Average: </h4>
-            <h3>3300 W </h3>
-            <h4>Difference: </h4>
-            <!-- Green and red if up or down -->
-            <h3>350 W </h3>
-            <h3>0.25%</h3>
-          </div>
+        </div>
       </div>
       <div class="col-sm-4 col-sm-offset-1 circle-max-power">
-        <h4>Your maximum power achieved</h4>
+        <h4>You Maximum Power</h4>
         <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" style="shape-rendering:geometricPrecision; text-rendering:geometricPrecision; image-rendering:optimizeQuality; fill-rule:evenodd; clip-rule:evenodd"
         viewBox="0 0 160 160">
         <g>
@@ -36,7 +32,7 @@
       
       </div>
       <div class="col-sm-4 col-sm-offset-2 circle-contracted-power">
-        <h4>Your contracted power</h4>
+        <h4>Your Contracted Power</h4>
         <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" style="shape-rendering:geometricPrecision; text-rendering:geometricPrecision; image-rendering:optimizeQuality; fill-rule:evenodd; clip-rule:evenodd"
         viewBox="0 0 160 160">
           <g>
