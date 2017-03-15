@@ -19,22 +19,18 @@
         ///////mehthods from the factory
         
               function getChartNow () {
-
                 Highcharts.setOptions({
-          global: {
-              useUTC: false
-          }
-      });
+        global: {
+            useUTC: false
+        }
+    });
 
-      // Create the chart
-      Highcharts.stockChart('chart-now', {
-          plotOptions: {
-              series: {
-                  turboThreshold: 0
-              }
-          },
-          chart: {
-              events: {
+    Highcharts.chart('chart-now', {
+        chart: {
+            type: 'spline',
+            animation: Highcharts.svg, // don't animate in old IE
+            marginRight: 10,
+            events: {
                   load: function () {
                     var series = this.series[0]
                     var socket = io.connect()
@@ -44,55 +40,59 @@
                         series.addPoint([x, y], true, true);
                     });
                   }
-              }
-          },
+            }
+        },
+        title: {
+            text: 'Instantaneous Power (every 5 seconds)'
+        },
+        xAxis: {
+            type: 'datetime',
+            tickPixelInterval: 150
+        },
+        yAxis: {
+            title: {
+                text: 'Value'
+            },
+            plotLines: [{
+                value: 0,
+                width: 1,
+                color: '#808080'
+            }]
+        },
+        tooltip: {
+            formatter: function () {
+                return '<b>' + this.series.name + '</b><br/>' +
+                    Highcharts.dateFormat('%Y-%m-%d %H:%M:%S', this.x) + '<br/>' +
+                    Highcharts.numberFormat(this.y, 2);
+            }
+        },
+        legend: {
+            enabled: false
+        },
+        exporting: {
+            enabled: false
+        },
+        series: [{
+            name: 'Power in W',
+            data: (function () {
+                // generate an array of random data
+                var data = [],
+                    time = (new Date()).getTime(),
+                    i;
 
-          rangeSelector: {
-              buttons: [{
-                  count: 1,
-                  type: 'minute',
-                  text: '1M'
-              }, {
-                  count: 5,
-                  type: 'minute',
-                  text: '5M'
-              }, {
-                  type: 'all',
-                  text: 'All'
-              }],
-              inputEnabled: false,
-              selected: 0
-          },
-
-          title: {
-              text: 'Live random data'
-          },
-
-          exporting: {
-              enabled: false
-          },
-
-          series: [{
-              name: 'Random data',
-              data: (function () {
-                  // generate an array of random data
-                  var data = [],
-                      time = (new Date()).getTime(),
-                      i;
-
-                  for (i = -999; i <= 0; i += 1) {
-                      data.push([
-                          time + i * 1000,
-                          data.current
-                      ]);
-                  }
-                  return data;
-              }())
-          }]
-      });
- 
+                for (i = -19; i <= 0; i += 1) {
+                    data.push({
+                        x: time + i * 1000,
+                        y: data.current
+                    });
+                }
+                return data;
+            }())
+        }]
+    });
+               
                 
-              }
+    }
    /// CHART HOURLY-------------------------------------------------
 
         function getChartHourly () {
@@ -110,6 +110,7 @@
           Highcharts.chart('chart-hourly', {
             chart: {
                 zoomType: 'xy'
+                // backgroundColor: '#222222'
             },
             title: {
                 text: 'Hourly Electricity Consumption and Price'
@@ -191,6 +192,7 @@
     // create the chart
             Highcharts.stockChart('chart-daily', {
                 chart: {
+                    // backgroundColor: '#3E4852',
                     alignTicks: false
                 },
 
@@ -199,12 +201,12 @@
                 },
 
                 title: {
-                    text: 'AAPL Stock Volume'
+                    text: 'Daily Consumption in kWh'
                 },
 
                 series: [{
                     type: 'column',
-                    name: 'AAPL Stock Volume',
+                    name: 'Electric Consumption',
                     data: data,
                     dataGrouping: {
                         units: [[

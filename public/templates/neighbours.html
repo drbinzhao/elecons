@@ -1,25 +1,25 @@
 <ng-include src="'/templates/navbar.html'"></ng-include>
 
 <div class="col-sm-9 col-lg-10 container dashboard">
-  <div id="dashboard-button">
-    <h2>Skylab Coder 01</h2>
-    <p>The chart below compares the current month consumption with the same month of last year. The data is updated daily </p>
+  <div id="neighbours-button">
+    <h2>Neighbours Comparison</h2>
+    <p>You can compare how efficient you are compared to your neighbours savings  </p>
 
     <div class="row status-box">
-      <div class="col-md-3 col-md-offset-1">
-        <h4>Month: MARCH 2017</h4>
-        <div id= "comparison-chart"> </div>
-        
+      <div class="col-sm-3 col-sm-offset-1">
+        <h4>Comparison chart</h4>
+        <!--Gauge-->
+        <div id="neighbours-chart"> </div>
       </div>
     
-      <div class="col-md-3 col-md-offset-1 status">
+      <div class="col-sm-3 col-sm-offset-1 status">
         <h3>GOOD!!</h3>
           <!-- Green and red if up or down -->
         <h3>BAD!!</h3>
       </div>
     
-      <div class="col-md-3 col-md-offset-1">
-        <h4>Your Savings</h4>
+      <div class="col-sm-3 col-sm-offset-1">
+        <h4>Ranking</h4>
           <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" style="shape-rendering:geometricPrecision; text-rendering:geometricPrecision; image-rendering:optimizeQuality; fill-rule:evenodd; clip-rule:evenodd"
           viewBox="0 0 160 160">
           <g>
@@ -27,9 +27,10 @@
             </circle>
             <circle style="fill:transparent;stroke:#F2CF61;stroke-width:1;stroke-miterlimit:10;" cx="80" cy="80" r="85">
             </circle>
-            <text class="circle-power-date" x="50%" y="40%" text-anchor="middle" fill="#F2CF61">120 kWh</text>
-            <text class="circle-power" x="50%" y="65%" text-anchor="middle" fill="#4AB8A1">10 €</text>
-            <text class="circle-power-units" x="50%" y="80%" text-anchor="middle" fill="#4AB8A1">date</text>
+            <text class="circle-power-date" x="50%" y="30%" text-anchor="middle" fill="#F2CF61"> 1 </text>
+            <text class="circle-power" x="50%" y="45%" text-anchor="middle" fill="#4AB8A1">out of</text>
+            <text class="circle-power-date" x="50%" y="65%" text-anchor="middle" fill="#F2CF61"> 5 </text>
+            <text class="circle-power-units" x="50%" y="80%" text-anchor="middle" fill="#4AB8A1">Updated at: </text>
           </g>
           </svg>
         </div>
