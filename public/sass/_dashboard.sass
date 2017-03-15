@@ -1,11 +1,33 @@
+div 
+  border: 1px solid red
+
 .dashboard
+  margin: 0px auto
   h2
+    padding-bottom: 26px
     color: #F2CF61
-  h3
-    color: #F2CF61
-  h4
+  h4 
+    padding: 0px
+    text-align: center
     color: #4AB8A1
-    padding-top: 10px
+  p
+    color: #4AB8A1
+    text-align: center
+
+#dashboard-button, #neighbours-button
+  margin-bottom: 20px
+  text-align: center
+  a
+    border: 1px solid #4AB8A1
+    border-radius: 25px
+    background-color: Transparent
+    text-align: center
+    font-size: 30px
+    //font-weight: bold
+    color: #F2CF61
+  a:hover
+    color: #4AB8A1
+    background: #F2CF61
 
 .time-buttons
   //padding-bottom: 30px 
@@ -23,22 +45,24 @@
       color: #4AB8A1
       background: #F2CF61
 
-.consumption-aggr
-  h2
-    padding-bottom: 20px
-  h4 
-    padding: 0px
-    text-align: center
+.status-box
+  vertical-align: center
+  .status
+    background: green
+    margin-top: 60px
+    h3
+      font-weight: bold
 
 
-
-@media all and (max-width: 450px)
+@media all and (max-width: 750px)
   .dashboard
     h2
       color: #F2CF61
     h3
       color: #F2CF61
-      font-size: 20px
+      font-size: 30px
     h4
       color: #4AB8A1
       padding-top: 10px
+      padding-bottom: 10px
+      font-size: 28px
