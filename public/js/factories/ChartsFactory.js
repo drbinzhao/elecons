@@ -107,7 +107,7 @@
               
               console.log(pvpcPrices)       
 
-          Highcharts.chart('chart-month', {
+          Highcharts.chart('chart-hourly', {
             chart: {
                 zoomType: 'xy'
             },
@@ -189,7 +189,7 @@
             $.getJSON('https://www.highcharts.com/samples/data/jsonp.php?filename=aapl-v.json&callback=?', function (data) {
 
     // create the chart
-            Highcharts.stockChart('chart-year', {
+            Highcharts.stockChart('chart-daily', {
                 chart: {
                     alignTicks: false
                 },

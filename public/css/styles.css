@@ -9523,7 +9523,7 @@ h1, h3, label {
 
 /* line 18, C:/Users/Josep/Documents/Skylabcoders/projects-bootcamp/elecons/public/sass/_prices.sass */
 #prices-day-button {
-  margin-bottom: 30px;
+  margin-bottom: 20px;
   text-align: center;
 }
 
@@ -9610,7 +9610,7 @@ h1, h3, label {
 
 /* line 18, C:/Users/Josep/Documents/Skylabcoders/projects-bootcamp/elecons/public/sass/_power.sass */
 #power-day-button {
-  margin-bottom: 30px;
+  margin-bottom: 20px;
   text-align: center;
 }
 
@@ -9674,6 +9674,57 @@ h1, h3, label {
     margin: 0 auto;
     position: relative;
   }
+}
+
+/* line 1, C:/Users/Josep/Documents/Skylabcoders/projects-bootcamp/elecons/public/sass/_charts.sass */
+#chart-day-button {
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+/* line 4, C:/Users/Josep/Documents/Skylabcoders/projects-bootcamp/elecons/public/sass/_charts.sass */
+#chart-day-button a {
+  border: 1px solid #4AB8A1;
+  border-radius: 25px;
+  background-color: Transparent;
+  text-align: center;
+  font-size: 30px;
+  color: #F2CF61;
+}
+
+/* line 12, C:/Users/Josep/Documents/Skylabcoders/projects-bootcamp/elecons/public/sass/_charts.sass */
+#chart-day-button a:hover {
+  color: #4AB8A1;
+  background: #F2CF61;
+}
+
+/* line 15, C:/Users/Josep/Documents/Skylabcoders/projects-bootcamp/elecons/public/sass/_charts.sass */
+#chart-day-button h3 {
+  margin-top: 0px;
+}
+
+/* line 19, C:/Users/Josep/Documents/Skylabcoders/projects-bootcamp/elecons/public/sass/_charts.sass */
+.charts div {
+  margin: 0px auto;
+}
+
+/* line 21, C:/Users/Josep/Documents/Skylabcoders/projects-bootcamp/elecons/public/sass/_charts.sass */
+.charts div h2 {
+  padding-bottom: 26px;
+  color: #F2CF61;
+}
+
+/* line 24, C:/Users/Josep/Documents/Skylabcoders/projects-bootcamp/elecons/public/sass/_charts.sass */
+.charts div h4 {
+  padding: 0px;
+  text-align: center;
+  color: #4AB8A1;
+}
+
+/* line 28, C:/Users/Josep/Documents/Skylabcoders/projects-bootcamp/elecons/public/sass/_charts.sass */
+.charts div p {
+  color: #4AB8A1;
+  text-align: center;
 }
 
 @media (max-width: 768px) {
