@@ -5,7 +5,7 @@ angular.module('EleconsApp')
       const password = $scope.password
       AuthFactory.login({ username, password })
         .then( AuthFactory.setCredentials )
-        .then( () => $location.path('/private') )
+        .then( () => $location.path('/dashboard') )
     }
 
   })
@@ -20,7 +20,7 @@ angular.module('EleconsApp')
 
     $scope.logout = function() {
       AuthFactory.logout()
-      $location.path('/private');
+      $location.path('/dashboard');
     }
   })
   .controller('PrivateCtrl', function($scope, auth, DataFactory) {

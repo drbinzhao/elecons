@@ -12,7 +12,7 @@
           <a class="navbar-brand" href="#!/"><img class="logo" src="../img/logo-elecons.png" alt=""></a>
         </div>
       </div>
-      <div id="navbar" class="navbar-collapse collapse">
+      <div id="navbar" class="navbar-collapse collapse" ng-controller="NavbarCtrl">
         <ul class="nav navbar-nav navbar-left">
           <li><a class="colored-icons" href="../#!/dashboard"><span class="pull-right glyphicon glyphicon-home"></span> <span> Dashboard</span> </a></li>
           <li><a class="colored-icons" href="../#!/neighbours"><span class="pull-right glyphicon glyphicon-globe"></span> <span>Neighbours</span> </a></li>
@@ -33,7 +33,7 @@
           <li><a class="colored-icons" href="../#!/forum"><span class="pull-right glyphicon glyphicon-envelope"></span> <span> Forum</span> </a></li>
           <li><a class="colored-icons" href="../#!/marketplace"><span class="pull-right glyphicon glyphicon-shopping-cart"></span> <span> MarketPlace</span> </a></li> -->
           <li><a class="colored-icons" href="../#!/user"><span class=" pull-right glyphicon glyphicon-user"></span> <span> User</span> </a></li>
-          <li><a class="colored-icons" href="../#!/logout"><span class="pull-right glyphicon glyphicon-log-out"></span> <span> Logout</span> </a></li>
+          <li><a class="colored-icons" href="#" ng-click="logout()"><span class="pull-right glyphicon glyphicon-log-out"></span> <span> Logout</span> </a></li>
         </ul>
       </div><!--/.nav-collapse -->
     </div>

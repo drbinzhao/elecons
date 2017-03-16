@@ -15,42 +15,35 @@ angular.module('EleconsApp')
           templateUrl: '/templates/register.html',
           controller: 'RegisterCtrl'
         })
-        .when('/private',{
-          templateUrl: '/templates/private.html',
-          controller: 'PrivateCtrl',
-          resolve : {
-            'auth' : AuthFactory =>  AuthFactory.isLoggedIn()
-          }
-        })
         .when('/dashboard', {
             templateUrl: '/templates/dashboard.html',
             controller: 'DashboardController',
-            controllerAs: 'vm'
+            controllerAs: 'vm',
+            secure: true
         })
         .when('/neighbours', {
             templateUrl: '/templates/neighbours.html',
             controller: 'NeighboursController',
-            controllerAs: 'vm'
+            controllerAs: 'vm',
+            secure: true
         })
         .when('/charts', {
             templateUrl: '/templates/charts.html',
             controller: 'ChartsController',
-            controllerAs: 'vm'
+            controllerAs: 'vm',
+            secure: true
         })
         .when('/power', {
             templateUrl: '/templates/power.html',
-            controller: 'getConsumptionController',
-            controllerAs: 'vm'
+            controller: 'PowerController',
+            controllerAs: 'vm',
+            secure: true
         })
         .when('/prices', {
             templateUrl: '/templates/prices.html',
-            controller: 'PricesController'
+            controller: 'PricesController',
+            secure: true
         })
-        // .when('/dashboard', {
-        //     templateUrl: '/templates/dashboard.html',
-        //     controller: 'getConsumptionController',
-        //     controllerAs: 'vm'
-        // })
         .when('/user', {
             templateUrl: '/templates/user.html'
         })
