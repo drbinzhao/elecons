@@ -2,7 +2,7 @@ const fs = require('fs');
 const thereIsDotEnv = fs.existsSync('.env')
 if ( thereIsDotEnv ) require('dotenv').config()
 
-global.__base = __dirname + '/server/';
+//global.__base = __dirname + '/server/';
 
 const app = require('./server/app');
 const db = require('./server/db');
