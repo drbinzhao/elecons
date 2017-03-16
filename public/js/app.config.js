@@ -19,33 +19,40 @@ angular.module('EleconsApp')
             templateUrl: '/templates/dashboard.html',
             controller: 'DashboardController',
             controllerAs: 'vm',
+            activetab: 'dashboard',
             secure: true
         })
         .when('/neighbours', {
             templateUrl: '/templates/neighbours.html',
             controller: 'NeighboursController',
             controllerAs: 'vm',
+            activetab: 'neighbours',
             secure: true
         })
         .when('/charts', {
             templateUrl: '/templates/charts.html',
             controller: 'ChartsController',
             controllerAs: 'vm',
+            activetab: 'charts',
             secure: true
         })
         .when('/power', {
             templateUrl: '/templates/power.html',
             controller: 'PowerController',
             controllerAs: 'vm',
+            activetab: 'power',
             secure: true
         })
         .when('/prices', {
             templateUrl: '/templates/prices.html',
             controller: 'PricesController',
+            activetab: 'prices',
             secure: true
         })
         .when('/user', {
-            templateUrl: '/templates/user.html'
+            templateUrl: '/templates/user.html',
+            activetab: 'user',
+            secure: true
         })
         .otherwise('/home')
     })

@@ -6,7 +6,7 @@
         .controller('PowerController', PowerController)
 
         function PowerController ($rootScope, $scope, $route, socketio) {
-        
+            $scope.$route = $route
             //var vm = this;
             //var socket = io.connect()
 

@@ -6,7 +6,9 @@ angular
     .module('EleconsApp')
     .controller('PricesController', PricesController)
 
-        function PricesController ($rootScope, PricesFactory){
+        function PricesController ($scope, $route, $rootScope, PricesFactory){
+          $scope.$route = $route
+
           var vm = this
             $rootScope.minPrice = {}
             $rootScope.maxPrice = {}

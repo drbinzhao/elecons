@@ -6,8 +6,11 @@
         .controller('ChartsController', ChartsController)
         //.controller('chartsController', ['socketio','$rootScope', function (socketio, $rootScope) {
         
-          function ChartsController ($rootScope, ChartsFactory) {
+          function ChartsController ($scope, $route, $rootScope, ChartsFactory) {
+            $scope.$route = $route
+
             var vm = this;
+
 
             ChartsFactory.getChartNow()
             ChartsFactory.getChartHourly()
