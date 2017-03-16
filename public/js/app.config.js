@@ -1,15 +1,26 @@
 angular.module('EleconsApp')
-
+.config( function ($httpProvider) {
+    $httpProvider.interceptors.push('AuthInterceptor')
+  })
 .config(function($routeProvider){
   $routeProvider
-      .when('/home', {
-          templateUrl: '/templates/home.html'
+      .when('/',{
+        templateUrl: '/templates/home.html',
       })
-      .when('/login', {
-          templateUrl: '/templates/login.html'
+      .when('/login',{
+        templateUrl: '/templates/login.html',
+        controller: 'LoginCtrl'
       })
-      .when('/register', {
-          templateUrl: '/templates/register.html'
+      .when('/register',{
+        templateUrl: '/templates/register.html',
+        controller: 'RegisterCtrl'
+      })
+      .when('/private',{
+        templateUrl: '/templates/private.html',
+        controller: 'PrivateCtrl',
+        resolve : {
+          'auth' : AuthFactory =>  AuthFactory.isLoggedIn()
+        }
       })
       .when('/dashboard', {
           templateUrl: '/templates/dashboard.html',
@@ -44,4 +55,18 @@ angular.module('EleconsApp')
           templateUrl: '/templates/user.html'
       })
       .otherwise('/home')
-})
+  })
+
+.run(function($rootScope, $location, StorageFactory, AuthFactory){
+
+      if ( AuthFactory.isLoggedIn() ) {
+        const token = StorageFactory.readToken()
+        AuthFactory.setCredentials(token)
+      }
+
+      $rootScope.$on('$routeChangeError', function(next, current, previous, rejection){
+          if(rejection === 'Not Authenticated'){
+              $location.path('/login');
+          }
+      })
+    })

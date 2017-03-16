@@ -22,6 +22,7 @@
     "font-awesome": "^4.7.0",
     "angular-route": "^1.6.3",
     "bootstrap-sass": "^3.3.7",
-    "highcharts": "^5.0.9"
+    "highcharts": "^5.0.9",
+    "angular-jwt": "^0.1.9"
   }
 }

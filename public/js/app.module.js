@@ -1,1 +1,1 @@
-angular.module('EleconsApp', ['ngRoute'])
+angular.module('EleconsApp', ['ngRoute','angular-jwt'])

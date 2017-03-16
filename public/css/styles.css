@@ -9252,7 +9252,7 @@ body {
   left: 0;
   height: 100%;
   position: relative;
-  padding-bottom: 60px;
+  padding-bottom: 80px;
 }
 
 /* line 14, C:/Users/Josep/Documents/Skylabcoders/projects-bootcamp/elecons/public/sass/_home.sass */
@@ -9480,7 +9480,7 @@ body {
 
 /* line 1, C:/Users/Josep/Documents/Skylabcoders/projects-bootcamp/elecons/public/sass/_login.sass */
 .modal-dialog {
-  padding: 70px 0px;
+  padding: 50px 0px;
   margin-top: 0px;
 }
 

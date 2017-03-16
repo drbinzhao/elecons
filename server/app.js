@@ -2,26 +2,37 @@ const express = require('express')
 const request = require('request');
 const moment = require('moment')
 const path = require('path')
+const bodyParser = require('body-parser')
+
+//routes here
+const routesAuth = require('./routes/auth')
+const routesPrivate = require('./routes/private')
+
+
 const app = express()
 
-const server = require('http').createServer(app);
-const io = require('socket.io')(server);
-
-const PORT = process.env.PORT || 3000
-const url = 'http://fran.noip.me:8888/consumo?id=0001'
 
 //app.set('view engine', 'pug')
-app.use(express.static( path.join(__dirname,'public') ))
+app.use(express.static( path.join(__dirname,'../public') ))
+
+app.use( bodyParser.urlencoded({ extended: false }) );
+app.use( bodyParser.json() );
+
+app.get('/', (req, res) => res.send(`Hello! The API is at http://localhost:${PORT}/api`) );
+app.use('/api', routesAuth );
+app.use('/private', routesPrivate );
+
+///-----------------------Web socket-------------------
+const server = require('http').createServer(app);
+const io = require('socket.io')(server);
 
 //var dataReads = []
 var connections = []
 let uniqueInterval
 
-// app.get('/', function(req,res) {
-//   res.sendFile(__dirname + '/index.html')
-// })
 
 //it listens a  message 'connection' and  will do the function
+const url = 'http://fran.noip.me:8888/consumo?id=0001'
 io.on('connection', function(socket){
   connections.push(socket);
   console.log(`Connected: ${connections.length} sockets connected`)
@@ -57,6 +68,8 @@ io.on('connection', function(socket){
     })
 })
 
+////---------------------End WEb socket ----------------------
+
  
 
-server.listen( PORT, () => console.log(`Listening on ${PORT}...`) )
+module.exports = app

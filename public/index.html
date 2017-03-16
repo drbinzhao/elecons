@@ -7,8 +7,8 @@
   <!-- Latest compiled and minified CSS -->
   <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
   <link rel="stylesheet" href="../bower_components/font-awesome/css/font-awesome.min.css">
-  <script src="bower_components/angular/angular.min.js"></script>
-  <script src="bower_components/angular-route/angular-route.min.js"></script>
+  <!-- <script src="bower_components/angular/angular.min.js"></script>
+  <script src="bower_components/angular-route/angular-route.min.js"></script> -->
   <script src="/socket.io/socket.io.js"></script>
   <link href="https://fonts.googleapis.com/css?family=Lato:300" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Unica+One" rel="stylesheet">
@@ -18,7 +18,20 @@
 
 </head>
 <body>
-  
+  <div class="header clearfix">
+      <nav ng-controller="NavbarCtrl">
+        <ul class="nav nav-pills pull-right">
+          <li ng-hide="loggedUser"><a href="#!/login">Login</a></li>
+          <li ng-hide="loggedUser"><a href="#!/register">Register</a></li>
+
+          <li ng-show="loggedUser"><a href="#!/private">Private</a></li>
+          <li ng-show="loggedUser">
+            <a class="btn btn-primary" ng-click="logout()" href="#">Logout</a>
+          </li>
+        </ul>
+      </nav>
+      <h3 class="text-muted"><a href="#!/">Project name</a></h3>
+    </div>
   <main>
       <ng-view></ng-view>
   </main>
@@ -33,8 +46,13 @@
   <script src="bower_components/c3/c3.min.js"></script>
 
   <!-- Load angular -->
+  <script src="bower_components/angular/angular.min.js"></script>
+  <script src="bower_components/angular-route/angular-route.min.js"></script>
+  <script src="bower_components/angular-jwt/dist/angular-jwt.min.js"></script>
+
   <script src="/js/app.module.js"></script>
   <script src="/js/app.config.js"></script>
+
   <script src="/js/factories/SocketIOFactory.js"></script>
   <script src="/js/factories/PricesFactory.js"></script>
   <script src="/js/factories/ChartsFactory.js"></script>
@@ -45,6 +63,11 @@
   <script src="/js/controllers/PricesController.js"></script>
   <script src="/js/controllers/DashboardController.js"></script>
   <script src="/js/controllers/NeighboursController.js"></script>
+
+  <!-- Login -->
+  <script src="js/services.js"></script>
+  <script src="js/interceptors.js"></script>
+  <script src="js/controllers.js"></script>
 
   <!-- Load highcharts  -->
   <!-- <script src="https://code.highcharts.com/highcharts.js"></script> -->
