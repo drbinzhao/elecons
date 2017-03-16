@@ -1,5 +1,1 @@
-angular.module('EleconsApp', ['ngRoute','angular-jwt', 'btford.socket-io'])
-
-.factory('socket', function (socketFactory) {
-  return socketFactory();
-})
+angular.module('EleconsApp', ['ngRoute','angular-jwt'])
