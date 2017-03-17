@@ -51,6 +51,7 @@ angular.module('EleconsApp')
         })
         .when('/user', {
             templateUrl: '/templates/user.html',
+            controller: 'UserController',
             activetab: 'user',
             secure: true
         })
