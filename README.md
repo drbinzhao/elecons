@@ -1,1 +1,0 @@
-https://elecons.herokuapp.com/ | https://git.heroku.com/elecons.git
