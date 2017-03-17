@@ -1,9 +1,16 @@
 <ng-include src="'/templates/navbar.html'"></ng-include>
 
 <div class="col-sm-9 col-lg-10 container dashboard">
-  <div id="dashboard-button">
-    <h2>Skylab Coder 01</h2>
+  <div id="dashboard-button" ng-controller = "ApiController as vm">
+    <h2>{{vm.users[0].username}}</h2>
     <p>The chart below compares the current month consumption with the same month of last year. The data is updated daily </p>
+    
+    <ul>
+      <li ng-repeat="user in vm.users">
+        {{user._id}}
+      </li> 
+      <p> {{}}</p>
+    </ul>
 
     <div class="row status-box">
       <div class="col-md-5 col-md-offset-1">

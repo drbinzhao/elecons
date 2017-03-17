@@ -8,6 +8,8 @@ const bodyParser = require('body-parser')
 const routesAuth = require('./routes/auth')
 const routesPrivate = require('./routes/private')
 
+const routesApi = require('./routes/api')
+
 const app = express()
 
 //app.set('view engine', 'pug')
@@ -17,7 +19,9 @@ app.use( bodyParser.urlencoded({ extended: false }) );
 app.use( bodyParser.json() );
 
 //app.get('/', (req, res) => res.send(`Hello! The API is at http://localhost:${PORT}/api`) );
-app.use('/api', routesAuth );
+app.use('/auth', routesAuth );
 app.use('/private', routesPrivate );
+
+app.use('/api', routesApi );
 
 module.exports = app

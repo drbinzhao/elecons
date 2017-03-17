@@ -9195,45 +9195,45 @@ body {
   font-family: 'Lato', sans-serif;
 }
 
-/* line 1, C:/Users/Josep/Documents/Skylabcoders/projects-bootcamp/elecons/public/sass/_navbar.sass */
+/* line 1, C:/Users/Josep/Documents/Skylabcoders/projects-bootcamp/elecons/public/sass/_navbar-home.sass */
 .logo {
   height: 40px;
   margin-top: -5px;
 }
 
-/* line 7, C:/Users/Josep/Documents/Skylabcoders/projects-bootcamp/elecons/public/sass/_navbar.sass */
+/* line 7, C:/Users/Josep/Documents/Skylabcoders/projects-bootcamp/elecons/public/sass/_navbar-home.sass */
 header nav .navbar.navbar-inverse.navbar-static-top {
   margin-bottom: 0px;
 }
 
-/* line 10, C:/Users/Josep/Documents/Skylabcoders/projects-bootcamp/elecons/public/sass/_navbar.sass */
+/* line 10, C:/Users/Josep/Documents/Skylabcoders/projects-bootcamp/elecons/public/sass/_navbar-home.sass */
 #navbar-style {
   margin-bottom: 0px;
 }
 
-/* line 13, C:/Users/Josep/Documents/Skylabcoders/projects-bootcamp/elecons/public/sass/_navbar.sass */
+/* line 13, C:/Users/Josep/Documents/Skylabcoders/projects-bootcamp/elecons/public/sass/_navbar-home.sass */
 #nav-style {
   height: 60px;
   margin: 0 auto;
 }
 
-/* line 17, C:/Users/Josep/Documents/Skylabcoders/projects-bootcamp/elecons/public/sass/_navbar.sass */
+/* line 17, C:/Users/Josep/Documents/Skylabcoders/projects-bootcamp/elecons/public/sass/_navbar-home.sass */
 #nav-style div:last-child div {
   padding-top: 13px;
 }
 
-/* line 21, C:/Users/Josep/Documents/Skylabcoders/projects-bootcamp/elecons/public/sass/_navbar.sass */
+/* line 21, C:/Users/Josep/Documents/Skylabcoders/projects-bootcamp/elecons/public/sass/_navbar-home.sass */
 .navbar-inverse .navbar-nav li a {
-  padding-top: 17px;
+  margin: 0 auto;
 }
 
-/* line 23, C:/Users/Josep/Documents/Skylabcoders/projects-bootcamp/elecons/public/sass/_navbar.sass */
+/* line 23, C:/Users/Josep/Documents/Skylabcoders/projects-bootcamp/elecons/public/sass/_navbar-home.sass */
 .colored-icons {
   background-color: #222222;
   padding-top: 10px;
 }
 
-/* line 26, C:/Users/Josep/Documents/Skylabcoders/projects-bootcamp/elecons/public/sass/_navbar.sass */
+/* line 26, C:/Users/Josep/Documents/Skylabcoders/projects-bootcamp/elecons/public/sass/_navbar-home.sass */
 .colored-icons a, .colored-icons span {
   color: #F2CF61;
   font-size: 18px;
