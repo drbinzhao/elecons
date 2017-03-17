@@ -5,14 +5,14 @@
         .module('EleconsApp')
         .controller('PowerController', PowerController)
 
-        function PowerController ($rootScope, $scope, $route, socket) {
+        function PowerController ($rootScope, $scope, $route, socketio) {
             $scope.$route = $route
             //var vm = this;
             //var socket = io.connect()
 
             $rootScope.readings = []
 
-            socket.on('new read', function(data) {
+            socketio.on('new read', function(data) {
               $rootScope.readings.push(data)
               $rootScope.current = data.current
               $rootScope.date = data.date
