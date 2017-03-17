@@ -9490,25 +9490,25 @@ body {
   color: #F2CF61;
 }
 
-/* line 9, C:/Users/Josep/Documents/Skylabcoders/projects-bootcamp/elecons/public/sass/_login.sass */
-input {
+/* line 10, C:/Users/Josep/Documents/Skylabcoders/projects-bootcamp/elecons/public/sass/_login.sass */
+button {
   background: #22475F;
-  color: #F2CF61;
 }
 
 /* line 13, C:/Users/Josep/Documents/Skylabcoders/projects-bootcamp/elecons/public/sass/_login.sass */
-.form-group a:hover {
-  text-decoration: none;
-}
-
-/* line 15, C:/Users/Josep/Documents/Skylabcoders/projects-bootcamp/elecons/public/sass/_login.sass */
-.form-group a:hover input {
+.btn:hover {
   color: white;
 }
 
 /* line 1, C:/Users/Josep/Documents/Skylabcoders/projects-bootcamp/elecons/public/sass/_register.sass */
-.test {
-  padding: 70px 0px;
+button {
+  background: #22475F;
+  font-weight: bold;
+}
+
+/* line 5, C:/Users/Josep/Documents/Skylabcoders/projects-bootcamp/elecons/public/sass/_register.sass */
+.btn:hover {
+  color: white;
 }
 
 /* line 1, C:/Users/Josep/Documents/Skylabcoders/projects-bootcamp/elecons/public/sass/_user.sass */
