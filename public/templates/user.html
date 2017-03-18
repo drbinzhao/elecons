@@ -12,31 +12,31 @@
 
       <!-- edit form column -->
       <div class="col-md-9 personal-info">
-        <div class="alert alert-info alert-dismissable">
+        <!-- <div class="alert alert-info alert-dismissable">
           <a class="panel-close close" data-dismiss="alert">×</a> 
           <i class="fa fa-coffee"></i>
           Be sure not to leave any blank field.
-        </div>
+        </div> -->
 
         <h3>Personal info</h3>
         
-        <form class="form-horizontal personal-info" role="form">
+        <form class="form-horizontal personal-info" role="form" action="/updateUser" method="POST" ng-submit="submitInfo($event)">
           <div class="form-group">
             <label class="col-lg-3 control-label">First name:</label>
             <div class="col-lg-8">
-              <input class="form-control" type="text" value="Jane">
+              <input class="form-control" type="text" ng-model="firstName" value="Jane">
             </div>
           </div>
           <div class="form-group">
             <label class="col-lg-3 control-label">Last name:</label>
             <div class="col-lg-8">
-              <input class="form-control" type="text" value="Bishop">
+              <input class="form-control" type="text" ng-model="lastName" value="Bishop">
             </div>
           </div>
           <div class="form-group">
             <label class="col-lg-3 control-label">Email:</label>
             <div class="col-lg-8">
-              <input class="form-control" type="text" value="janesemail@gmail.com">
+              <input class="form-control" type="email" ng-model="email" value="janesemail@gmail.com">
             </div>
           </div>
           
