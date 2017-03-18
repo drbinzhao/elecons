@@ -9497,7 +9497,7 @@ button {
 }
 
 /* line 14, C:/Users/Josep/Documents/Skylabcoders/projects-bootcamp/elecons/public/sass/_login.sass */
-.button-login .btn:hover {
+.button-login:hover {
   color: white;
   font-weight: bold;
 }
