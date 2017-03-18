@@ -3,12 +3,14 @@ const Schema = mongoose.Schema
 const passportLocalMongoose = require('passport-local-mongoose')
 
 const User = new Schema({
+  createdAt: {type: Number, default: 
+    Date.now},
   firstName: {type: String},
   lastName:{type: String},
   email: {type: String},
   contractedPower: Number,
-  Tariff: String,
-  createdAt: {type: Number, default: 
+  energyTariff: String,
+  updatedAt: {type: Number, default: 
     Date.now},
   
   // //DASHBOARD !! see comments

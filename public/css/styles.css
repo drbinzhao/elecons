@@ -9490,20 +9490,36 @@ body {
   color: #F2CF61;
 }
 
-/* line 10, C:/Users/Josep/Documents/Skylabcoders/projects-bootcamp/elecons/public/sass/_login.sass */
+/* line 9, C:/Users/Josep/Documents/Skylabcoders/projects-bootcamp/elecons/public/sass/_login.sass */
 button {
   background: #22475F;
   font-weight: bold;
 }
 
-/* line 14, C:/Users/Josep/Documents/Skylabcoders/projects-bootcamp/elecons/public/sass/_login.sass */
+/* line 13, C:/Users/Josep/Documents/Skylabcoders/projects-bootcamp/elecons/public/sass/_login.sass */
 .button-login:hover {
   color: white;
   font-weight: bold;
 }
 
 /* line 1, C:/Users/Josep/Documents/Skylabcoders/projects-bootcamp/elecons/public/sass/_user.sass */
-h1, h3, label {
+#user-button {
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+/* line 4, C:/Users/Josep/Documents/Skylabcoders/projects-bootcamp/elecons/public/sass/_user.sass */
+#user-button h3 {
+  margin-top: 0px;
+}
+
+/* line 7, C:/Users/Josep/Documents/Skylabcoders/projects-bootcamp/elecons/public/sass/_user.sass */
+.personal-info {
+  color: #F2CF61;
+}
+
+/* line 10, C:/Users/Josep/Documents/Skylabcoders/projects-bootcamp/elecons/public/sass/_user.sass */
+.energy-info {
   color: #F2CF61;
 }
 
