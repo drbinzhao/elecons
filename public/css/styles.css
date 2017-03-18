@@ -9493,22 +9493,13 @@ body {
 /* line 10, C:/Users/Josep/Documents/Skylabcoders/projects-bootcamp/elecons/public/sass/_login.sass */
 button {
   background: #22475F;
-}
-
-/* line 13, C:/Users/Josep/Documents/Skylabcoders/projects-bootcamp/elecons/public/sass/_login.sass */
-.btn:hover {
-  color: white;
-}
-
-/* line 1, C:/Users/Josep/Documents/Skylabcoders/projects-bootcamp/elecons/public/sass/_register.sass */
-button {
-  background: #22475F;
   font-weight: bold;
 }
 
-/* line 5, C:/Users/Josep/Documents/Skylabcoders/projects-bootcamp/elecons/public/sass/_register.sass */
-.btn:hover {
+/* line 14, C:/Users/Josep/Documents/Skylabcoders/projects-bootcamp/elecons/public/sass/_login.sass */
+.button-login .btn:hover {
   color: white;
+  font-weight: bold;
 }
 
 /* line 1, C:/Users/Josep/Documents/Skylabcoders/projects-bootcamp/elecons/public/sass/_user.sass */

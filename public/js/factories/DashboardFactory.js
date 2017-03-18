@@ -62,6 +62,9 @@ Highcharts.chart('comparison-chart', {
             borderWidth: 0
         }
     },
+    exporting: {
+            enabled: false
+        },
     series: [{
         name: '2016',
         data: [49.9]

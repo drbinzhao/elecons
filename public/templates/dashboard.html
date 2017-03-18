@@ -3,14 +3,7 @@
 <div class="col-sm-9 col-lg-10 container dashboard">
   <div id="dashboard-button" ng-controller = "ApiController as vm">
     <h2>{{vm.users[0].username}}</h2>
-    <p>The chart below compares the current month consumption with the same month of last year. The data is updated daily </p>
-    
-    <ul>
-      <li ng-repeat="user in vm.users">
-        {{user._id}}
-      </li> 
-      <p> {{}}</p>
-    </ul>
+    <p>You can compare your current month consumption with same month of the previous year. The data is updated daily. </p>
 
     <div class="row status-box">
       <div class="col-md-5 col-md-offset-1">
