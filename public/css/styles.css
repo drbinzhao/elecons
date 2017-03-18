@@ -9518,7 +9518,12 @@ button {
   color: #F2CF61;
 }
 
-/* line 10, C:/Users/Josep/Documents/Skylabcoders/projects-bootcamp/elecons/public/sass/_user.sass */
+/* line 9, C:/Users/Josep/Documents/Skylabcoders/projects-bootcamp/elecons/public/sass/_user.sass */
+.personal-info label {
+  font-size: 16px;
+}
+
+/* line 12, C:/Users/Josep/Documents/Skylabcoders/projects-bootcamp/elecons/public/sass/_user.sass */
 .energy-info {
   color: #F2CF61;
 }
