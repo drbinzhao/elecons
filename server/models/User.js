@@ -10,8 +10,7 @@ const User = new Schema({
   email: {type: String},
   contractedPower: Number,
   energyTariff: String,
-  updatedAt: {type: Number, default: 
-    Date.now},
+  updatedAt: {type: Number},
   
   // //DASHBOARD !! see comments
   // monthConsumptionCurrentYear: {type: Number, default: Math.random},

@@ -9555,14 +9555,26 @@ button {
   padding-bottom: 10px;
 }
 
-/* line 17, C:/Users/Josep/Documents/Skylabcoders/projects-bootcamp/elecons/public/sass/_prices.sass */
+/* line 19, C:/Users/Josep/Documents/Skylabcoders/projects-bootcamp/elecons/public/sass/_prices.sass */
+#all-prices a {
+  background-color: Transparent;
+  text-align: center;
+  color: #F2CF61;
+}
+
+/* line 24, C:/Users/Josep/Documents/Skylabcoders/projects-bootcamp/elecons/public/sass/_prices.sass */
+#all-prices:hover a {
+  color: #4AB8A1;
+}
+
+/* line 28, C:/Users/Josep/Documents/Skylabcoders/projects-bootcamp/elecons/public/sass/_prices.sass */
 #prices-day-button {
   margin-bottom: 10px;
   text-align: center;
 }
 
-/* line 20, C:/Users/Josep/Documents/Skylabcoders/projects-bootcamp/elecons/public/sass/_prices.sass */
-#prices-day-button a {
+/* line 31, C:/Users/Josep/Documents/Skylabcoders/projects-bootcamp/elecons/public/sass/_prices.sass */
+#prices-day-button button {
   border: 1px solid #4AB8A1;
   border-radius: 25px;
   background-color: Transparent;
@@ -9571,45 +9583,45 @@ button {
   color: #F2CF61;
 }
 
-/* line 28, C:/Users/Josep/Documents/Skylabcoders/projects-bootcamp/elecons/public/sass/_prices.sass */
-#prices-day-button a:hover {
+/* line 39, C:/Users/Josep/Documents/Skylabcoders/projects-bootcamp/elecons/public/sass/_prices.sass */
+#prices-day-button button:hover {
   color: #4AB8A1;
   background: #F2CF61;
 }
 
-/* line 33, C:/Users/Josep/Documents/Skylabcoders/projects-bootcamp/elecons/public/sass/_prices.sass */
+/* line 44, C:/Users/Josep/Documents/Skylabcoders/projects-bootcamp/elecons/public/sass/_prices.sass */
 .circle-data {
   font-size: 24px;
 }
 
-/* line 35, C:/Users/Josep/Documents/Skylabcoders/projects-bootcamp/elecons/public/sass/_prices.sass */
+/* line 46, C:/Users/Josep/Documents/Skylabcoders/projects-bootcamp/elecons/public/sass/_prices.sass */
 .circle-data-units, .circle-data-units-date {
   font-size: 20px;
 }
 
-/* line 38, C:/Users/Josep/Documents/Skylabcoders/projects-bootcamp/elecons/public/sass/_prices.sass */
+/* line 49, C:/Users/Josep/Documents/Skylabcoders/projects-bootcamp/elecons/public/sass/_prices.sass */
 .circle-prices, .circle-prices-units {
   font-size: 20px;
 }
 
-/* line 40, C:/Users/Josep/Documents/Skylabcoders/projects-bootcamp/elecons/public/sass/_prices.sass */
+/* line 51, C:/Users/Josep/Documents/Skylabcoders/projects-bootcamp/elecons/public/sass/_prices.sass */
 .circle-prices-date {
   font-size: 28px;
 }
 
 @media all and (max-width: 450px) {
-  /* line 45, C:/Users/Josep/Documents/Skylabcoders/projects-bootcamp/elecons/public/sass/_prices.sass */
+  /* line 56, C:/Users/Josep/Documents/Skylabcoders/projects-bootcamp/elecons/public/sass/_prices.sass */
   .circle-min-price {
     margin-bottom: 50px;
   }
-  /* line 47, C:/Users/Josep/Documents/Skylabcoders/projects-bootcamp/elecons/public/sass/_prices.sass */
+  /* line 58, C:/Users/Josep/Documents/Skylabcoders/projects-bootcamp/elecons/public/sass/_prices.sass */
   .circle-min-price svg {
     height: 300px;
     display: block;
     margin: 0 auto;
     position: relative;
   }
-  /* line 53, C:/Users/Josep/Documents/Skylabcoders/projects-bootcamp/elecons/public/sass/_prices.sass */
+  /* line 64, C:/Users/Josep/Documents/Skylabcoders/projects-bootcamp/elecons/public/sass/_prices.sass */
   .circle-max-price svg {
     height: 300px;
     display: block;

@@ -31,7 +31,7 @@
       </svg>
       
       </div>
-      <div class="col-sm-4 col-sm-offset-2 circle-contracted-power">
+      <div class="col-sm-4 col-sm-offset-2 circle-contracted-power" ng-controller="ApiController as vm">
         <h4>Your Contracted Power</h4>
         <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" style="shape-rendering:geometricPrecision; text-rendering:geometricPrecision; image-rendering:optimizeQuality; fill-rule:evenodd; clip-rule:evenodd"
         viewBox="0 0 160 160">
@@ -40,9 +40,9 @@
           </circle>
           <circle style="fill:transparent;stroke:#F2CF61;stroke-width:1;stroke-miterlimit:10;" cx="80" cy="80" r="85">
           </circle>
-          <text class="circle-power-date" x="50%" y="40%" text-anchor="middle" fill="#F2CF61">3,45 kW</text>
+          <text class="circle-power-date" x="50%" y="40%" text-anchor="middle" fill="#F2CF61">{{vm.user.contractedPower}} kW</text>
           <text class="circle-power" x="50%" y="65%" text-anchor="middle" fill="#4AB8A1">From:</text>
-          <text class="circle-power-units" x="50%" y="80%" text-anchor="middle" fill="#4AB8A1">01/03/2017</text>
+          <text class="circle-power-units" x="50%" y="80%" text-anchor="middle" fill="#4AB8A1">{{vm.user.updatedAt}}</text>
           </g>
         </svg>
         

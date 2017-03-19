@@ -18,11 +18,5 @@
         console.log(data)
         vm.user = data
       })
-
-  //   ApiFactory.updateUser()
-  //     .then(({data}) => {
-  //       console.log(data)
-  //       vm.user = data
-  //     })
   }
 })()
