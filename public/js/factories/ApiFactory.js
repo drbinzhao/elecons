@@ -17,9 +17,18 @@
     }
     //josep id: 58cbb0356930d723a88fb1fb
 
+    function updateUser(id, firstName, lastName,email, contractedPower, energyTariff) {
+      const data = {id, firstName, lastName,email, contractedPower, energyTariff}
+      let userId = $rootScope.loggedUser.id
+      var url = `/api/users/${userId}`
+        return $http.put(url, data)
+          console.log(data)
+    }
+
     return {
       getUsers,
-      getUser
+      getUser,
+      updateUser
     }
   }
 })()

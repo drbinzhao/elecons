@@ -8,6 +8,6 @@ const updateUser = require('./handlers/updateUser')
 router.get('/users', getAll)
 router.get('/users/:id', getUser)
 
-router.put('/updateUser', updateUser)
+router.put('/users/:id', updateUser)
 
 module.exports = router

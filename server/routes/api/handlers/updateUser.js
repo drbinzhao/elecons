@@ -1,8 +1,8 @@
-const User = require('../../../models/User')
+const User = require( __base + 'models/User')
 
 module.exports = (req,res) => {
 
-  const { id } = req.params
+  const  id  = req.params.id
   let { firstName, lastName, email, contractedPower, energyTariff } = req.body
   const updatedAt = Date.now()
 

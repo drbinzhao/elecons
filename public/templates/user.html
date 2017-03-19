@@ -20,23 +20,46 @@
 
         <h3>Personal info</h3>
         
-        <form class="form-horizontal personal-info" role="form" action="/updateUser" method="POST" ng-submit="submitInfo($event)">
+          
+          <!-- <form class="form-horizontal personal-info" role="form" ng-submit="updateUser($event)">
+            <div class="form-group">
+              <label class="col-lg-3 control-label">First name:</label>
+              <div class="col-lg-8">
+                <input class="form-control" type="text" ng-model="firstName">
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="col-lg-3 control-label">Last name:</label>
+              <div class="col-lg-8">
+                <input class="form-control" type="text" ng-model="lastName">
+              </div>
+            </div>
+
+            Enter text and hit enter:
+            <input type="text" ng-model="text" name="text" />
+            <input type="submit" id="submit" value="Submit" />
+            {{3+4}}
+            <p>list={{list}}</p>
+            <p>{{text}}</p>
+          </form> -->
+        
+        <form class="form-horizontal personal-info" role="form" ng-submit="updateUser($event)">
           <div class="form-group">
             <label class="col-lg-3 control-label">First name:</label>
             <div class="col-lg-8">
-              <input class="form-control" type="text" ng-model="firstName" value="Jane">
+              <input class="form-control" type="text" ng-model="firstName">
             </div>
           </div>
           <div class="form-group">
             <label class="col-lg-3 control-label">Last name:</label>
             <div class="col-lg-8">
-              <input class="form-control" type="text" ng-model="lastName" value="Bishop">
+              <input class="form-control" type="text" ng-model="lastName">
             </div>
           </div>
           <div class="form-group">
             <label class="col-lg-3 control-label">Email:</label>
             <div class="col-lg-8">
-              <input class="form-control" type="email" ng-model="email" value="janesemail@gmail.com">
+              <input class="form-control" type="email" ng-model="email">
             </div>
           </div>
           
@@ -45,31 +68,31 @@
           <div class="form-group energy-info">
             <label class="col-md-3 control-label">Contracted Power:</label>
             <div class="col-md-8">
-              <input class="form-control" type="text" value="janeuser">
+              <input class="form-control" type="text" ng-model="contractedPower">
             </div>
           </div>
           <div class="form-group">
             <label class="col-md-3 control-label">Energy tariff:</label>
-            <!--select options-->
+            
             <div class="col-md-8">
-              <input class="form-control" type="password" value="11111122333">
+              <input class="form-control" type="text" ng-model="energyTariff">
             </div>
           </div>
           <div class="form-group">
             <label class="col-md-3 control-label" style="color:red">TESTING FIELD</label>
             <div class="col-md-8">
-              <input class="form-control" type="password" value="11111122333">
+              <input class="form-control" type="text" ng-model="testing">
             </div>
           </div>
           <div class="form-group">
             <label class="col-md-3 control-label"></label>
             <div class="col-md-8">
-              <input type="button" class="btn btn-primary" value="Save Changes">
+              <input type="submit" class="btn btn-primary" value="Save Changes">
               <span></span>
               <input type="reset" class="btn btn-default" value="Cancel">
             </div>
           </div>
         </form>
+
       </div>
-  </div>
 </div>
