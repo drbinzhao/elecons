@@ -47,6 +47,7 @@ angular.module('EleconsApp')
     function setCredentials( token ) {
       var tokenPayload = jwtHelper.decodeToken( token )
       $rootScope.loggedUser = tokenPayload;
+      $rootScope.$broadcast( "userLogged", tokenPayload.id)
     }
 
 

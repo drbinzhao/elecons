@@ -59,7 +59,7 @@ angular.module('EleconsApp')
         .otherwise('/home')
     })
 
-.run(function($rootScope, $location, StorageFactory, AuthFactory){
+.run(function($rootScope, $location, StorageFactory, AuthFactory, ApiFactory){
 
       if ( AuthFactory.isLoggedIn() ) {
         const token = StorageFactory.readToken()
@@ -74,5 +74,12 @@ angular.module('EleconsApp')
           }
         }
       
+      })
+      $rootScope.$on( "userLogged", function(event, id) {
+        ApiFactory.getUser(id)
+            .then( response => {
+                $rootScope.maxPower = Number(response.data.maxPower) || 0
+                
+            })
       })
     })
