@@ -25,10 +25,19 @@
           console.log(data)
     }
 
+    function maxPower(id, currentPower) {
+      const data = {id, currentPower}
+      let userId = $rootScope.loggedUser.id
+      var url = `/api/users/${userId}`
+        return $http.put(url, data)
+          console.log(data)
+    }
+
     return {
       getUsers,
       getUser,
-      updateUser
+      updateUser, 
+      maxPower
     }
   }
 })()

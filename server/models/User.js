@@ -11,7 +11,16 @@ const User = new Schema({
   contractedPower: Number,
   energyTariff: String,
   updatedAt: {type: Number},
+  maxPower: {type: Number},
+  consumption: {date: {type: Date}, consumption: {type: Number}} //Schema.ObjectId, ref:"Consumption"
   
+});
+
+User.plugin( passportLocalMongoose );
+
+module.exports = mongoose.model('User', User);
+
+
   // //DASHBOARD !! see comments
   // monthConsumptionCurrentYear: {type: Number, default: Math.random},
   // monthConsumptionLastYear: {type: Number, default: Math.random},
@@ -42,13 +51,4 @@ const User = new Schema({
   // we need []
   // */
   
-
-
-
-
-});
-
-User.plugin( passportLocalMongoose );
-
-module.exports = mongoose.model('User', User);
 

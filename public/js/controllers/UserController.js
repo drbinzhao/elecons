@@ -12,9 +12,6 @@
             const id = $scope.loggedUser.id
             console.log(id)
 
-              $scope.list = [];
-              $scope.text = '';
-
               $scope.updateUser = function(e) {
                 e.preventDefault()
                 const { firstName, lastName, email, contractedPower, energyTariff } = $scope

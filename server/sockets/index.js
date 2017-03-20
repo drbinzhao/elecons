@@ -34,7 +34,7 @@ function setSocketEvents(io) {
 
       io.sockets.emit('new read', newRead)
       })
-    }, 1000)
+    }, 5000)
 
     //setTimeout(() => clearInterval(myInterval), 240000)
 
