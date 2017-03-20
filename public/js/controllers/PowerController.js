@@ -10,30 +10,26 @@
             const id = $scope.loggedUser.id
             //var vm = this;
 
-            $rootScope.readings = []
+            ApiFactory.maxPower(id, $rootScope.maxPowerKW) 
 
             socketio.on('new read', function(data) {
-              $rootScope.readings.push(data)
-              //console.log($rootScope.readings)
+              // $rootScope.readings.push(data)
               $rootScope.current = data.current
               $rootScope.date = data.date
-              $rootScope.accumulated = data.accumulated
+              // $rootScope.accumulated = data.accumulated
 
-              $rootScope.maxPower = $rootScope.readings.sort(function(a,b) {return (a.current < b.current) ? 1 : ((b.current < a.current) ? -1 : 0);} );
-              $rootScope.maxPowerKW = (($rootScope.maxPower[0].current)/1000).toFixed(2)
-              $rootScope.maxPowerDate = $rootScope.maxPower[0].date
+              //we got the power but not the date
+              $rootScope.maxPower = $rootScope.maxPower || 0
+              $rootScope.maxPower = (data.current > $rootScope.maxPower) ? data.current : $rootScope.maxPower
+              $rootScope.maxPowerKW = ($rootScope.maxPower/1000).toFixed(2)
               console.log($rootScope.maxPowerKW)
-              let maxPower = $rootScope.maxPowerKW
-                        
-              //get maxPower from DB
-              ApiFactory.getUser()
-                .then(({data}) => {
-                    $rootScope.DBmaxPower = (data.maxPower > $rootScope.maxPowerKW) ? data.maxPower : $rootScope.maxPowerKW
-                })
 
-              ApiFactory.maxPower(id, $rootScope.DBmaxPower)
-
+              //ApiFactory.maxPower(id, $rootScope.maxPowerKW)   
           })
-        console.log($rootScope.DBmaxPower)
+          
+          //ApiFactory.maxPower(id, $rootScope.maxPowerKW)          
+
+      //console.log($rootScope.maxPower)  
     };
+
 })()
