@@ -19,8 +19,8 @@
 
     function updateUser(id, firstName, lastName,email, contractedPower, energyTariff) {
       const data = {id, firstName, lastName,email, contractedPower, energyTariff}
-      let userId = $rootScope.loggedUser.id
-      var url = `/api/users/${userId}`
+      //let userId = $rootScope.loggedUser.id
+      var url = `/api/users/${id}`
         console.log(data)
         return $http.put(url, data)
           

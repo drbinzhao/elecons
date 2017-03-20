@@ -6,7 +6,7 @@
         .controller('UserController', UserController)
         //.controller('chartsController', ['socketio','$rootScope', function (socketio, $rootScope) {
         
-          function UserController ($scope, $route, ApiFactory) {
+          function UserController ($scope, $route, ApiFactory, $rootScope) {
             $scope.$route = $route;
             //var vm = this;
             const id = $scope.loggedUser.id
@@ -14,12 +14,13 @@
 
               $scope.updateUser = function(e) {
                 e.preventDefault()
-                const { firstName, lastName, email, contractedPower, energyTariff } = $scope
-                $scope.testing = this.testing
-                console.log(firstName, lastName, email, contractedPower, energyTariff)
-                console.log(this.testing)
+                let { firstName, lastName, email, contractedPower, energyTariff } = $scope
 
-                ApiFactory.updateUser(id, firstName, lastName,email, contractedPower, energyTariff)
+                // $scope.testing = this.testing
+                console.log(firstName, lastName, email, contractedPower, energyTariff)
+                //console.log(this.testing)
+
+                ApiFactory.updateUser(id, firstName, lastName, email, contractedPower, energyTariff)
                   .then(function(user) {
                     $scope.user = user
                   })
