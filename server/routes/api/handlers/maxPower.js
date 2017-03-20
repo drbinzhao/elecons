@@ -5,7 +5,6 @@ module.exports = (req,res) => {
   let id  = req.params.id
   let {maxPower} = req.body
   console.log(maxPower)
-  //console.log("EL MAXPOWER ES => " + maxPower)
 
   User.findByIdAndUpdate( id,  { maxPower } )
     .then( user => {

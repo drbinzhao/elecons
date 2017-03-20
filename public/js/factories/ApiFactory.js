@@ -28,13 +28,10 @@
 
     function maxPower( id, maxPower) {
       let data = { id, maxPower }
-      //data = +data.maxPower
-      console.log(typeof data)
-      console.log(id)
-      //let userId = $rootScope.loggedUser.id
+      
       var url = `/api/users/${id}/maxPower`
-        console.log(data)
-        console.log(url)
+        // console.log(data)
+        // console.log(url)
         return $http.put(url, data)
     }
 

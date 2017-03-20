@@ -15,7 +15,7 @@
 
     ApiFactory.getUser()
       .then(({data}) => {
-        console.log(data)
+        //console.log(data)
         vm.user = data
       })
   }
