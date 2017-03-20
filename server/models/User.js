@@ -8,10 +8,10 @@ const User = new Schema({
   firstName: {type: String},
   lastName:{type: String},
   email: {type: String},
-  contractedPower: Number,
+  contractedPower: String,
   energyTariff: String,
   updatedAt: {type: Number},
-  maxPower: {type: Number},
+  maxPower: {type: String},
   consumption: {date: {type: Date}, consumption: {type: Number}} //Schema.ObjectId, ref:"Consumption"
   
 });

@@ -2,10 +2,10 @@ const User = require( __base + 'models/User')
 
 module.exports = (req,res) => {
 
-  const  id  = req.params.id
-  
-
-  maxPower = 3.9
+  let id  = req.params.id
+  let {maxPower} = req.body
+  console.log(maxPower)
+  //console.log("EL MAXPOWER ES => " + maxPower)
 
   User.findByIdAndUpdate( id,  { maxPower } )
     .then( user => {

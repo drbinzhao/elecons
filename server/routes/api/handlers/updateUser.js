@@ -5,9 +5,8 @@ module.exports = (req,res) => {
   const  id  = req.params.id
   let { firstName, lastName, email, contractedPower, energyTariff } = req.body
   const updatedAt = Date.now()
-  
+  //const maxPower = 59
   consumption =  [Date.now() , (Math.random()).toFixed(2)] 
-  maxPower =''
 
   User.findByIdAndUpdate( id,  { firstName, lastName, email, contractedPower, energyTariff, updatedAt, consumption } )
     .then( user => {

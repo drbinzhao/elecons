@@ -21,16 +21,21 @@
       const data = {id, firstName, lastName,email, contractedPower, energyTariff}
       let userId = $rootScope.loggedUser.id
       var url = `/api/users/${userId}`
+        console.log(data)
         return $http.put(url, data)
-          console.log(data)
+          
     }
 
-    function maxPower(id, currentPower) {
-      const data = {id, currentPower}
-      let userId = $rootScope.loggedUser.id
-      var url = `/api/users/${userId}`
+    function maxPower( id, maxPower) {
+      let data = { id, maxPower }
+      //data = +data.maxPower
+      console.log(typeof data)
+      console.log(id)
+      //let userId = $rootScope.loggedUser.id
+      var url = `/api/users/${id}/maxPower`
+        console.log(data)
+        console.log(url)
         return $http.put(url, data)
-          console.log(data)
     }
 
     return {
