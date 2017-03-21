@@ -26,6 +26,7 @@ angular.module('EleconsApp')
                 $rootScope.contractedPower = Number(response.data.contractedPower) || 2.3
                 $rootScope.energyTariff = response.data.energyTariff || "PVPC"
                 $rootScope.updatedAt = response.data.updatedAt 
+                $rootScope.urlCurrentPower = response.data.urlCurrentPower
                 
             })
       })

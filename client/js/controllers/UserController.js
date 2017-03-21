@@ -12,16 +12,17 @@
             
               $scope.updateUser = function(e) {
                 e.preventDefault()
-                let { firstName, lastName, email, contractedPower, energyTariff, updatedAt} = $scope
+                let { firstName, lastName, email, contractedPower, energyTariff, updatedAt, urlCurrentPower} = $scope
                 $rootScope.firstName =  firstName 
                 $rootScope.lastName =  lastName 
                 $rootScope.email =  email 
                 $rootScope.contractedPower =  contractedPower
                 $rootScope.energyTariff =  energyTariff
                 $rootScope.updatedAt =  updatedAt
+                $rootScope.urlCurrentPower =  urlCurrentPower
 
 
-                ApiFactory.updateUser(id, firstName, lastName, email, contractedPower, energyTariff, updatedAt)
+                ApiFactory.updateUser(id, firstName, lastName, email, contractedPower, energyTariff, updatedAt, urlCurrentPower)
                   .then(function(user) {
                     $scope.user = user
                   })

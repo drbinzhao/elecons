@@ -5,12 +5,12 @@ const moment = require('moment')
 var connections = []
 let uniqueInterval
 
+const url = 'http://fran.noip.me:8888/consumo?id=0001'
+
+
 function setSocketEvents(io) {
 
   //it listens a  message 'connection' and  will do the function
-  
-  const url = 'http://fran.noip.me:8888/consumo?id=0001'
-  
   io.on('connection', function(socket){
     connections.push(socket);
     console.log(`Connected: ${connections.length} sockets connected`)
@@ -30,13 +30,11 @@ function setSocketEvents(io) {
             current : +current,
             accumulated: +accumulated
           }
-        //console.log(newRead)
 
       io.sockets.emit('new read', newRead)
       })
     }, 2000)
 
-    //setTimeout(() => clearInterval(myInterval), 240000)
 
     //Disconnect
     socket.on('disconnect', function(data) {

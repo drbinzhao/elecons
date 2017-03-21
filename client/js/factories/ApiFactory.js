@@ -15,10 +15,9 @@
       var url = `/api/users/${userId}`
       return $http.get(url)
     }
-    //josep id: 58cbb0356930d723a88fb1fb
 
-    function updateUser(id, firstName, lastName,email, contractedPower, energyTariff) {
-      const data = {id, firstName, lastName,email, contractedPower, energyTariff}
+    function updateUser(id, firstName, lastName,email, contractedPower, energyTariff, updatedAt, urlCurrentPower) {
+      const data = {id, firstName, lastName,email, contractedPower, energyTariff, updatedAt, urlCurrentPower}
       //let userId = $rootScope.loggedUser.id
       var url = `/api/users/${id}`
         console.log(data)

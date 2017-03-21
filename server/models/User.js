@@ -12,8 +12,7 @@ const User = new Schema({
   energyTariff: String,
   updatedAt: {type: Number},
   maxPower: {type: String},
-  consumption: {date: {type: Date}, consumption: {type: Number}} //Schema.ObjectId, ref:"Consumption"
-  
+  urlCurrentPower: {type: String}  
 });
 
 User.plugin( passportLocalMongoose );
