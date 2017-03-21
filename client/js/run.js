@@ -19,6 +19,7 @@ angular.module('EleconsApp')
       $rootScope.$on( "userLogged", function(event, id) {
         ApiFactory.getUser(id)
             .then( response => {
+                $rootScope.username = response.data.username
                 $rootScope.firstName = response.data.firstName || "Your firstName"
                 $rootScope.lastName = response.data.lastName || "Your lastName"
                 $rootScope.email = response.data.email || "Your email"

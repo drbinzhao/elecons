@@ -8,8 +8,12 @@
         function PowerController ($rootScope, $scope, $route, socketio, ApiFactory) {
             $scope.$route = $route;
             const id = $scope.loggedUser.id
-
-            socketio.emit ("send readIndex", {"urlCurrentPower": $rootScope.urlCurrentPower})
+            
+            //var socket = io.connect('http://localhost:3000')
+              socketio.emit ("send readIndex", {
+                id: $rootScope.username,
+                urlCurrentPower: $rootScope.urlCurrentPower
+                })
 
             socketio.on('new read', function(data) {
               $rootScope.current = data.current
