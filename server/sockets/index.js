@@ -19,10 +19,10 @@ function setSocketEvents(io) {
                 console.log(data.id)
 
 
-                if (uniqueInterval) clearInterval(uniqueInterval)
+                // if (uniqueInterval) clearInterval(uniqueInterval)
 
                 // Emit - send data available
-                uniqueInterval = setInterval(() => {
+                //uniqueInterval = setInterval(() => {
                     request(socket.url, (error, response, body) => {
 
                         let bodyParsed = body.replace(/\n/g, '')
@@ -36,10 +36,11 @@ function setSocketEvents(io) {
                         }
 
                         //Here comes the magic (but does not work) //.in('http://fran.noip.me:8888/consumo?id=0001')
-                        io.to(data.id).emit('new read', newRead)
+                        // with .in(data.id) does not show the realtime chart
+                        socket.emit('new read', newRead) 
                     })
-                
-                }, 1000)
+
+                //}, 1000)
 
         })
             //Disconnect
