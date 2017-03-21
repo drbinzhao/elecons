@@ -1,7 +1,7 @@
 {
   "name": "elecons",
   "description": "",
-  "main": "app.js",
+  "main": "index.js",
   "authors": [
     "Josep Otal <j.otal.pares@gmail.com>"
   ],
