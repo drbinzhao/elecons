@@ -29,8 +29,6 @@
       let data = { id, maxPower }
       
       var url = `/api/users/${id}/maxPower`
-        // console.log(data)
-        // console.log(url)
         return $http.put(url, data)
     }
 

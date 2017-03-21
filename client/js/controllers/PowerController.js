@@ -9,6 +9,8 @@
             $scope.$route = $route;
             const id = $scope.loggedUser.id
 
+            socketio.emit ("send readIndex", {"urlCurrentPower": $rootScope.urlCurrentPower})
+
             socketio.on('new read', function(data) {
               $rootScope.current = data.current
               $rootScope.currentKW = ($rootScope.current)/1000

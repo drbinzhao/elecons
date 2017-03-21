@@ -1,12 +1,19 @@
 const request = require('request');
 const moment = require('moment')
 
+
+//url depends on user id
+
+let url = 'http://fran.noip.me:8888/consumo?id=0001'
+// const url2 = 'http://fran.noip.me:8888/consumo?id=0002'
+// const url3 = 'http://fran.noip.me:8888/consumo?id=0003'
+// const url4 = 'http://fran.noip.me:8888/consumo?id=0004'
+// const url5 = 'http://fran.noip.me:8888/consumo?id=0005'
+
+
 //var dataReads = []
 var connections = []
 let uniqueInterval
-
-const url = 'http://fran.noip.me:8888/consumo?id=0001'
-
 
 function setSocketEvents(io) {
 
@@ -14,6 +21,11 @@ function setSocketEvents(io) {
   io.on('connection', function(socket){
     connections.push(socket);
     console.log(`Connected: ${connections.length} sockets connected`)
+
+    socket.on("send readIndex", function(data){
+      url = data.urlCurrentPower
+      console.log(url)
+    
 
     if (uniqueInterval) clearInterval(uniqueInterval)
 
@@ -31,11 +43,11 @@ function setSocketEvents(io) {
             accumulated: +accumulated
           }
 
-      io.sockets.emit('new read', newRead)
+      socket.emit('new read', newRead)
       })
-    }, 2000)
+    }, 1000)
 
-
+  })
     //Disconnect
     socket.on('disconnect', function(data) {
       clearInterval(uniqueInterval)
