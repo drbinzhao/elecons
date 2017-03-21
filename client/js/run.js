@@ -28,7 +28,6 @@ angular.module('EleconsApp')
                 $rootScope.energyTariff = response.data.energyTariff || "PVPC"
                 $rootScope.updatedAt = response.data.updatedAt 
                 $rootScope.urlCurrentPower = response.data.urlCurrentPower || "https://fran.noip.me:8888/consumo?id=0001"
-                
             })
       })
   })
