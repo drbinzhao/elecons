@@ -43,7 +43,7 @@ function setSocketEvents(io) {
             accumulated: +accumulated
           }
 
-      socket.emit('new read', newRead)
+      io.sockets.emit('new read', newRead)
       })
     }, 1000)
 
