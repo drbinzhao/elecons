@@ -11,11 +11,11 @@
             
             //var socket = io.connect('http://localhost:3000')
             $interval(()=> {
-              socketio.emit ("send readIndex", {
+              socketio.emit ("userInfo", {
                 id: $rootScope.username,
                 urlCurrentPower: $rootScope.urlCurrentPower
                 })
-            }, 1000)
+            }, 2000)
 
             socketio.on('new read', function(data) {
               $rootScope.current = data.current

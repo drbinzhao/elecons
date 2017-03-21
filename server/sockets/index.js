@@ -12,7 +12,7 @@ function setSocketEvents(io) {
         connections.push(socket);
         console.log(`Connected: ${connections.length} sockets connected`)
 
-        socket.on("send readIndex", function(data) {
+        socket.on("userInfo", function(data) {
                 socket.join(data.id)
                 socket.url = data.urlCurrentPower
                 console.log(socket.url)
@@ -37,7 +37,7 @@ function setSocketEvents(io) {
 
                         //Here comes the magic (but does not work) //.in('http://fran.noip.me:8888/consumo?id=0001')
                         // with .in(data.id) does not show the realtime chart
-                        socket.emit('new read', newRead) 
+                        io.sockets.in(data.id).emit('new read', newRead) 
                     })
 
                 //}, 1000)

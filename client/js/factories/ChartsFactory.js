@@ -5,7 +5,7 @@
       .module('EleconsApp')
       .factory('ChartsFactory', ChartsFactory)
 
-      function ChartsFactory ($rootScope, PricesFactory) {
+      function ChartsFactory ($rootScope, PricesFactory, socketio) {
         //var vm = this
         var service = {
             getChartNow: getChartNow,
@@ -33,8 +33,8 @@
             events: {
                   load: function () {
                     var series = this.series[0]
-                    var socket = io.connect()
-                    socket.on('new read', function(data) {
+                    //var socket = io.connect()
+                    socketio.on('new read', function(data) {
                         var x = (new Date()).getTime(), // current time
                             y = data.current;
                         series.addPoint([x, y], true, true);
@@ -43,7 +43,7 @@
             }
         },
         title: {
-            text: 'Instantaneous Power (every 5 seconds)'
+            text: 'Instantaneous Power (every second)'
         },
         xAxis: {
             type: 'datetime',
