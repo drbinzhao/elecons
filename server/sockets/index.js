@@ -36,7 +36,6 @@ function setSocketEvents(io) {
                         }
 
                         //Here comes the magic (but does not work) //.in('http://fran.noip.me:8888/consumo?id=0001')
-                        // with .in(data.id) does not show the realtime chart
                         io.sockets.in(data.id).emit('new read', newRead) 
                     })
 

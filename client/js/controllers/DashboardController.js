@@ -10,6 +10,10 @@
             var vm = this;
 
             DashboardFactory.getComparison()
+            DashboardFactory.getYear()
+              .then(function(response){
+                console.log(response)
+              })
 
           }
 })()

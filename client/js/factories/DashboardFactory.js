@@ -4,14 +4,18 @@
         .module('EleconsApp')
         .factory('DashboardFactory', DashboardFactory)
 
-    function DashboardFactory($rootScope, PricesFactory) {
+    function DashboardFactory($http, $rootScope, PricesFactory) {
 
         var service = {
-            getComparison: getComparison
+            getComparison: getComparison,
+            getYear: getYear
         };
 
         return service;
 
+        function getYear () {
+            return $http.get('../../data/user1/yearlyConsumption.json')
+        }
 
         function getComparison() {
 
