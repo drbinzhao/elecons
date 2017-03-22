@@ -13,8 +13,8 @@ const User = new Schema({
   updatedAt: {type: Number},
   maxPower: {type: String},
   urlCurrentPower: {type: String},
-  consumption2016: {type: String},
-  consumption2017: {type: String}
+  consumption2016: {type: String, default:"150"},
+  consumption2017: {type: String, default:"230"}
 });
 
 User.plugin( passportLocalMongoose );
