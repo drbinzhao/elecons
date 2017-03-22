@@ -16,8 +16,8 @@
       return $http.get(url)
     }
 
-    function updateUser(id, firstName, lastName,email, contractedPower, energyTariff, updatedAt, urlCurrentPower, consumption2016, consumption2017) {
-      const data = {id, firstName, lastName,email, contractedPower, energyTariff, updatedAt, urlCurrentPower, consumption2016, consumption2017}
+    function updateUser(id, firstName, lastName,email, contractedPower, energyTariff, updatedAt, urlCurrentPower) {  //, consumption2016, consumption2017
+      const data = {id, firstName, lastName,email, contractedPower, energyTariff, updatedAt, urlCurrentPower}    //, consumption2016, consumption2017
       var url = `/api/users/${id}`
         console.log(data)
         return $http.put(url, data)    

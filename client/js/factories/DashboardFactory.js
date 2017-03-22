@@ -19,18 +19,16 @@
             ApiFactory.getUser()
               .then(function(response){
                 let electricPrice = 0.11
-                $rootScope.consumption2016 = response.data.consumption2016
-                $rootScope.consumption2017 = response.data.consumption2017
+                //$rootScope.consumption2016 = response.data.consumption2016
+                //$rootScope.consumption2017 = response.data.consumption2017
                 $rootScope.savingsKWH = $rootScope.consumption2016 - $rootScope.consumption2017
                 $rootScope.savingsEuro = $rootScope.savingsKWH * electricPrice
               })
         }
-        console.log($rootScope.consumption2017)
 
 
         function getComparison() {
 
-            console.log($rootScope.consumption2017)
 
             var monthLastYear = 88
             var percMonthLastYear = (monthLastYear / monthLastYear) * 100
@@ -86,11 +84,11 @@
                 },
                 series: [{
                     name: '2016',
-                    data: [$rootScope.consumption2016]
+                    data: [Number($rootScope.consumption2016)]
 
                 }, {
                     name: '2017',
-                    data: [$rootScope.consumption2017]
+                    data: [Number($rootScope.consumption2017)]
                 }]
             });
         }

@@ -28,8 +28,8 @@ angular.module('EleconsApp')
                 $rootScope.energyTariff = response.data.energyTariff || "PVPC"
                 $rootScope.updatedAt = response.data.updatedAt 
                 $rootScope.urlCurrentPower = response.data.urlCurrentPower || "http://fran.noip.me:8888/consumo?id=0001"
-                $rootScope.consumption2016 = response.data.consumption2016 || 150
-                $rootScope.consumption2017 = response.data.consumption2017 || 230
+                $rootScope.consumption2016 = Number(response.data.consumption2016) || 150
+                $rootScope.consumption2017 = Number(response.data.consumption2017) || 230
                 $rootScope.savingsKWH = Number($rootScope.consumption2016 - $rootScope.consumption2017)
             })
       })
