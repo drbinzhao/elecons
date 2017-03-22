@@ -21,8 +21,7 @@
       //let userId = $rootScope.loggedUser.id
       var url = `/api/users/${id}`
         console.log(data)
-        return $http.put(url, data)
-          
+        return $http.put(url, data)    
     }
 
     function maxPower( id, maxPower) {

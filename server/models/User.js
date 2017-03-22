@@ -12,7 +12,9 @@ const User = new Schema({
   energyTariff: String,
   updatedAt: {type: Number},
   maxPower: {type: String},
-  urlCurrentPower: {type: String}  
+  urlCurrentPower: {type: String},
+  consumption2016: {type: Number, default: 200},
+  consumption2017: {type: Number, default: 120}
 });
 
 User.plugin( passportLocalMongoose );

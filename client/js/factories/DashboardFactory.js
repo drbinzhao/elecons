@@ -4,15 +4,33 @@
         .module('EleconsApp')
         .factory('DashboardFactory', DashboardFactory)
 
-    function DashboardFactory($http, $rootScope, PricesFactory) {
+    function DashboardFactory($http, $rootScope, PricesFactory, ApiFactory) {
+        //console.log( $rootScope.consumption2017)
 
         var service = {
             getComparison: getComparison,
+            getMonthData: getMonthData
         };
 
         return service;
 
+        
+        function getMonthData() {
+            ApiFactory.getUser()
+              .then(function(response){
+                let electricPrice = 0.11
+                $rootScope.consumption2016 = response.data.consumption2016
+                $rootScope.consumption2017 = response.data.consumption2017
+                $rootScope.savingsKWH = $rootScope.consumption2016 - $rootScope.consumption2017
+                $rootScope.savingsEuro = $rootScope.savingsKWH * electricPrice
+              })
+        }
+        console.log($rootScope.consumption2017)
+
+
         function getComparison() {
+
+            console.log($rootScope.consumption2017)
 
             var monthLastYear = 88
             var percMonthLastYear = (monthLastYear / monthLastYear) * 100
@@ -26,7 +44,8 @@
             var percDays = (numDays / 31) * 100
             percDays = Math.round(percDays)
 
-
+            // let consumption2017 = $rootScope.consumption2017
+            // console.log(consumption2017)
 
             Highcharts.chart('comparison-chart', {
                 chart: {
@@ -67,11 +86,11 @@
                 },
                 series: [{
                     name: '2016',
-                    data: [200]
+                    data: [$rootScope.consumption2016]
 
                 }, {
                     name: '2017',
-                    data: [100]
+                    data: [$rootScope.consumption2017]
                 }]
             });
         }
