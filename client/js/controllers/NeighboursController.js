@@ -6,10 +6,18 @@
         .controller('NeighboursController', NeighboursController)
         //.controller('chartsController', ['socketio','$rootScope', function (socketio, $rootScope) {
         
-          function NeighboursController ($scope, $route, $rootScope, NeighboursFactory, ApiFactory) {
+          function NeighboursController ($scope, $route, $rootScope, ApiFactory) {
             $scope.$route = $route
 
             var vm = this;
+
+            $scope.showStatusNeighbours = function (){
+              if ($rootScope.neighboursPosition < 4 ) {
+                return true
+              } else {
+                return false
+              }
+            }
 
             ApiFactory.getUsers()
               .then(function(response){
@@ -42,6 +50,6 @@
 
               })
 
-            NeighboursFactory.getNeighbours()
+            //NeighboursFactory.getNeighbours()
           }
 })()
