@@ -16,9 +16,8 @@
       return $http.get(url)
     }
 
-    function updateUser(id, firstName, lastName,email, contractedPower, energyTariff, updatedAt, urlCurrentPower) {
-      const data = {id, firstName, lastName,email, contractedPower, energyTariff, updatedAt, urlCurrentPower}
-      //let userId = $rootScope.loggedUser.id
+    function updateUser(id, firstName, lastName,email, contractedPower, energyTariff, updatedAt, urlCurrentPower, consumption2016, consumption2017) {
+      const data = {id, firstName, lastName,email, contractedPower, energyTariff, updatedAt, urlCurrentPower, consumption2016, consumption2017}
       var url = `/api/users/${id}`
         console.log(data)
         return $http.put(url, data)    
@@ -26,7 +25,6 @@
 
     function maxPower( id, maxPower) {
       let data = { id, maxPower }
-      
       var url = `/api/users/${id}/maxPower`
         return $http.put(url, data)
     }
