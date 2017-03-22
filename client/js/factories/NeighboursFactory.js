@@ -74,49 +74,83 @@
                 console.log($rootScope.allSavings)
             
             
-
             Highcharts.chart('neighbours-chart', {
                 chart: {
                     type: 'column'
                 },
                 title: {
-                    text: 'Monthly Average Rainfall'
-                },
-                subtitle: {
-                    text: 'Source: WorldClimate.com'
+                    text: "Neighbours' Savings"
                 },
                 xAxis: {
-                    categories: [
-                        
-                    ],
-                    crosshair: true
+                    categories: []
                 },
                 yAxis: {
-                    min: 0,
                     title: {
-                        text: 'Rainfall (mm)'
+                        text: 'Savings (kWh)'
                     }
                 },
                 tooltip: {
                     headerFormat: '<span style="font-size:10px">{point.key}</span><table>',
                     pointFormat: '<tr><td style="color:{series.color};padding:0">{series.name}: </td>' +
-                        '<td style="padding:0"><b>{point.y:.1f} mm</b></td></tr>',
+                        '<td style="padding:0"><b>{point.y:.1f} kWh</b></td></tr>',
                     footerFormat: '</table>',
                     shared: true,
                     useHTML: true
                 },
-                plotOptions: {
-                    column: {
-                        pointPadding: 0.2,
-                        borderWidth: 0
-                    }
+                credits: {
+                    enabled: false
+                },
+                exporting: {
+                    enabled: false
                 },
                 series: [{
-                    name: 'Tokyo',
+                    name: 'Users',
                     data: $rootScope.allSavings
-
                 }]
             });
+
+            // Highcharts.chart('neighbours-chart', {
+            //     chart: {
+            //         type: 'column'
+            //     },
+            //     title: {
+            //         text: 'Monthly Average Rainfall'
+            //     },
+            //     subtitle: {
+            //         text: 'Source: WorldClimate.com'
+            //     },
+            //     xAxis: {
+            //         categories: [
+                        
+            //         ],
+            //         crosshair: true
+            //     },
+            //     yAxis: {
+            //         min: 0,
+            //         title: {
+            //             text: 'Rainfall (mm)'
+            //         }
+            //     },
+            //     tooltip: {
+            //         headerFormat: '<span style="font-size:10px">{point.key}</span><table>',
+            //         pointFormat: '<tr><td style="color:{series.color};padding:0">{series.name}: </td>' +
+            //             '<td style="padding:0"><b>{point.y:.1f} mm</b></td></tr>',
+            //         footerFormat: '</table>',
+            //         shared: true,
+            //         useHTML: true
+            //     },
+            //     plotOptions: {
+            //         column: {
+            //             pointPadding: 0.2,
+            //             borderWidth: 0
+            //         }
+            //     },
+            //     series: [{
+            //         name: 'User',
+            //         data: $rootScope.allSavings
+
+            //     }]
+            // });
         
         }); 
         }

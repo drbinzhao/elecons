@@ -43,7 +43,7 @@
             }
         },
         title: {
-            text: 'Instantaneous Power (every second)'
+            text: 'Real-time Chart: Instantaneous Power'
         },
         xAxis: {
             type: 'datetime',
@@ -113,7 +113,7 @@
                 // backgroundColor: '#222222'
             },
             title: {
-                text: 'Hourly Electricity Consumption and Price'
+                text: 'Hourly Chart: Electricity Consumption and Price'
             },
             subtitle: {
                 text: ''
