@@ -7936,14 +7936,32 @@ body {
   vertical-align: center;
 }
 
-.status {
-  background: green;
+.statusDashboard {
   margin-top: 20px;
-  margin-bottom: 20px;
+  background: none;
 }
 
-.status h3 {
+.statusGoodDashboard {
+  border-radius: 25px;
+  background-color: none;
+}
+
+.statusGoodDashboard h3 {
+  color: green;
+  font-size: 30px;
   font-weight: bold;
+  margin-top: 10px;
+}
+
+.statusBadDashboard {
+  border-radius: 25px;
+  background-color: none;
+}
+
+.statusBadDashboard h3 {
+  color: red;
+  font-size: 30px;
+  margin-top: 10px;
 }
 
 @media all and (max-width: 750px) {
@@ -7959,6 +7977,28 @@ body {
     padding-top: 10px;
     padding-bottom: 10px;
     font-size: 28px;
+  }
+  .statusDashboard {
+    margin-top: 20px;
+    background: none;
+  }
+  .statusGoodDashboard {
+    border-radius: 25px;
+    background-color: none;
+  }
+  .statusGoodDashboard h3 {
+    color: green;
+    font-size: 30px;
+    margin-top: 10px;
+  }
+  .statusBadDashboard {
+    border-radius: 25px;
+    background-color: none;
+  }
+  .statusBadDashboard h3 {
+    color: red;
+    font-size: 30px;
+    margin-top: 10px;
   }
 }
 
@@ -8144,22 +8184,32 @@ button {
   text-align: center;
 }
 
-#power-day-button a {
-  border: 1px solid #4AB8A1;
+.statusPower {
+  margin-top: 20px;
+  background: none;
+}
+
+.statusGoodPower {
   border-radius: 25px;
-  background-color: Transparent;
-  text-align: center;
+  background-color: none;
+}
+
+.statusGoodPower h3 {
+  color: green;
   font-size: 30px;
-  color: #F2CF61;
+  font-weight: bold;
+  margin-top: 10px;
 }
 
-#power-day-button a:hover {
-  color: #4AB8A1;
-  background: #F2CF61;
+.statusBadPower {
+  border-radius: 25px;
+  background-color: none;
 }
 
-#power-day-button h3 {
-  margin-top: 0px;
+.statusBadPower h3 {
+  color: red;
+  font-size: 30px;
+  margin-top: 10px;
 }
 
 .circle-power {

@@ -8,14 +8,9 @@
 
         var service = {
             getComparison: getComparison,
-            getYear: getYear
         };
 
         return service;
-
-        function getYear () {
-            return $http.get('../../data/user1/yearlyConsumption.json')
-        }
 
         function getComparison() {
 
@@ -72,7 +67,7 @@
                 },
                 series: [{
                     name: '2016',
-                    data: [49.9]
+                    data: [200]
 
                 }, {
                     name: '2017',

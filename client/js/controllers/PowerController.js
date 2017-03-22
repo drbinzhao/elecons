@@ -8,6 +8,14 @@
         function PowerController ($rootScope, $scope, $route, $interval, socketio, ApiFactory) {
             $scope.$route = $route;
             const id = $scope.loggedUser.id
+
+             $scope.showStatusPower = function (){
+              if ($rootScope.maxPower < $rootScope.contractedPower ) {
+                return true
+              } else {
+                return false
+              }
+            }
             
             //var socket = io.connect('http://localhost:3000')
             $interval(()=> {
