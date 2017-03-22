@@ -8085,6 +8085,10 @@ button {
   padding-bottom: 10px;
 }
 
+.energyTariff {
+  color: #F2CF61;
+}
+
 #all-prices a {
   background-color: Transparent;
   text-align: center;

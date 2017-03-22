@@ -5,7 +5,7 @@
       .module('EleconsApp')
       .factory('PricesFactory', PricesFactory)
     
-        function PricesFactory ($http) {
+        function PricesFactory ($http, $rootScope) {
     
           var servicePrices = {
             getPrices: getPrices
@@ -16,10 +16,24 @@
           /// methods from the factory
     
           function getPrices() {
-    
+            
+            console.log($rootScope.energyTariff)
+
+            let indicator = 10229
+
+            if ($rootScope.energyTariff === "PVPC") {
+              indicator = 10229
+            } else if ($rootScope.energyTariff === "PVPC DH"){
+              indicator = 10230
+            } else {
+              indicator = 10231
+            }
+
+            console.log(indicator)
+
             var req = {
             method: 'GET',
-            url: 'https://api.esios.ree.es/indicators/10229', 
+            url: `https://api.esios.ree.es/indicators/${indicator}`, 
             headers: {
               "Accept": "application/json; application/vnd.esios-api-v1+json",
               "Content-Type" : "application/json",
@@ -28,6 +42,7 @@
             dataType: 'json',
             }
           
+
             return $http(req)
               .then(getPvpc)
               .then(filterPvpc)
@@ -37,6 +52,7 @@
 
         //Helper functions
         function getPvpc (response) {
+            console.log(response.data.indicator.values)
             return response.data.indicator.values
         }
 
