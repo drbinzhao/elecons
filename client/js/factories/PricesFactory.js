@@ -17,7 +17,7 @@
     
           function getPrices() {
             
-            console.log($rootScope.energyTariff)
+            //console.log($rootScope.energyTariff)
 
             let indicator = 10229
 
@@ -29,7 +29,7 @@
               indicator = 10231
             }
 
-            console.log(indicator)
+            //console.log(indicator)
 
             var req = {
             method: 'GET',
