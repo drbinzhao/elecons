@@ -9,7 +9,16 @@
             $scope.$route = $route
             var vm = this;
 
+            $scope.showStatusDashboard = function (){
+              if (2016 < 2017 ) {
+                return true
+              } else {
+                return false
+              }
+            }
             DashboardFactory.getComparison()
-
+            //DashboardFactory.getYear()
           }
+
+          
 })()

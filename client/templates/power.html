@@ -9,18 +9,18 @@
             <h3>Current power: <span>{{current}} W </span></h3>
             <h3>Last read at: <span>{{date}} </span></h3>
           </div>
-          <div class="col-md-4 col-md-offset-1">
-            <div class="col-xs-12 status">
-              <h3>You are FINE!!</h3>
-              <!-- Green and red if up or down -->
-              <h3>BAD!!</h3>
+          <div class="col-md-4 col-md-offset-1 statusPower">
+            <div class="col-xs-12 statusGoodPower">
+              <h3 ng-show="showStatusPower()">Your Contracted Power is FINE!!</h3>
             </div>
-            
+            <div class="col-xs-12 statusBadPower">
+              <h3 ng-show="!showStatusPower()">Your Maximum Power is a bit HIGH!!</h3>
+            </div>
           </div>
         </div>
       </div>
       <div class="col-sm-4 col-sm-offset-1 circle-max-power">
-        <h4>You Maximum Power</h4>
+        <h4>Your Maximum Power</h4>
         <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" style="shape-rendering:geometricPrecision; text-rendering:geometricPrecision; image-rendering:optimizeQuality; fill-rule:evenodd; clip-rule:evenodd"
         viewBox="0 0 160 160">
         <g>

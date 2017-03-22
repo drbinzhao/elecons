@@ -31,12 +31,29 @@
 .status-box
   vertical-align: center
 
-.status
-  background: green
+.statusDashboard
   margin-top: 20px
-  margin-bottom: 20px
+  background: none
+
+.statusGoodDashboard
+  //border: 1px solid green
+  border-radius: 25px
+  background-color: none
   h3
+    color: green
+    font-size: 30px 
     font-weight: bold
+    margin-top: 10px
+
+.statusBadDashboard
+  //border: 1px solid red
+  border-radius: 25px
+  background-color: none
+  h3
+    color: red
+    font-size: 30px 
+    //font-weight: bold
+    margin-top: 10px
 
 
 @media all and (max-width: 750px)
@@ -51,3 +68,27 @@
       padding-top: 10px
       padding-bottom: 10px
       font-size: 28px
+  
+  .statusDashboard
+    margin-top: 20px
+    background: none
+
+  .statusGoodDashboard
+    //border: 1px solid green
+    border-radius: 25px
+    background-color: none
+    h3
+      color: green
+      font-size: 30px 
+      //font-weight: bold
+      margin-top: 10px
+
+  .statusBadDashboard
+    //border: 1px solid red
+    border-radius: 25px
+    background-color: none
+    h3
+      color: red
+      font-size: 30px 
+      //font-weight: bold
+      margin-top: 10px

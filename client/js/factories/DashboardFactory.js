@@ -4,10 +4,10 @@
         .module('EleconsApp')
         .factory('DashboardFactory', DashboardFactory)
 
-    function DashboardFactory($rootScope, PricesFactory) {
+    function DashboardFactory($http, $rootScope, PricesFactory) {
 
         var service = {
-            getComparison: getComparison
+            getComparison: getComparison,
         };
 
         return service;
@@ -68,7 +68,7 @@
                 },
                 series: [{
                     name: '2016',
-                    data: [49.9]
+                    data: [200]
 
                 }, {
                     name: '2017',
