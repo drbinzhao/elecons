@@ -16,14 +16,11 @@
 
         
         function getMonthData() {
-            ApiFactory.getUser()
-              .then(function(response){
-                let electricPrice = 0.11
-                //$rootScope.consumption2016 = response.data.consumption2016
-                //$rootScope.consumption2017 = response.data.consumption2017
+            let electricPrice = 0.11
+                //$rootScope.consumption2016 = Number(response.data.consumption2016)
+                //$rootScope.consumption2017 = Number(response.data.consumption2017)
                 $rootScope.savingsKWH = $rootScope.consumption2016 - $rootScope.consumption2017
                 $rootScope.savingsEuro = $rootScope.savingsKWH * electricPrice
-              })
         }
 
 
