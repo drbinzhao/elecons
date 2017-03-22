@@ -4,16 +4,77 @@
         .module('EleconsApp')
         .factory('NeighboursFactory', NeighboursFactory)
 
-    function NeighboursFactory($rootScope) {
+    function NeighboursFactory($rootScope, ApiFactory) {
         //var vm = this
+        //console.log($rootScope.allSavings)
+        
         var service = {
-            getNeighbours: getNeighbours
+            getNeighbours: getNeighbours,
+            getNeighboursPosition: getNeighboursPosition
         };
 
         return service;
 
+        function getNeighboursPosition(){
+            ApiFactory.getUsers()
+              .then(function(response){
+                let aUsers = response.data.users
+                let newArrayUsers = aUsers.map(function(obj){
+                  let rObj = {}
+                  let savings = Number(obj.consumption2016) - Number(obj.consumption2017)
+                  rObj['savings'] = savings
+                  rObj['username'] = obj.username
+                  return rObj
+                })
+
+                let oArray = newArrayUsers.sort(function(a,b) {return (a.savings < b.savings) ? 1 : ((b.savings < a.savings) ? -1 : 0);} );
+                
+                let aSavings = oArray.map(function(obj) {
+                    return obj.savings  
+                })
+             
+                let positionArray = 0
+                let test = oArray.forEach(function(elem, index) {
+                  if (elem.username == $rootScope.username){
+                    positionArray = index + 1
+                  
+                    return positionArray
+                  }
+                })
+
+                $rootScope.neighboursPosition = positionArray 
+                $rootScope.allSavings = aSavings 
+
+              })
+        }
+
+        console.log($rootScope.allSavings)
+        
         function getNeighbours() {
+            let aSavings = []
+
+            ApiFactory.getUsers()
+              .then(function(response){
+                let aUsers = response.data.users
+                let newArrayUsers = aUsers.map(function(obj){
+                  let rObj = {}
+                  let savings = Number(obj.consumption2016) - Number(obj.consumption2017)
+                  rObj['savings'] = savings
+                  rObj['username'] = obj.username
+                  return rObj
+                })
+
+                let oArray = newArrayUsers.sort(function(a,b) {return (a.savings < b.savings) ? 1 : ((b.savings < a.savings) ? -1 : 0);} );
+                
+                aSavings = oArray.map(function(obj) {
+                    return obj.savings  
+                })
             
+                $rootScope.allSavings = aSavings 
+                console.log($rootScope.allSavings)
+            
+            
+
             Highcharts.chart('neighbours-chart', {
                 chart: {
                     type: 'column'
@@ -26,18 +87,7 @@
                 },
                 xAxis: {
                     categories: [
-                        'Jan',
-                        'Feb',
-                        'Mar',
-                        'Apr',
-                        'May',
-                        'Jun',
-                        'Jul',
-                        'Aug',
-                        'Sep',
-                        'Oct',
-                        'Nov',
-                        'Dec'
+                        
                     ],
                     crosshair: true
                 },
@@ -63,22 +113,12 @@
                 },
                 series: [{
                     name: 'Tokyo',
-                    data: [49.9, 71.5, 106.4, 129.2, 144.0, 176.0, 135.6, 148.5, 216.4, 194.1, 95.6, 54.4]
-
-                }, {
-                    name: 'New York',
-                    data: [83.6, 78.8, 98.5, 93.4, 106.0, 84.5, 105.0, 104.3, 91.2, 83.5, 106.6, 92.3]
-
-                }, {
-                    name: 'London',
-                    data: [48.9, 38.8, 39.3, 41.4, 47.0, 48.3, 59.0, 59.6, 52.4, 65.2, 59.3, 51.2]
-
-                }, {
-                    name: 'Berlin',
-                    data: [42.4, 33.2, 34.5, 39.7, 52.6, 75.5, 57.4, 60.4, 47.6, 39.1, 46.8, 51.1]
+                    data: $rootScope.allSavings
 
                 }]
             });
+        
+        }); 
         }
     }
 })()
