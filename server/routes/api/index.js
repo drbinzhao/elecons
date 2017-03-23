@@ -9,6 +9,7 @@ const updateUser = require('./handlers/updateUser')
 const maxPower = require('./handlers/maxPower')
 const getData = require('./handlers/getData')
 
+
 //router.use( passport.authenticate('jwt', { session: false }) )
 
 

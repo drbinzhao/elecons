@@ -27,21 +27,6 @@
         function getComparison() {
 
 
-            // var monthLastYear = 88
-            // var percMonthLastYear = (monthLastYear / monthLastYear) * 100
-            // percMonthLastYear = Math.round(percMonthLastYear)
-
-            // var monthCurrentYear = 50
-            // var percMonthCurrentYear = (monthCurrentYear / monthLastYear) * 100
-            // percMonthCurrentYear = Math.round(percMonthCurrentYear)
-
-            // var numDays = new Date().getDate()
-            // var percDays = (numDays / 31) * 100
-            // percDays = Math.round(percDays)
-
-            // // let consumption2017 = $rootScope.consumption2017
-            // // console.log(consumption2017)
-
             Highcharts.chart('comparison-chart', {
                 chart: {
                     //backgroundColor: 'none',
