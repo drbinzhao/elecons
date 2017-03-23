@@ -3,3 +3,4 @@ bower_components
 .notes
 *.log
 .env
+data/users
