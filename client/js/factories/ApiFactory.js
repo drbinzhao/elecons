@@ -29,11 +29,18 @@
         return $http.put(url, data)
     }
 
+    function getData(id) {
+      let userId = $rootScope.loggedUser.id
+      var url = `/api/users/${userId}/data`
+      return $http.get(url)
+    }
+
     return {
       getUsers,
       getUser,
       updateUser, 
-      maxPower
+      maxPower,
+      getData
     }
   }
 })()
