@@ -7,7 +7,7 @@ It can be seen in: https://eleconsum.herokuapp.com/ (stable version) and https:/
 This demo assigns a randomly generated electricity consumption data to any register users. This data is both real-time data simluating the instant power and fixed data simulating the hourly, daily and monthly electricity consumption.
 It uses the Red Eléctrica Española (REE) API, to show the Spanish hourly electricity prices.
 
-###Endpoints for Spain Energy prices
+##Endpoints for Spain Energy prices
 You need a `token` (you can request it sending an email to: `consultasios@ree.es`)and it has to be included in the header of the request. The API documentation can be found in https://api.esios.ree.es/: 
 - To obtain the PVPC: https://api.esios.ree.es/indicators/10229
 - To obtain the PVPC DH: https://api.esios.ree.es/indicators/10230
@@ -24,7 +24,7 @@ You need a `token` (you can request it sending an email to: `consultasios@ree.es
     }
 ```
 
-###Endpoints for real-time power
+##Endpoints for real-time power
 It is a web-service that generates an random instant power value in Watts every second, and it has 5 instances, that have different maximum powers assigned, so their random values will be between 0 and the value assigned:
 - `http://fran.noip.me:8888/consumo?id=0001` --> Power assigned: 5,50kW
 - `http://fran.noip.me:8888/consumo?id=0002` --> Power assigned: 3,30kW
@@ -32,7 +32,7 @@ It is a web-service that generates an random instant power value in Watts every 
 - `http://fran.noip.me:8888/consumo?id=0004` --> Power assigned: 4,40kW
 - `http://fran.noip.me:8888/consumo?id=0005` --> Power assigned: 5,50kW
 
-### Technologies
+## Technologies
 It is a `MEAN project`, where the server-side is an `Express` app and the front-end is server in an `Angular app`.
 - It uses `websockets` to instantianlly show the real-time data from the external-web service.
 - Regarding the charts the are build by using the `Highcharts` library
