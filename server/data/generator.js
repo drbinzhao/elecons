@@ -1,5 +1,5 @@
 const fs = require('fs')
-const mkdirp = require('mkdirp');
+// const mkdirp = require('mkdirp');
 
 function getDate(index) {
     const startDate = new Date(2015, 0, 1)
@@ -21,14 +21,15 @@ const jsonToWrite = JSON.stringify(dataUser, null, 4)
 
 module.exports = function(id) {
   
-  const folderPath = __dirname + '/' + id;
-  mkdirp(folderPath, function(err) {
-      if (err) throw err
-      console.log(`folder ${folderPath} created!!`) 
-      fs.writeFile(folderPath + "/data.json", jsonToWrite, function(err) {
-          if (err) throw err
+  const folderPath = __dirname + '/users/';
+  // mkdirp(folderPath, function(err) {
+      // if (err) throw err
+      // console.log(`folder ${folderPath} created!!`) 
+      fs.writeFileSync(folderPath + id + ".json", jsonToWrite)
+      // , function(err) {
+          // if (err) throw err
           console.log(`data.json was created at ${folderPath}!`);
-      });
-  });
+      // });
+    return dataUser
 
 } 

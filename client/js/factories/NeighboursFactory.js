@@ -16,7 +16,7 @@
         return service;
 
         function getNeighboursPosition(){
-            ApiFactory.getUsers()
+            ApiFactory.getData()
               .then(function(response){
                 let aUsers = response.data.users
                 let newArrayUsers = aUsers.map(function(obj){
