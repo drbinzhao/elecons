@@ -15,7 +15,7 @@ function register(req, res) {
     let id = user._id
     console.log(id)
     
-    const dataUser = generateFakeData(user._id)
+    const dataUser = generateFakeData(id)
 
     //const dataUser = require(`../../../data/${id}/data.json`)
     console.log('!!!!!!!')

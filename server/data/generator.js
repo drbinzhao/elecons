@@ -25,7 +25,7 @@ module.exports = function(id) {
   // mkdirp(folderPath, function(err) {
       // if (err) throw err
       // console.log(`folder ${folderPath} created!!`) 
-      fs.writeFileSync(folderPath + id + ".json", jsonToWrite)
+      fs.writeFile(folderPath + id + ".json", jsonToWrite)
       // , function(err) {
           // if (err) throw err
           console.log(`data.json was created at ${folderPath}!`);
