@@ -11,6 +11,8 @@ function getRandomInt(min, max) {
   return Math.floor(Math.random() * (max - min)) + min;
 }
 
+module.exports = function(id) {
+
 const dataUser = {
     hourly: Array(24).fill(0).map(elem => +(Math.random() * 3).toFixed(2)),
     monthly: Array(2).fill(0).map(elem => +(getRandomInt(100, 200)).toFixed(2)),
@@ -19,17 +21,19 @@ const dataUser = {
 
 const jsonToWrite = JSON.stringify(dataUser, null, 4)
 
-module.exports = function(id) {
   
   const folderPath = __dirname + '/users/';
+  fs.writeFileSync(folderPath + id + ".json", jsonToWrite)
+  console.log(`data.json was created at ${folderPath}!`);
+
+    return dataUser
   // mkdirp(folderPath, function(err) {
       // if (err) throw err
       // console.log(`folder ${folderPath} created!!`) 
-      fs.writeFile(folderPath + id + ".json", jsonToWrite)
+      
       // , function(err) {
           // if (err) throw err
-          console.log(`data.json was created at ${folderPath}!`);
+  
       // });
-    return dataUser
 
 } 

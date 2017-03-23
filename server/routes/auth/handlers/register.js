@@ -33,9 +33,6 @@ function register(req, res) {
     .catch( err => res.status(500).json(err) )
 
 
-
-
-
     res.json({success: true, msg: 'Successful created new user.'})
   })
 
