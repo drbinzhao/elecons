@@ -7,8 +7,13 @@ function getDate(index) {
     return +new Date(startDate.getTime() + dayOffset)
 }
 
+function getRandomInt(min, max) {
+  return Math.floor(Math.random() * (max - min)) + min;
+}
+
 const dataUser = {
     hourly: Array(24).fill(0).map(elem => +(Math.random() * 3).toFixed(2)),
+    monthly: Array(2).fill(0).map(elem => +(getRandomInt(100, 200)).toFixed(2)),
     yearly: Array(810).fill(0).map((elem, i) => [getDate(i), +(Math.random() * 10).toFixed(2)])
 }
 
