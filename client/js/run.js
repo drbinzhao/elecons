@@ -31,6 +31,8 @@ angular.module('EleconsApp')
                 $rootScope.consumption2016 = Number(response.data.consumption2016) || 150
                 $rootScope.consumption2017 = Number(response.data.consumption2017) || 230
                 $rootScope.savingsKWH = Number($rootScope.consumption2016 - $rootScope.consumption2017)
+                $rootScope.savingsEuro = $rootScope.savingsEuro  || ($rootScope.savingsKWH * 0.11)
+                
             })
       })
   })
