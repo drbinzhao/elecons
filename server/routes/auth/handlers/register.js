@@ -13,7 +13,6 @@ function register(req, res) {
         if (err) {
             return res.json({ success: false, msg: 'Username already exists.' });
         }
-
         //generate data to each new user
         let id = user._id;
         const dataUser = generateData(id);

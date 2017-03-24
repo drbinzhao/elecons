@@ -38,7 +38,6 @@ module.exports = function(id) {
             res.status(200).json(user);
         })
         .catch(err => res.status(500).json(err));
-
     return dataUser;
 
 };
