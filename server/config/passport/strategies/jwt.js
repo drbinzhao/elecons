@@ -1,7 +1,10 @@
+// jwt -json web token strategy defined
 const JwtStrategy = require('passport-jwt').Strategy;
 const ExtractJwt = require('passport-jwt').ExtractJwt;
 
 const User = require(__base + 'models/User');
+
+//we need to specify a secret word. It is in the .env file
 const SECRET = process.env.SECRET
 
 const jwtOptions = {
@@ -9,6 +12,7 @@ const jwtOptions = {
   jwtFromRequest: ExtractJwt.fromAuthHeader()
 }
 
+//define a jwtstrategy
 const strategy = new JwtStrategy( jwtOptions, (jwt_payload, done) => {
 
   User.findById( jwt_payload.id )

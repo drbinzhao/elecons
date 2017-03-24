@@ -1,5 +1,7 @@
+// passport is an auth module based on strategies
 const passport = require('passport')
 
+// strategies required
 const LocalStrategy = require('passport-local').Strategy;
 const jwtStrategy = require('./strategies/jwt')
 

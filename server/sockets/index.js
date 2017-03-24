@@ -3,55 +3,45 @@ const moment = require('moment')
 
 
 var connections = []
-let uniqueInterval
 
 function setSocketEvents(io) {
 
-    //it listens a  message 'connection' and  will do the function
+    //it launches the 'connection' and  will run the function
     io.sockets.on('connection', function(socket) {
         connections.push(socket);
         console.log(`Connected: ${connections.length} sockets connected`)
 
+        // Listens the 'userInfo' event from the client
         socket.on("userInfo", function(data) {
-                socket.join(data.id)
-                socket.url = data.urlCurrentPower
-                console.log(socket.url)
-                console.log(data.id)
+            
+            // creates an individual socket per id
+            socket.join(data.id)
+            socket.url = data.urlCurrentPower
+            
+            request(socket.url, (error, response, body) => {
 
+                //parsing the webservice and transform it to an object
+                let bodyParsed = body.replace(/\n/g, '')
+                let current = bodyParsed.substring(bodyParsed.indexOf(':') + 1);
+                let accumulated = bodyParsed.substring(0, bodyParsed.indexOf(':'))
 
-                // if (uniqueInterval) clearInterval(uniqueInterval)
+                let newRead = {
+                    date: moment(Date.now()).format('DD/MM/YYYY hh:mm:ss'),
+                    current: +current,
+                    accumulated: +accumulated
+                }
 
-                // Emit - send data available
-                //uniqueInterval = setInterval(() => {
-                    request(socket.url, (error, response, body) => {
-
-                        let bodyParsed = body.replace(/\n/g, '')
-                        let current = bodyParsed.substring(bodyParsed.indexOf(':') + 1);
-                        let accumulated = bodyParsed.substring(0, bodyParsed.indexOf(':'))
-
-                        let newRead = {
-                            date: moment(Date.now()).format('DD/MM/YYYY hh:mm:ss'),
-                            current: +current,
-                            accumulated: +accumulated
-                        }
-
-                        //Here comes the magic (but does not work) //.in('http://fran.noip.me:8888/consumo?id=0001')
-                        io.sockets.in(data.id).emit('new read', newRead) 
-                    })
-
-                //}, 1000)
-
+                //Emits an event "new read" the data to the sockets with the specified 'id' using .in
+                io.sockets.in(data.id).emit('new read', newRead) 
+            })
         })
-            //Disconnect
+            
+        //Message when a socket is disconnected and recount
         socket.on('disconnect', function(data) {
-            clearInterval(uniqueInterval)
             connections.splice(connections.indexOf(socket), 1)
             console.log('Disconnected: %s sockets connected', connections.length)
-        })
-
+            })
     })
-
-
 }
 
 module.exports = setSocketEvents

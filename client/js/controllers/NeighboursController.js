@@ -19,7 +19,7 @@
               console.log(aUsers.length)
 
             $scope.showStatusNeighbours = function (){
-              if ($rootScope.neighboursPosition < (aUsers.length/2)) {
+              if ($rootScope.neighboursPosition <= (aUsers.length/2)) {
                 return true
               } else {
                 return false

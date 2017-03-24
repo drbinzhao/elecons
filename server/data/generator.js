@@ -1,3 +1,5 @@
+// generate the random data to each new registered user
+
 const fs = require('fs')
 // const mkdirp = require('mkdirp');
 
