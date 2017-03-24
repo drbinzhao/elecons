@@ -45,7 +45,6 @@
 
         //Helper functions
         function getPvpc(response) {
-            console.log(response.data.indicator.values)
             return response.data.indicator.values
         }
 
