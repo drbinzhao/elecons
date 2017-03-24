@@ -92,9 +92,9 @@
         function getChartHourly() {
 
             let hourlyData = []
-            ApiFactory.getData()
+            ApiFactory.getUser()
                 .then((response) => {
-                    hourlyData = response.data.hourly
+                    hourlyData = response.data.dataUser.hourly
 
                     var pvpcPrices = []
                     PricesFactory.getPrices()
@@ -191,7 +191,7 @@
         // CHART DAILY
         function getChartDaily() {
 
-            ApiFactory.getData()
+            ApiFactory.getUser()
                 .then(function(response) {
 
                     // create the chart
@@ -214,7 +214,7 @@
                         series: [{
                             type: 'column',
                             name: 'Electric Consumption',
-                            data: response.data.yearly,
+                            data: response.data.dataUser.yearly,
                             dataGrouping: {
                                 units: [
                                     [
