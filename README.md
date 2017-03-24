@@ -1,4 +1,17 @@
-README.md
+[![Skylab](https://github.com/Iggy-Codes/logo-images/blob/master/logos/skylab-56.png)](http://www.skylabcoders.com/)
+
+[![MongoDB](https://github.com/Iggy-Codes/logo-images/blob/master/logos/mongodb.png)](https://www.mongodb.com/)
+[![ExpressJS](https://github.com/Iggy-Codes/logo-images/blob/master/logos/expressjs.png)](http://expressjs.com///)
+[![AngularJS](https://github.com/Iggy-Codes/logo-images/blob/master/logos/angularjs.png)](https://angularjs.org/)
+[![NodeJS](https://github.com/Iggy-Codes/logo-images/blob/master/logos/nodejs.png)](https://nodejs.org/)
+[![PugJS](https://github.com/Iggy-Codes/logo-images/blob/master/logos/pug.png)](http://www.pugjs.org/)  
+
+[![HTML5, CSS3 and JS](https://github.com/Iggy-Codes/logo-images/blob/master/logos/html5-css3-js.png)](https://www.w3.org/)
+[![Bootstrap](https://github.com/Iggy-Codes/logo-images/blob/master/logos/bootstrap.png)](http://getbootstrap.com/)
+[![SASS](https://github.com/Iggy-Codes/logo-images/blob/master/logos/sass.png)](http://sass-lang.com/)
+[![Bower](https://github.com/Iggy-Codes/logo-images/blob/master/logos/bower.png)](https://bower.io//)
+[![npm](https://github.com/Iggy-Codes/logo-images/blob/master/logos/npm.png)](https://www.npmjs.com/)
+
 # Elecons
 Elecons is the final project of the Skylab Coders bootcamp. This project aims to facilitate the user to track and reduce its electric consumption, compare himself to last year period, compare its savings to neighbours, see what hour the electricity is cheaper, etc...
 
@@ -32,11 +45,20 @@ It is a web-service that generates an random instant power value in Watts every 
 - `http://fran.noip.me:8888/consumo?id=0004` --> Power assigned: 4,40kW
 - `http://fran.noip.me:8888/consumo?id=0005` --> Power assigned: 5,50kW
 
+##REST API endpoints that interact with the MongoDb collection
+- GET /api/users → get all users with all their data
+- GET /api/users/:id → get specified user and his/her data
+- GET /api/users/:id/data → get specified user consumption data
+- PUT /api/users/:id → update specified user data
+- PUT /api/users/:id/maxPower → update maximum power when new
+
+
 ## Technologies
 It is a `MEAN project`, where the server-side is an `Express` app and the front-end is server in an `Angular app`.
 - It uses `websockets` to instantianlly show the real-time data from the external-web service.
 - Regarding the charts the are build by using the `Highcharts` library
 - The MongoDB is stored in [Mlab](www.mlab.com)
+
 
 ##Installation
 
@@ -56,3 +78,34 @@ heroku config:set DB_URI=mongodb://<%USER%>:<%PASS%>@XXXXXXXXX.mlab.com:00000/xx
 heroku config:set ENVIRONMENT=production
 heroku config:set SECRET=XXXXXXXXXXXXXXX
 ```
+
+
+
+
+## Built With
+
+* [SublimeText](http://https://https:/npmdejs.org/www.sublimetext.com) - Text editor
+
+## Authors
+
+* [Josep Otal](http://github.com/josepotal) 
+
+## License
+
+This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
+
+## Acknowledgments
+
+* [SkylabCoders](https://github.com/SkylabCoders)
+* [JuanMa Garrido](https://github.com/juanmaguitar)
+* [AlejandroDG](https://github.com/agandia9)
+
+And my mates from Skylab Coders Academy
+* [Franscico López](https://github.com/FransLopez)
+* [Stívali Serna](https://github.com/stivaliserna)
+* [Bijay Timilsina](https://github.com/bijay007)
+* [Ignasi Amargòs](https://github.com/Iggy-codes)
+* [Xavier Meroño](https://github.com/xmero)
+* [Ernesto](https://github.com/ERPG)
+* [Alejandro Vázquez](https://github.com/alejovp)
+* [Carles](https://github.com/LITULANDIO)
