@@ -26,9 +26,8 @@
 
         function getComparison() {
 
-            ApiFactory.getData()
-                .then((response) => {
-                    console.log(response.data.monthly)
+            ApiFactory.getUser()
+                .then(response => {
             Highcharts.chart('comparison-chart', {
                 chart: {
                     //backgroundColor: 'none',
@@ -68,11 +67,11 @@
                 },
                 series: [{
                     name: '2016',
-                    data: [response.data.monthly[0]]
+                    data: [response.data.dataUser.monthly[0]]
 
                 }, {
                     name: '2017',
-                    data: [response.data.monthly[1]]
+                    data: [response.data.dataUser.monthly[1]]
                 }]
             });
             })
