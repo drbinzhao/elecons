@@ -21,7 +21,7 @@
                     let aUsers = response.data.users;
                     let newArrayUsers = aUsers.map(function(obj) {
                         let rObj = {};
-                        let savings = Number(obj.consumption2016) - Number(obj.consumption2017);
+                        let savings = Number(obj.dataUser.monthly[0]) - Number(obj.dataUser.monthly[1]);
                         rObj['savings'] = savings;
                         rObj['username'] = obj.username;
                         return rObj
@@ -57,7 +57,7 @@
                     let aUsers = response.data.users
                     let newArrayUsers = aUsers.map(function(obj) {
                         let rObj = {}
-                        let savings = Number(obj.consumption2016) - Number(obj.consumption2017)
+                        let savings = Number(obj.dataUser.monthly[0]) - Number(obj.dataUser.monthly[1])
                         rObj['savings'] = savings
                         rObj['username'] = obj.username
                         return rObj
