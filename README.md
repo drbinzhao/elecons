@@ -20,7 +20,7 @@ It can be seen in: https://elecons-backup.herokuapp.com/ (stable version) and ht
 This demo assigns a randomly generated electricity consumption data to any register users. This data is both real-time data simluating the instant power and fixed data simulating the hourly, daily and monthly electricity consumption.
 It uses the Red Eléctrica Española (REE) API, to show the Spanish hourly electricity prices.
 
-##Endpoints for Spain Energy prices
+## Endpoints for Spain Energy prices
 You need a `token` (you can request it sending an email to: `consultasios@ree.es`)and it has to be included in the header of the request. The API documentation can be found in https://api.esios.ree.es/: 
 - To obtain the PVPC: https://api.esios.ree.es/indicators/10229
 - To obtain the PVPC DH: https://api.esios.ree.es/indicators/10230
@@ -37,7 +37,7 @@ You need a `token` (you can request it sending an email to: `consultasios@ree.es
     }
 ```
 
-##Endpoints for real-time power
+## Endpoints for real-time power
 It is a web-service that generates an random instant power value in Watts every second, and it has 5 instances, that have different maximum powers assigned, so their random values will be between 0 and the value assigned:
 - `http://fran.noip.me:8888/consumo?id=0001` --> Power assigned: 5,50kW
 - `http://fran.noip.me:8888/consumo?id=0002` --> Power assigned: 3,30kW
@@ -45,7 +45,7 @@ It is a web-service that generates an random instant power value in Watts every 
 - `http://fran.noip.me:8888/consumo?id=0004` --> Power assigned: 4,40kW
 - `http://fran.noip.me:8888/consumo?id=0005` --> Power assigned: 5,50kW
 
-##REST API endpoints that interact with the MongoDb collection
+## REST API endpoints that interact with the MongoDb collection
 - GET /api/users → get all users with all their data
 - GET /api/users/:id → get specified user and his/her data
 - GET /api/users/:id/data → get specified user consumption data
