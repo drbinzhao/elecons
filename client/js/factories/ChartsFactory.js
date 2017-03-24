@@ -1,14 +1,10 @@
 (function() {
-    'use strict'
-
+    'use strict';
     angular
         .module('EleconsApp')
         .factory('ChartsFactory', ChartsFactory)
 
     function ChartsFactory($rootScope, PricesFactory, socketio, ApiFactory) {
-        //var vm = this
-        let hourlyData = []
-
 
         var service = {
             getChartNow: getChartNow,
@@ -18,9 +14,8 @@
 
         return service;
 
-
-        ///////mehthods from the factory
-
+    // Mehtods of the factory
+        // CHART REAL-TIME
         function getChartNow() {
             Highcharts.setOptions({
                 global: {
@@ -36,7 +31,6 @@
                     events: {
                         load: function() {
                             var series = this.series[0]
-                                //var socket = io.connect()
                             socketio.on('new read', function(data) {
                                 var x = (new Date()).getTime(), // current time
                                     y = data.current;
@@ -93,11 +87,8 @@
                     }())
                 }]
             });
-
-
-        }
-        /// CHART HOURLY-------------------------------------------------
-
+        };
+        // CHART HOURLY
         function getChartHourly() {
 
             let hourlyData = []
@@ -112,7 +103,7 @@
                                 return obj.price
                             })
                             pvpcPrices = aPricesValues
-   
+
 
                             Highcharts.chart('chart-hourly', {
                                 chart: {
@@ -197,47 +188,47 @@
                 })
         };
 
-
+        // CHART DAILY
         function getChartDaily() {
-            // CHART MONTH
+
             ApiFactory.getData()
                 .then(function(response) {
 
-                // create the chart
-                Highcharts.stockChart('chart-daily', {
-                    chart: {
-                        // backgroundColor: '#3E4852',
-                        alignTicks: false
-                    },
+                    // create the chart
+                    Highcharts.stockChart('chart-daily', {
+                        chart: {
+                            //backgroundColor: '#3E4852',
+                            alignTicks: false
+                        },
 
-                    rangeSelector: {
-                        selected: 1
-                    },
+                        rangeSelector: {
+                            selected: 1
+                        },
 
-                    title: {
-                        text: 'Daily Consumption in kWh'
-                    },
-                    exporting: {
-                        enabled: false
-                    },
-                    series: [{
-                        type: 'column',
-                        name: 'Electric Consumption',
-                        data: response.data.yearly,
-                        dataGrouping: {
-                            units: [
-                                [
-                                    'week', // unit name
-                                    [1] // allowed multiples
-                                ],
-                                [
-                                    'month', [1, 2, 3, 4, 6]
+                        title: {
+                            text: 'Daily Consumption in kWh'
+                        },
+                        exporting: {
+                            enabled: false
+                        },
+                        series: [{
+                            type: 'column',
+                            name: 'Electric Consumption',
+                            data: response.data.yearly,
+                            dataGrouping: {
+                                units: [
+                                    [
+                                        'week', // unit name
+                                        [1] // allowed multiples
+                                    ],
+                                    [
+                                        'month', [1, 2, 3, 4, 6]
+                                    ]
                                 ]
-                            ]
-                        }
-                    }]
+                            }
+                        }]
+                    });
                 });
-            });
         };
     }
 

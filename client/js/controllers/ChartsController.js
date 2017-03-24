@@ -1,20 +1,17 @@
-(function () {
-  'use strict'
+(function() {
+    'use strict'
     angular
-        
+
         .module('EleconsApp')
-        .controller('ChartsController', ChartsController)
-        //.controller('chartsController', ['socketio','$rootScope', function (socketio, $rootScope) {
-        
-          function ChartsController ($scope, $route, $rootScope, ChartsFactory) {
-            $scope.$route = $route
+        .controller('ChartsController', ChartsController);
 
-            var vm = this;
+    function ChartsController($scope, $route, $rootScope, ChartsFactory) {
+        $scope.$route = $route;
+        var vm = this;
 
+        ChartsFactory.getChartNow();
+        ChartsFactory.getChartHourly();
+        ChartsFactory.getChartDaily();
 
-            ChartsFactory.getChartNow()
-            ChartsFactory.getChartHourly()
-            ChartsFactory.getChartDaily()
-
-          }
+    }
 })()

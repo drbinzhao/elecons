@@ -1,5 +1,4 @@
 // generate the random data to each new registered user
-
 const fs = require('fs');
 
 // generates a new day in milliseconds

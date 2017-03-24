@@ -5,5 +5,5 @@ angular.module('EleconsApp')
     $scope.logout = function() {
       AuthFactory.logout()
       $location.path('/dashboard');
-    }
-  })
+    };
+  });
