@@ -2,7 +2,7 @@ README.md
 # Elecons
 Elecons is the final project of the Skylab Coders bootcamp. This project aims to facilitate the user to track and reduce its electric consumption, compare himself to last year period, compare its savings to neighbours, see what hour the electricity is cheaper, etc...
 
-It can be seen in: https://eleconsum.herokuapp.com/ (stable version) and https://engiebuddy.herokuapp.com/ (beta version)
+It can be seen in: https://elecons-backup.herokuapp.com/ (stable version) and https://engiebuddy.herokuapp.com/ (beta version)
 
 This demo assigns a randomly generated electricity consumption data to any register users. This data is both real-time data simluating the instant power and fixed data simulating the hourly, daily and monthly electricity consumption.
 It uses the Red Eléctrica Española (REE) API, to show the Spanish hourly electricity prices.
