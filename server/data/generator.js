@@ -24,10 +24,10 @@ module.exports = function(id) {
 
     const jsonToWrite = JSON.stringify(dataUser, null, 4);
 
-    //Creates a file for each new user
-    const folderPath = __dirname + '/users/';
-        fs.writeFileSync(folderPath + id + ".json", jsonToWrite);
-        console.log(`data.json was created at ${folderPath}!`);
+    // //Creates a file for each new user
+    // const folderPath = __dirname + '/users/';
+    //     fs.writeFileSync(folderPath + id + ".json", jsonToWrite);
+    //     console.log(`data.json was created at ${folderPath}!`);
 
     //Stores the data into the DB
     const User = require(__base + 'models/User');
@@ -38,6 +38,7 @@ module.exports = function(id) {
             res.status(200).json(user);
         })
         .catch(err => res.status(500).json(err));
+
     return dataUser;
 
 };

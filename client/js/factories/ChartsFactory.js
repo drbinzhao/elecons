@@ -4,7 +4,7 @@
         .module('EleconsApp')
         .factory('ChartsFactory', ChartsFactory)
 
-    function ChartsFactory($rootScope, PricesFactory, socketio, ApiFactory) {
+    function ChartsFactory($rootScope, PricesFactory, ApiFactory) {
 
         var service = {
             //getChartNow: getChartNow,
