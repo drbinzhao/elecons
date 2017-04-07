@@ -7,31 +7,36 @@
         <div class="row">
         </div>
     </div>
-    <form class="form-horizontal personal-info" role="form" ng-submit="updateUser($event)">
+    <form class="form-horizontal personal-info" role="form" ng-submit="vm.updateUser($event)">
         <h3>Personal info</h3>
         <div class="form-group">
-            <label class="col-lg-3 control-label">First name:</label>
-            <div class="col-lg-8">
-                <input class="form-control" type="text" ng-model="firstName">
+            <label class="col-md-3 control-label">First name:  </label>
+            <p class="col-md-3">{{vm.user.firstName}}</p>
+            <div class="col-md-3">
+                <input class="form-control" type="text" ng-model="firstName" placeholder="Edit firstName" required>
             </div>
         </div>
         <div class="form-group">
-            <label class="col-lg-3 control-label">Last name:</label>
-            <div class="col-lg-8">
-                <input class="form-control" type="text" ng-model="lastName">
+            <label class="col-md-3 control-label">Last name: </label>
+            <p class="col-md-3">{{vm.user.lastName}}</p>
+            <div class="col-md-3">
+                <input class="form-control" type="text" ng-model="lastName" placeholder="Edit lastName..." required>
             </div>
         </div>
         <div class="form-group">
-            <label class="col-lg-3 control-label">Email:</label>
-            <div class="col-lg-8">
-                <input class="form-control" type="email" ng-model="email">
+            <label class="col-md-3 control-label">Email: </label>
+            <p class="col-md-3">{{vm.user.email}}</p>
+            <div class="col-md-3">
+                <input class="form-control" type="email" ng-model="email" placeholder="Edit email..." required>
             </div>
         </div>
         <h3>Energy info</h3>
         <div class="form-group">
             <label class="col-md-3 control-label">Contracted Power:</label>
-            <div class="col-md-8">
-                <select class="form-control" type="text" ng-model="contractedPower">
+            <p class="col-md-3">{{vm.user.contractedPower}}</p>
+            <div class="col-md-3">
+                <select class="form-control" type="text" ng-model="contractedPower" required>
+                    <option value="">Select Your Contracted Power</option>
                     <option value="2.30">2.30</option>
                     <option value="3.45">3.45</option>
                     <option value="4.60">4.60</option>
@@ -43,8 +48,10 @@
         </div>
         <div class="form-group">
             <label class="col-md-3 control-label">Energy tariff:</label>
-            <div class="col-md-8">
-                <select class="form-control" type="text" ng-model="energyTariff">
+            <p class="col-md-3">{{vm.user.energyTariff}}</p>
+            <div class="col-md-3">
+                <select class="form-control" type="text" ng-model="energyTariff" required>
+                    <option value="">Select Your EnergyTariff</option>
                     <option value="PVPC">PVPC</option>
                     <option value="PVPC DH">PVPC DH</option>
                     <option value="PVPC EV">PVPC EV</option>
@@ -53,8 +60,10 @@
         </div>
         <div class="form-group">
             <label class="col-md-3 control-label">Device connected</label>
-            <div class="col-md-8">
-                <input class="form-control" type="text" ng-model="urlCurrentPower">
+            <p class="col-md-3">{{vm.user.urlCurrentPower}}</p>
+            <div class="col-md-3">
+                <input class="form-control" type="text" ng-model="urlCurrentPower" required>
+                
             </div>
         </div>
         <div class="form-group">

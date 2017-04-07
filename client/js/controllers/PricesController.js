@@ -4,12 +4,18 @@
         .module('EleconsApp')
         .controller('PricesController', PricesController)
 
-    function PricesController($scope, $route, $rootScope, PricesFactory) {
+    function PricesController($scope, $route, $rootScope, PricesFactory, ApiFactory) {
         $scope.$route = $route
 
         var vm = this;
-        $rootScope.minPrice = {};
-        $rootScope.maxPrice = {};
+        const id = $scope.loggedUser.id;
+        ApiFactory.getUser(id) 
+            .then(function(user) {
+                vm.user = user.data;
+            })
+
+        vm.minPrice = {};
+        vm.maxPrice = {};
 
         PricesFactory.getPrices()
             .then(function(response) {

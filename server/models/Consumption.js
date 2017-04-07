@@ -3,7 +3,7 @@ const Schema = mongoose.Schema
 const passportLocalMongoose = require('passport-local-mongoose')
 
 const Consumption = new Schema({
-    consumption: {type: Number}
+    consumption: {type: Object}
 });
 
 Consumption.plugin( passportLocalMongoose );

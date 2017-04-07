@@ -7,29 +7,26 @@
         
           function UserController ($scope, $route, ApiFactory, $rootScope) {
             $scope.$route = $route;
-            //var vm = this;
+            var vm = this;
             const id = $scope.loggedUser.id;
+            console.log($scope.loggedUser)
             
-              $scope.updateUser = function(e) {
+            ApiFactory.getUser(id) 
+                .then(function(user) {
+                    vm.user = user.data;
+                })
+
+              vm.updateUser = function(e) {
                 e.preventDefault()
-                let { firstName, lastName, email, contractedPower, energyTariff, updatedAt, urlCurrentPower, consumption2016, consumption2017} = $scope;
-                $rootScope.firstName =  firstName;
-                $rootScope.lastName =  lastName;
-                $rootScope.email =  email;
-                $rootScope.contractedPower =  contractedPower;
-                $rootScope.energyTariff =  energyTariff;
-                $rootScope.updatedAt =  updatedAt;
-                $rootScope.urlCurrentPower =  urlCurrentPower;
-                $rootScope.consumption2016 = consumption2016;
-                $rootScope.consumption2017 = consumption2017;
-
-                ApiFactory.updateUser(id, firstName, lastName, email, contractedPower, energyTariff, updatedAt, urlCurrentPower, consumption2016, consumption2017)
-                  .then(function(user) {
-                    $scope.user = user;
-                  })
-
+                let { firstName, lastName, email, contractedPower, energyTariff, updatedAt, urlCurrentPower} = $scope;
+            
+                ApiFactory.updateUser(id, firstName, lastName, email, contractedPower, energyTariff, updatedAt, urlCurrentPower)
                 alert("Your data has been updated correctly!!")
-
-              };
+              
+                ApiFactory.getUser(id) 
+                  .then(function(user) {
+                      vm.user = user.data;
+                })
+            }
         }
 })();

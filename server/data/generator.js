@@ -31,6 +31,7 @@ module.exports = function(id) {
 
     //Stores the data into the DB
     const User = require(__base + 'models/User');
+    
 
     User.findByIdAndUpdate(id, { dataUser })
         .then(user => {
