@@ -17,7 +17,6 @@
 
             ApiFactory.getUser()
                 .then(response => {
-                    console.log(response)
                     Highcharts.chart('comparison-chart', {
                         chart: {
                             //backgroundColor: 'none',
