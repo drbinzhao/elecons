@@ -16,10 +16,11 @@
                 var sortedPrices = response.sort(function(a, b) {
                     return a.price - b.price;
                 });
-
-                $rootScope.min = sortedPrices[0];
-                $rootScope.max = sortedPrices[sortedPrices.length - 1];
-
+                return sortedPrices
+            })
+            .then (function(response) {
+                vm.minPrice = response[0];
+                vm.maxPrice = response[response.length - 1];
             });
     }
 })();

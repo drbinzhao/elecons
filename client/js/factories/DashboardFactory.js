@@ -7,18 +7,12 @@
     function DashboardFactory($http, $rootScope, PricesFactory, ApiFactory) {
 
         var service = {
-            getComparison: getComparison,
-            getMonthData: getMonthData
+            getComparison: getComparison
         };
 
         return service;
 
-        function getMonthData() {
-            let electricPrice = 0.11
-            $rootScope.savingsKWH = $rootScope.consumption2016 - $rootScope.consumption2017;
-            $rootScope.savingsEuro = $rootScope.savingsKWH * electricPrice;
-        }
-
+        
         function getComparison() {
 
             ApiFactory.getUser()

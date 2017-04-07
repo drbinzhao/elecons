@@ -29,10 +29,10 @@ angular.module('EleconsApp')
                 $rootScope.energyTariff = response.data.energyTariff || "PVPC";
                 $rootScope.updatedAt = response.data.updatedAt;
                 $rootScope.urlCurrentPower = response.data.urlCurrentPower || "http://fran.noip.me:8888/consumo?id=0001";
-                $rootScope.consumption2016 = response.data.dataUser.monthly[0];
-                $rootScope.consumption2017 = response.data.dataUser.monthly[1];
-                $rootScope.savingsKWH = $rootScope.consumption2016 - $rootScope.consumption2017;
-                $rootScope.savingsEuro = $rootScope.savingsEuro  || ($rootScope.savingsKWH * 0.11);
+                // $rootScope.consumption2016 = response.data.dataUser.monthly[0];
+                // $rootScope.consumption2017 = response.data.dataUser.monthly[1];
+                // $rootScope.savingsKWH = $rootScope.consumption2016 - $rootScope.consumption2017;
+                // $rootScope.savingsEuro = $rootScope.savingsEuro  || ($rootScope.savingsKWH * 0.11);
             });      
       });
   });

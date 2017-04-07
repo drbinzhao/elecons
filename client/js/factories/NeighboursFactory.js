@@ -15,53 +15,45 @@
 
 
         function getNeighboursPosition() {
+            return ApiFactory.getUsers()
+                .then(getObjSavings)
+        }
+
+            //helper function of  getNeighboursPosition
+            function getObjSavings(response) {
+
+                 let aUsers = response.data.users;
+                
+                let newArrayUsers = aUsers.map(function(obj) {
+                    let rObj = {};
+                    let savings = Number(obj.dataUser.monthly[0]) - Number(obj.dataUser.monthly[1]);
+                    rObj['savings'] = savings;
+                    rObj['username'] = obj.username;
+                    return rObj
+                })
+                
+
+                let oArray = newArrayUsers.sort(function(a, b) {
+                    return (a.savings < b.savings) ? 1 : ((b.savings < a.savings) ? -1 : 0); 
+                });
+                return oArray
+            }    
+
+
+        //chart neighbours comparison
+        function getNeighbours() {
+            let aSavings = [];
+
             ApiFactory.getUsers()
                 .then(function(response) {
-
                     let aUsers = response.data.users;
                     let newArrayUsers = aUsers.map(function(obj) {
                         let rObj = {};
-                        let savings = Number(obj.dataUser.monthly[0]) - Number(obj.dataUser.monthly[1]);
+                        let savings = Number(obj.dataUser.monthly[0]) - Number(obj.dataUser.monthly[1])
                         rObj['savings'] = savings;
                         rObj['username'] = obj.username;
-                        return rObj
-                    })
-
-                    let oArray = newArrayUsers.sort(function(a, b) {
-                        return (a.savings < b.savings) ? 1 : ((b.savings < a.savings) ? -1 : 0); });
-
-                    let aSavings = oArray.map(function(obj) {
-                        return obj.savings
-                    })
-
-                    let positionArray = 0
-                    let test = oArray.forEach(function(elem, index) {
-                        if (elem.username == $rootScope.username) {
-                            positionArray = index + 1
-
-                            return positionArray
-                        }
-                    })
-
-                    $rootScope.neighboursPosition = positionArray
-                    $rootScope.allSavings = aSavings
-
-                })
-        }
-
-        function getNeighbours() {
-            let aSavings = []
-
-            ApiFactory.getUsers()
-                .then(function(response) {
-                    let aUsers = response.data.users
-                    let newArrayUsers = aUsers.map(function(obj) {
-                        let rObj = {}
-                        let savings = Number(obj.dataUser.monthly[0]) - Number(obj.dataUser.monthly[1])
-                        rObj['savings'] = savings
-                        rObj['username'] = obj.username
-                        return rObj
-                    })
+                        return rObj;
+                    });
 
                     let oArray = newArrayUsers.sort(function(a, b) {
                         return (a.savings < b.savings) ? 1 : ((b.savings < a.savings) ? -1 : 0); });

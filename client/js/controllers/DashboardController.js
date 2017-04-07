@@ -9,6 +9,9 @@
         $scope.$route = $route
         var vm = this;
 
+        //comparison chart
+        DashboardFactory.getComparison();
+
         var monthNames = ["January", "February", "March", "April", "May", "June",
             "July", "August", "September", "October", "November", "December"
         ];
@@ -18,15 +21,25 @@
         vm.lastYear = vm.currentYear - 1;
         vm.currentMonth = monthNames[currentDate.getMonth()];
 
+        //message function
         $scope.showStatusDashboard = function() {
-            if ($rootScope.consumption2016 > $rootScope.consumption2017) {
+            if (vm.consumption2016 > vm.consumption2017) {
                 return true
             } else {
                 return false
             }
         }
 
-        DashboardFactory.getMonthData();
-        DashboardFactory.getComparison();
+        let electricPrice = 0.11
+        ApiFactory.getUser()
+            .then(response => {
+            vm.username = response.data.username
+            vm.consumption2016 = response.data.dataUser.monthly[0]
+            vm.consumption2017 = response.data.dataUser.monthly[1]
+
+            vm.savingsKWH = vm.consumption2016 - vm.consumption2017;
+            vm.savingsEuro = vm.savingsKWH * electricPrice;
+        })
+        
     }
 })()
